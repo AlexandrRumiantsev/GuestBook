@@ -23,7 +23,9 @@
 </head>
 <body style="background: url(Background.jpg)" >
 
-
+<div>
+    <?  include "Panel.php"; ?>
+</div>
 
 <div align="center" style="color:white; padding-top:20px;">
 
@@ -32,9 +34,7 @@
 
 
 <!-- Панель входа и регистрации на сайт  -->
-<div>
- <?  include "Panel.php"; ?>
-</div> 
+
 
 
 
@@ -127,7 +127,9 @@ if (mysqli_multi_query($link, $query)) {
                         ?>  <?
                     printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:left;'> <img width='30px' height='30px' src='images\close.png'></a>");
                     printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:left;'> <img width='30px' height='30px' src='edit.png'></a>");
-				 ?>   </div> <?
+                    printf("<a target='_blank' href='' style='float:left;'> <img width='30px' height='30px' src='images\conv.png'></a>");
+
+                        ?>   </div> <?
 
 
             }
@@ -198,7 +200,7 @@ if (mysqli_multi_query($link, $query)) {
 </div>
 <div align="left">
 <!-- КАК В ЛОГИНЕ МОЖЕТ БЫТЬ ЧИСЛО 1(Он глобальный, объявлен в Panel) -->
-<input type="text" id="mess" name="msg_from" value="<?=$Login?>" maxlength="40" size="20">
+<input type="text" disabled id="mess" name="msg_from" value="<?if($User==Null){echo "авторизуйтесь";}else echo $User?>" maxlength="40" size="20">
 </div>
 </div>
 </div>
@@ -212,7 +214,7 @@ if (mysqli_multi_query($link, $query)) {
 E-Mail:
 </div>
 <div align="left">
-<input type="text" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
+<input type="text" disabled value="<? echo $mail ?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
 </div>
 </div>
 </div>
@@ -309,7 +311,11 @@ URL:
 document.getElementById('filesPic').addEventListener('change', handleFileSelect, false);
 </script>
 
-<!-- Удаление JS -->
+<!-- роверка логирования -->
+<script>
+    val Log = document.getElementById("mess");
+    if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
+</script>
 
 
 </body>

@@ -36,9 +36,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         if ($result = mysqli_store_result($link)) {
             while ($row = mysqli_fetch_row($result)) {
 				if($Login == $row[0]  and $Password == $row[1]){
-                printf("<div style='background:black; float:left; color:white; width:210px; height:250px; border-style:groove; position:absolute; font-size:18px;'> 
-         				 <div align='center'>Учётные данные </div> <br><br> <form action='Profile.php' method='post'> Логин:  <input  value='%s' type='text' name='login' maxlength='40' size='17'>  <form><br><br> 
-						Email: %s <br><br> Город: %s <br><br> Пол: %s <br><br> Возраст: %s <br><br> <input type='submit' name='submitUser' value='Редактировать учётную запись'/></div> ", $row[0],$row[2],$row[3],$row[4],$row[5]);	
+                printf("<div style='background:black; float:left; color:white; width:190px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
+         				   <form action='Profile.php' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:17px; margin-left:46px; ' name='login' maxlength='20' size='10'>  <form> 
+         				   <br>
+						 <input type='submit' class='subm' name='submitUser' value=''/>
+						 <a href='index.php'> <div style='width:50px;height:50px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 35px; padding-left:13px; padding-top:16px;'>1 </div></div></a> 
+						 <a href='index.php'> <img style='width:50px;height:50px;padding-top:10px;' src='images/close.png'> </a> 
+						
+						 </div> ", $row[0],$row[2],$row[3],$row[4],$row[5]);
 				}
 				//БАГ С УСЛОВИЕМ(ВСЕГДА ВЫВОДИТ)(РЕШЕНО)
 				/* else if($Login != $row[0]  or $Password != $row[1]){  echo "<div style='float:left; color:white; width:200px; height:50px; border-style:groove; position:absolute;'> Ошибкаq авторизации!</div>";}
@@ -65,7 +70,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 				<form class="clearfix" action="#" method="post" style="float:left;">
 					<h1>Авторизация</h1>
 					<label class="grey" for="log">Логин:</label>
-					<input class="field" type="text" name="log" id="log" value="" size="23" />
+					<input class="field" type="text" name="log" id="log" value="" size="23" style="border-style: groove; background: gray;"/>
 					<label class="grey" for="pwd">Пароль:</label>
 					<input class="field" type="password" name="pwd" id="pwd" size="23" />
 	            	<label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> &nbsp;Запомнить</label>
@@ -106,3 +111,25 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		</ul> 
 	</div> <!-- / top -->
+
+	<style>
+	.subm {
+		margin-left:10px;
+		width:50px;
+		height:50px;
+		background-image: url(images/edit.png);
+	}
+	</style>
+
+	<style>
+	.close{
+	background-image: url(images/close.png);
+	}
+	</style>
+
+	<style>
+	.text{
+	  background-color: #f6f6f6; /*Цвет текстового поля*/
+	  border-radius: 10px 10px 10px 10px; /*Закругляем уголки*/
+	}
+	</style>
