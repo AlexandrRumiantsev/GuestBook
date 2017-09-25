@@ -1,20 +1,10 @@
 ﻿<?
 //Авторизация
 global $Login;
+global $mail;
+
 $Login=$_POST['log'];
 $Password=$_POST['pwd'];
-//Регистрация
-/* $LoginReg = $_POST['signup'];
-$PasswordReg = $_POST['pass'];
-$EmailReg = $_POST['email']; */
-
-// if($LoginReg =! null){
-// $mysqli = new mysqli ("localhost","root","","GuestBook");
-// $mysqli -> query ("SET CHARSET 'utf8'");
-	// $q = "INSERT INTO RegUsers (Log,Pass,mail) VALUES ('$LoginReg','$PasswordReg','$EmailReg')";
-    // $success = $mysqli -> query ("$q");
-    // if($success == 1){$mysqli -> close ();}
-	// }
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	
@@ -44,6 +34,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 						 <a href='index.php'> <img style='width:50px;height:50px;padding-top:10px;' src='images/close.png'> </a> 
 						
 						 </div> ", $row[0],$row[2],$row[3],$row[4],$row[5]);
+					$Login = $row[0];
+					$mail = $row[2];
 				}
 				//БАГ С УСЛОВИЕМ(ВСЕГДА ВЫВОДИТ)(РЕШЕНО)
 				/* else if($Login != $row[0]  or $Password != $row[1]){  echo "<div style='float:left; color:white; width:200px; height:50px; border-style:groove; position:absolute;'> Ошибкаq авторизации!</div>";}
@@ -63,8 +55,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 ?>
 
 <div id="toppanel" align="right" >
-	<div id="panel" style = "width:300px; background: rgba(, , , 0.7); border-style:outset; background:black;">
-		<div class="content clearfix" width="300px" style="background:black;" >
+	<div id="panel" style = "width:460px; background: rgba(, , , 0.7); border-style:outset; background:black;">
+		<div class="content clearfix" width="500px" style="background:black;" >
 			<div class="left" style="width:200px;" style ="margin: 0px">
 				<!-- Login Form -->
 				<form class="clearfix" action="#" method="post" style="float:left;">
@@ -79,9 +71,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 				</form>
 			</div>
 			
-			<!--  <div class="left right" style="width:200px;" style ="margin: 0px">			
+			  <div class="left right" style="width:200px;" style ="margin: 0px">
 				<!-- Register Form -->
-				<!--<form action="#" method="post">
+				<form action="rega.php" method="post">
 					<h1>Зарегистрироваться</h1>		
 					<label class="grey" for="signup">Логин:</label><br/>
 					<input class="field" type="text" name="signup" id="signup" value="" size="23" />
@@ -95,7 +87,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 					<label>Быстрая Регистрация</label>
 					<input type="submit" name="submit"  value="Регистрация"   class="button normal white" />
 				</form>
-			</div> -->
+			</div>
 		</div>
 	</div> <!-- /login -->	
 
