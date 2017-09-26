@@ -68,10 +68,10 @@ $login = strip_tags($login);
         if ($result = mysqli_store_result($link)) {
             $row = mysqli_fetch_row($result);
 				
-				if($row[2] == null){$row[2]="Не указанно";}
-				if($row[3] == null){$row[3]="Не указанно";}
-				if($row[4] == null){$row[4]="Не указанно";}
-				if($row[5] == null){$row[5]="Не указанно";}
+				//if($row[2] == null){$row[2]="Не указанно";}
+				//if($row[3] == null){$row[3]="Не указанно";}
+				//if($row[4] == null){$row[4]="Не указанно";}
+				//if($row[5] == null){$row[5]="Не указанно";}
 				
 				//Условие не работает тк перебор всё равно найдёт админа и выведет. Необходимо редактировать и другие учётки!
 				if($row[0] == $login){

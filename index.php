@@ -200,7 +200,7 @@ if (mysqli_multi_query($link, $query)) {
 </div>
 <div align="left">
 <!-- КАК В ЛОГИНЕ МОЖЕТ БЫТЬ ЧИСЛО 1(Он глобальный, объявлен в Panel) -->
-<input type="text" disabled id="mess" name="msg_from" value="<?if($User==Null){echo "авторизуйтесь";}else echo $User?>" maxlength="40" size="20">
+<input type="text" disabled id="mess" name="msg_from" value="<?echo $Login?>" maxlength="40" size="20">
 </div>
 </div>
 </div>
