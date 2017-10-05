@@ -7,7 +7,7 @@ $url = $_POST['msg_url'];
 //Работа с картинкой
 $file = $_FILES['filesName'];
 
-if($text == null or $name == null or $file == null){echo "необходимо заполнить Имя, Сообщение  и добавить файл";} 
+if($text == null or $name == null){echo "<script> alert('Необходимо авторизоватся и заполнить поле - Сообщение'); window.location.href = 'index.php';</script>";} 
 $nameFile = $_FILES['filesName']['name'];
 //Определяем IP и Браузер пользователя
 $Br = $_SERVER['HTTP_USER_AGENT'];
@@ -17,7 +17,8 @@ if($_FILES['filesName']['type'] == "image/gif" or
    $_FILES['filesName']['type'] =="image/jpeg" or 
    $_FILES['filesName']['type'] =="image/jpg" or 
    $_FILES['filesName']['type'] =="image/png" or 
-   $_FILES['filesName']['type'] == 'text/plain')
+   $_FILES['filesName']['type'] == 'text/plain' or
+    $_FILES['filesName']['type'] == Null)
 {}else{echo"Error!!"; echo "Недопустимый формат файла!";}
 
 //Проверка файла на РАЗМЕР не более 1мб
@@ -32,14 +33,10 @@ if($_FILES['filesName']['type'] == 'text/plain' and $_FILES['filesName']['size']
 	
 function save_source_code($cName)
 {
-/* $cache = fopen("source\ " .$_FILES['filesName']['name'], 'w+');
-@copy($file ,"source\ "); */
 
 $path = "source/".$_FILES["filesName"]["name"];
 move_uploaded_file($_FILES["filesName"]["tmp_name"], $path);
-
-/* fwrite($cache,$_FILES['filesName']['name']);
-fclose($cache); */
+    
 }
 
 

@@ -26,20 +26,20 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         if ($result = mysqli_store_result($link)) {
             while ($row = mysqli_fetch_row($result)) {
 				if($Login == $row[0]  and $Password == $row[1]){
-                printf("<div style='background:black; float:left; color:white; width:190px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
-         				   <form action='Profile.php' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:17px; margin-left:46px; ' name='login' maxlength='20' size='10'>  <form> 
+                printf("<div style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
+                           <img style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
+         				   <form action='Profile.php' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
          				   <br>
-						 <input type='submit' class='subm' name='submitUser' value=''/>
-						 <a href='index.php'> <div style='width:50px;height:50px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 35px; padding-left:13px; padding-top:16px;'>1 </div></div></a> 
-						 <a href='index.php'> <img style='width:50px;height:50px;padding-top:10px;' src='images/close.png'> </a> 
-						
-						 </div> ", $row[0],$row[2],$row[3],$row[4],$row[5]);
+         				   <div style='padding-left:44px;display:block;'>
+						 <input type='submit' style='width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>
+						 <a href='#'> <div style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'>1 </div></div></a> 
+						 <a href='index.php'> <img style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a> 
+						</div>
+						 </div> ",$row[6] , $row[0]);
 					$Login = $row[0];
 					$mail = $row[2];
 				}
-				//БАГ С УСЛОВИЕМ(ВСЕГДА ВЫВОДИТ)(РЕШЕНО)
-				/* else if($Login != $row[0]  or $Password != $row[1]){  echo "<div style='float:left; color:white; width:200px; height:50px; border-style:groove; position:absolute;'> Ошибкаq авторизации!</div>";}
-				else {echo"ERROR!";} */
+				//else echo("<script>alert('Вы ввели неправильный логин или пароль!'); window.location.href = 'index.php';</script>");
             }
             mysqli_free_result($result);
         }else { echo "Ничего не найдено";}
@@ -75,8 +75,8 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 				<!-- Register Form -->
 				<form action="rega.php" method="post">
 					<h1>Зарегистрироваться</h1>		
-					<label class="grey" for="signup">Логин:</label><br/>
-					<input class="field" type="text" name="signup" id="signup" value="" size="23" />
+					<label class="grey" for="Log">Логин:</label><br/>
+					<input class="field" type="text" name="Log" id="Log" value="" size="23" />
 					
 					<label class="grey" for="pass">Пароль:</label><br/>
 					<input class="field" type="text" name="pass" id="pass" value="" size="23" />
@@ -106,9 +106,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 
 	<style>
 	.subm {
-		margin-left:10px;
-		width:50px;
-		height:50px;
+		background-size:contain;
 		background-image: url(images/edit.png);
 	}
 	</style>

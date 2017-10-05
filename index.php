@@ -5,7 +5,11 @@
 //--------------------------------------//
 ?>
 
-
+<style>
+    .bloock{
+        float:left;margin-left: 70px; width:140px; height: 200px; background: black; display: none;
+    }
+</style>
 
 <html><head>
 <? include 'cookie.inc.php' ?>
@@ -39,9 +43,9 @@
 
 
 <div align="center">
-
+<a href="phpinfo.php">phpinfo</a>
 <!-- Проблема с сортировкой по дате-->
-<form method="post" action="#" style="color:white;">
+<form method="get" action="#" style="color:white;">
 <label for="first_name">Имя:</label><br/>
 <input type="text" name="first_name" size="30"><br/>
 <!-- <label for="Date">Дата:</label><br/>
@@ -73,28 +77,49 @@ mysqli_query($link, "SET CHARACTER SET 'utf8'");
 //$query  = 'SELECT * FROM Users';
 
 //Условия сортировки на запрос
-$first_name = $_POST['first_name'];
+
+$first_name = $_GET['first_name'];
+
 //$Date = $_POST['Date'];
-$Email = $_POST['E-Mail'];
+$Email = $_GET['E-Mail'];
 $active= $_GET['page'];
 if($active == null){$active = 1;} else $active= $_GET['page'];
 
-//Попытка реализации сортировки через условия в запросе, Сам запрос работает, но условие выдаёт ошибку.
-// if($first_name == 'Иван'){echo $first_name; $query = 'SELECT * FROM Users WHERE Users = "Иван"';}
-// else
-//$query = 'SELECT * FROM Users WHERE Users = "Иван"';
+//Вытащить все строки из базы и посчитать
+
+
 
 //Реализация сортировки
+/*if($first_name != null and $Email != null){$query  = "SELECT * FROM `Users` WHERE Users='$first_name'";}
+else if($Email != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
+else if($Email != null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email' and Users='$first_name'";}
+else if($Email != null and $first_name == null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
+else if($Email == null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Users='$first_name'";}
+else $query  = 'SELECT * FROM Users LIMIT '.(($active*3)-3).",3";*/
+
+//Тестирую
+//$queryTest = "SELECT `Users`.*,`RegUsers`.* FROM `Users`,`RegUsers` WHERE `Users`=`Log` ";
+//$Test = mysqli_query($link,$queryTest);
+
+//УСПЕХ! Но при сортировке запросы не вытягивают картинки! ПОПРАВЛЮ.
 if($first_name != null and $Email != null){$query  = "SELECT * FROM `Users` WHERE Users='$first_name'";}
 else if($Email != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
 else if($Email != null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email' and Users='$first_name'";}
 else if($Email != null and $first_name == null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
 else if($Email == null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Users='$first_name'";}
-else $query  = 'SELECT * FROM Users LIMIT '.(($active*25)-25).",25";
+else $query  = 'SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` LIMIT '.(($active*3)-3).",3";
 
-        //$query  = 'SELECT * FROM Users LIMIT '.(($active*25)-25).",25";
+
+
+
+//////////////////////////////////////////////////////////////////////////////
 $stmt = mysqli_prepare($link, $query);
 
+//Вытащить все строки из базы и посчитать
+$queryAll  = 'SELECT COUNT(1) FROM Users';
+$a = mysqli_query($link,$queryAll);
+$b = mysqli_fetch_array($a);
+$CountAllStringInBase = $b[0];
 /////////////Число строк\\\\\\\\\\\\\\\\\\\ 
 mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
@@ -110,26 +135,28 @@ if (mysqli_multi_query($link, $query)) {
 			
             while ($row = mysqli_fetch_row($result)) {
 				// тут выводит столбцы из таблицы
+
+
 				?> <div style="border-style:groove; width:900px; height:300px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
                         <?
-                printf("<div style='float:left'> %s </div>", $row[0]);
-				printf("<div style='float:right'> %s </div>", $row[4]);
+                echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$row[14]'></div>";
+                echo"<div  style='float:left; position:relative; margin-top: 10px;'>$row[0]</div>";
+
+				printf("<div style='float:right;'> %s </div>", $row[4]);
 				printf("<br>"); 
 				printf("<br>"); 
 				printf("<br>");
                     if($row[5] != null) {
                         printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
-                    }else printf("<p style='display:block; padding-left:200px; width:100px; float:left; align:center;'>%s</p><br><br><br><br><br><br><br><br><br><br><br>",$row[1]);
+                    }else  printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='pic\PicZag.png'",$row[1]);
 
 				 printf("<br>");
-				 printf("<br> <br>");
+                 printf("<br> <br>");
 
-                        ?>  <?
+                        ?><?
                     printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:left;'> <img width='30px' height='30px' src='images\close.png'></a>");
                     printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:left;'> <img width='30px' height='30px' src='edit.png'></a>");
-                    printf("<a target='_blank' href='' style='float:left;'> <img width='30px' height='30px' src='images\conv.png'></a>");
-
-                        ?>   </div> <?
+                        ?></div> <?
 
 
             }
@@ -146,10 +173,12 @@ if (mysqli_multi_query($link, $query)) {
 //mysqli_close($link); 
 //.................................... Pagination -->
   /* Входные параметры */
-  $count_pages = $countString/5;
+  //Общее страниц в пагинации
+$count_pages=$CountAllStringInBase/3;
+$count_pages = ceil($count_pages);
   $active = $_GET['page'];
   if($_GET['page']==null) $active = 1;
-  $count_show_pages = 3;
+  $count_show_pages = 1;
   $url = "/index.php";
   $url_page = "/index.php?page=";
   if ($count_pages > 1) { // Всё это только если количество страниц больше 1
@@ -166,21 +195,21 @@ if (mysqli_multi_query($link, $query)) {
     }
 ?>
   <!-- Дальше идёт вывод Pagination -->
-  <div id="pagination">
+  <div id="pagination" style="font-size: 23px;">
     <span style="color:white;">Страницы: </span>
     <?php if ($active != 1) { ?>
       <a href="<?=$url?>" title="Первая страница">&lt;&lt;&lt;</a>
       <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>" title="Предыдущая страница">&lt;</a>
     <?php } ?>
     <?php for ($i = $start; $i <= $end; $i++) { ?>
-      <?php if ($i == $active) { ?><span><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
+      <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
     <?php } ?>
     
       <a href="<?=$url_page.($active + 1)?>" title="Следующая страница">&gt;</a>
       <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
-   
+      <?php } ?>
   </div>
-<?php } ?>
+
 <!-- END Pagination -->
 <br>
 
@@ -200,7 +229,7 @@ if (mysqli_multi_query($link, $query)) {
 </div>
 <div align="left">
 <!-- КАК В ЛОГИНЕ МОЖЕТ БЫТЬ ЧИСЛО 1(Он глобальный, объявлен в Panel) -->
-<input type="text" disabled id="mess" name="msg_from" value="<?echo $Login?>" maxlength="40" size="20">
+<input type="text"  id="mess" name="msg_from" value="<? echo $Login; if($Login==Null){echo"Авторезуйтесь";}?>" maxlength="40" size="20">
 </div>
 </div>
 </div>
@@ -214,7 +243,7 @@ if (mysqli_multi_query($link, $query)) {
 E-Mail:
 </div>
 <div align="left">
-<input type="text" disabled value="<? echo $mail ?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
+<input type="text"  value="<? echo $mail; if($mail==Null){echo"Авторезуйтесь";}?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
 </div>
 </div>
 </div>
@@ -237,7 +266,7 @@ URL:
 <br>
 
 </div>
-<br> <div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:230px;"> <p style="margin:80px;  font-size:25px; opacity: 0.5;">Место <br>для картинки</p></div> 
+<br> <div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <p style="margin:80px;  font-size:25px; opacity: 0.5;">Место <br>для картинки</p></div>
 <output id="list" style="width:200px; height:200px; float:left;"></output> 
 <div>
 
@@ -313,7 +342,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
 
 <!-- роверка логирования -->
 <script>
-    val Log = document.getElementById("mess");
+    var Log = document.getElementById("mess");
     if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
 </script>
 

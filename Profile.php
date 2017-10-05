@@ -4,6 +4,11 @@ $town = $_POST['town'];
 $pol = $_POST['pol'];
 $years = $_POST['years'];
 
+$fileX = $_FILES['file'];
+$file = $_FILES['file']['name'];
+$filePath = "images/" .$file;
+//$nameFile = $_POST['file']['name'];
+$s = move_uploaded_file ($_FILES["file"]["tmp_name"] ,$filePath);
 
 $email = strip_tags($email);
 $town = strip_tags($town);
@@ -20,9 +25,11 @@ $login = strip_tags($login);
 		   mail = '$email', 
 		   town = '$town', 
 		   pol = '$pol', 
-		   years = '$years'
+		   years = '$years',
+		   ProfPic = '$filePath'
 		   WHERE Log='$login'";
      $success = $mysqli -> query ("$q");
+    echo "<script>alert('Данные успешно сохранены')</script>";
     if($success == 1){$mysqli -> close ();}
 	?>
 	
@@ -77,13 +84,14 @@ $login = strip_tags($login);
 				if($row[0] == $login){
                 printf("<div align='center' style='color:white;font-size:20px;'> 
          				Изменение учётных данных <br><br>
-						<form  action='#' method='post'> Логин:  <input   value='%s' type='text' name='login' maxlength='40' size='20'>
+						<form  action='#' method='post' enctype='multipart/form-data'> Логин:  <input   value='%s' type='text' name='login' maxlength='40' size='20'>
 						<br>Добро пожаловать <h1>%s</h1> 
 						Введите ваши новые учётные данные:<br><br>
 						Email:  <input  value='%s' type='text' name='email' maxlength='40' size='20'><br><br> 
 						Город:  <input  value='%s' type='text' name='town' maxlength='40' size='20'><br><br> 
 						Пол: %s <input  type='radio' name='pol' value='М'>M <input type='radio' name='pol' value='Ж'>Ж <br><br> 
 						Возраст: %d <input  type='number' name='years'><br><br> 
+						Аватар: <input  type='file' name='file' multiple><br><br><br>
 						<a href='index.php'> Назад </a> 
 						<input type='submit' value='Сохранить'>  </form> </div>",
 				$row[0],$row[0],$row[2],$row[3],$row[4],$row[5]);}

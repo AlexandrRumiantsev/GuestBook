@@ -1,7 +1,7 @@
 <?
 //Регистрация
 global $LoginReg;
-$LoginReg = $_POST['signup'];
+$LoginReg = $_POST['Log'];
 $PasswordReg = $_POST['pass'];
 $EmailReg = $_POST['email'];
 
