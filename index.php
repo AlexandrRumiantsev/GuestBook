@@ -46,11 +46,11 @@
 <!-- Проблема с сортировкой по дате-->
 <form method="get" action="#" style="color:white;">
 <label for="first_name">Имя:</label><br/>
-<input type="text" style="border-radius: 7px 7px 7px 7px; background: gray; border-style: solid;" name="first_name" size="30"><br/>
+<input type="text" style="border-radius: 7px 7px 7px 7px; border-style: solid;" name="first_name" size="30"><br/>
 <!-- <label for="Date">Дата:</label><br/>
 <input type="date" name="Date" size="30"><br/> -->
 <label for="E-Mail">E-Mail:</label><br/>
-<input style="border-radius: 7px 7px 7px 7px; background: gray; border-style: solid;" type="text" name="E-Mail" size="30"><br/><br/>
+<input style="border-radius: 7px 7px 7px 7px;  border-style: solid;" type="text" name="E-Mail" size="30"><br/><br/>
 <input style="border-radius: 7px 7px 7px 7px;" id="submit" type="submit" value="Найти и вывести"><br/>
 </form>
 
@@ -224,7 +224,7 @@ $count_pages = ceil($count_pages);
 </div>
 <div align="left">
 <!-- КАК В ЛОГИНЕ МОЖЕТ БЫТЬ ЧИСЛО 1(Он глобальный, объявлен в Panel) -->
-<input type="text"  id="mess" name="msg_from" value="<? echo $Login; if($Login==Null){echo"Авторезуйтесь";}?>" maxlength="40" size="20">
+<input type="text" style="border-style: solid;border-radius: 7px 7px 7px 7px;" id="mess" name="msg_from" value="<?echo $Login;?>" placeholder="<?if($Login==Null){echo"Авторезуйтесь";}?>"maxlength="40" size="20">
 </div>
 </div>
 </div>
@@ -238,7 +238,7 @@ $count_pages = ceil($count_pages);
 E-Mail:
 </div>
 <div align="left">
-<input type="text"  value="<? echo $mail; if($mail==Null){echo"Авторезуйтесь";}?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
+<input type="text"  style="border-style: solid; border-radius: 7px 7px 7px 7px;" value="<?echo $mail;?>" placeholder="<?if($mail==Null){echo"Авторезуйтесь";}?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
 </div>
 </div>
 </div>
@@ -257,7 +257,7 @@ URL:
 </div>
 </div>
 </div> -->
-    <button onclick="alert('test');">Click me</button>
+
 <br>
 
 </div>
@@ -266,7 +266,7 @@ URL:
 <div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <img style="width:130px; height:130px; padding: 30px 100px; opacity: .06;" src="images/fotik.png">
     <input type="file" id="filesPic" name="filesName" style="display: none" multiple />
 </div>
-<output id="list" style="width:200px; height:200px; float:left;"></output> 
+<output id="list" style="width:200px; height:200px; float:left; padding-left:49px;"></output>
 <div>
     </label>
 <div>
@@ -277,7 +277,7 @@ URL:
 * Сообщение:
 </div>
 <div>
-<textarea cols="80" rows="7" id="message" name="msg_message"></textarea>
+<textarea cols="80" rows="7" id="message" name="msg_message" style="border-radius: 7px 7px 7px 7px;border-style: solid;"></textarea>
 </div>
 <!--Файл:<input type="file" id="filesPic" name="filesName" multiple />-->
 </div>
@@ -290,10 +290,10 @@ URL:
 
 <div style="padding-left:1000px;padding-bottom:10px;">
 
-<input type="submit" name="msg_submit" value="Отправить">
+<input type="submit" style="border-radius: 7px 7px 7px 7px;" name="msg_submit" value="Отправить">
 
 
-<input type="reset">
+<input type="reset" style="border-radius: 7px 7px 7px 7px;">
 					
 </div>
 
