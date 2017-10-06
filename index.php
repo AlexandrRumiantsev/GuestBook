@@ -137,28 +137,22 @@ if (mysqli_multi_query($link, $query)) {
 				// тут выводит столбцы из таблицы
 
 
-				?> <div style="border-style:groove; width:900px; height:300px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
-                        <?
+				?> <div style="border-style:groove; width:900px; height:350px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
+                    <? /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$row[14]'></div>";
                 echo"<div  style='float:left; position:relative; margin-top: 10px;'>$row[0]</div>";
-
-				printf("<div style='float:right;'> %s </div>", $row[4]);
+                    printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
+                    printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
+				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";
 				printf("<br>"); 
 				printf("<br>"); 
 				printf("<br>");
+                printf("<br>");
+
                     if($row[5] != null) {
                         printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
-                    }else  printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='pic\PicZag.png'",$row[1]);
-
-				 printf("<br>");
-                 printf("<br> <br>");
-
-                        ?><?
-                    printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:left;'> <img width='30px' height='30px' src='images\close.png'></a>");
-                    printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:left;'> <img width='30px' height='30px' src='edit.png'></a>");
-                        ?></div> <?
-
-
+                    }else  printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
+                        ?></div><?
             }
             mysqli_free_result($result);
         }
@@ -215,7 +209,7 @@ $count_pages = ceil($count_pages);
 
 </div>
 
-<div style="align:center; min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 10%;">
+<div style="min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 10%;">
 <form  method="post" value="Отправить" action="New.php" enctype="multipart/form-data">
 
 <div style="color: white;" bgcolor="black">
@@ -266,10 +260,14 @@ URL:
 <br>
 
 </div>
-<br> <div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <p style="margin:80px;  font-size:25px; opacity: 0.5;">Место <br>для картинки</p></div>
+<br>
+    <label>
+<div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <img style="width:130px; height:130px; padding: 30px 100px; opacity: .06;" src="images/fotik.png">
+    <input type="file" id="filesPic" name="filesName" style="display: none" multiple />
+</div>
 <output id="list" style="width:200px; height:200px; float:left;"></output> 
 <div>
-
+    </label>
 <div>
 
 
@@ -280,7 +278,7 @@ URL:
 <div>
 <textarea cols="80" rows="7" id="message" name="msg_message"></textarea>
 </div>
-* Файл:<input type="file" id="filesPic"  name="filesName" multiple /> 
+<!--Файл:<input type="file" id="filesPic" name="filesName" multiple />-->
 </div>
 <div>
 
