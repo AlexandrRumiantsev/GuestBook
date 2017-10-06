@@ -43,16 +43,15 @@
 
 
 <div align="center">
-<a href="phpinfo.php">phpinfo</a>
 <!-- Проблема с сортировкой по дате-->
 <form method="get" action="#" style="color:white;">
 <label for="first_name">Имя:</label><br/>
-<input type="text" name="first_name" size="30"><br/>
+<input type="text" style="border-radius: 7px 7px 7px 7px; background: gray; border-style: solid;" name="first_name" size="30"><br/>
 <!-- <label for="Date">Дата:</label><br/>
 <input type="date" name="Date" size="30"><br/> -->
 <label for="E-Mail">E-Mail:</label><br/>
-<input type="text" name="E-Mail" size="30"><br/>
-<input id="submit" type="submit" value="Найти и вывести"><br/>
+<input style="border-radius: 7px 7px 7px 7px; background: gray; border-style: solid;" type="text" name="E-Mail" size="30"><br/><br/>
+<input style="border-radius: 7px 7px 7px 7px;" id="submit" type="submit" value="Найти и вывести"><br/>
 </form>
 
 <?
