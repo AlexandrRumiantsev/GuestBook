@@ -138,7 +138,9 @@ if (mysqli_multi_query($link, $query)) {
 
 				?> <div style="border-style:groove; width:900px; height:350px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
                     <? /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
-                echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$row[14]'></div>";
+                                                      if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
+                echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
+
                 echo"<div  style='float:left; position:relative; margin-top: 10px;'>$row[0]</div>";
                     printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                     printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
