@@ -10,6 +10,11 @@
         float:left;margin-left: 70px; width:140px; height: 200px; background: black; display: none;
     }
 </style>
+<style>
+.picFooter:hover{
+border-color: yellow;
+}
+</style>
 
 <html><head>
 <? include 'cookie.inc.php' ?>
@@ -263,7 +268,7 @@ URL:
 </div>
 <br>
     <label>
-<div style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <img style="width:130px; height:130px; padding: 30px 100px; opacity: .06;" src="images/fotik.png">
+<div class="picFooter" style="width:320px; height:200px; float:left; position:absolute; border-style:groove; float:left; margin-left:250px;"> <img style="width:130px; height:130px; padding: 30px 100px; opacity: .06;" src="images/fotik.png">
     <input type="file" id="filesPic" name="filesName" style="display: none" multiple />
 </div>
 <output id="list" style="width:200px; height:200px; float:left; padding-left:49px;"></output>
@@ -344,7 +349,5 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
     var Log = document.getElementById("mess");
     if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
 </script>
-
-
 </body>
 </html>
