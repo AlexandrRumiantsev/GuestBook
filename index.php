@@ -141,7 +141,7 @@ if (mysqli_multi_query($link, $query)) {
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
 
-                echo"<div  style='float:left; position:relative; margin-top: 10px;'>$row[0]</div>";
+                echo"<a target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                     printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                     printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
 				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";

@@ -3,6 +3,7 @@ $text = $_POST['msg_message'];
 $name = $_POST['msg_from'];
 $mail = $_POST['msg_mail'];
 $url = $_POST['msg_url'];
+//$time = time();
 
 //Работа с картинкой
 $file = $_FILES['filesName'];
@@ -81,5 +82,4 @@ ini_set('display_startup_errors', TRUE);
     if($success == 1){$mysqli -> close (); 	
 	header('Location: index.php');}
 	else echo "Произошла ошибка";
-    //
 ?>

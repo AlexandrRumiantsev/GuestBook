@@ -27,7 +27,7 @@ $mysqli = new mysqli ("localhost","root","","GuestBook");
 	 $q = "UPDATE Users 
 	       SET
 		   Text = '$newMassage'
-		   WHERE Users = '$nameUser'";
+		   WHERE Users='$nameUser' and Text='$massage'";
      $success = $mysqli -> query ("$q");
 	 $massage = $newMassage;
     

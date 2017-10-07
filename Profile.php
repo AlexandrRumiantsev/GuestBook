@@ -39,12 +39,11 @@ $login = strip_tags($login);
 .main{
 	border-style:groove; 
 	display:block; 
-	width:700px;
+	width:900px;
 	height:500px; 
-	margin-left:400px; 
+	margin-left:270px;
 	background-color:rgba(0, 0, 0, 0.7);
 	color:white;
-	 align:center;
 }
 </style>
 
@@ -64,51 +63,64 @@ $login = strip_tags($login);
 	
 	$link = mysqli_connect("localhost", "root", "", "GuestBook");
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	$q = "SELECT Log, Pass, mail, town, pol, years FROM `RegUsers` WHERE Log='$login'";;
+	$q = "SELECT Log, Pass, mail, town, pol, years, ProfPic FROM `RegUsers` WHERE Log='$login'";;
 
 	mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
     mysqli_query($link, "SET CHARACTER SET 'utf8'");
 
 	if (mysqli_multi_query($link, $q)) {
-    do {
-        /* получаем первый результирующий набор */
-        if ($result = mysqli_store_result($link)) {
-            $row = mysqli_fetch_row($result);
-				
+		do{
+			/* получаем первый результирующий набор */
+			if ($result = mysqli_store_result($link)) {
+				$row = mysqli_fetch_row($result);
+
 				//if($row[2] == null){$row[2]="Не указанно";}
 				//if($row[3] == null){$row[3]="Не указанно";}
 				//if($row[4] == null){$row[4]="Не указанно";}
 				//if($row[5] == null){$row[5]="Не указанно";}
-				
+
 				//Условие не работает тк перебор всё равно найдёт админа и выведет. Необходимо редактировать и другие учётки!
-				if($row[0] == $login){
-                printf("<div align='center' style='color:white;font-size:20px;'> 
+				if ($row[0] == $login) {
+					/*printf("<div align='center' style='color:white;font-size:20px;'>
+                             Изменение учётных данных <br><br>
+                             <div style='float:left;'><img src='%s' style='width: 350px; height: 350px; margin-left: 25px; margin-top: 25px'></div>
+                            <div style='float:right';><form  action='#' method='post' enctype='multipart/form-data'> Логин:  <input   value='%s' type='text' name='login' maxlength='40' size='20'>
+                            <br>Добро пожаловать <h1>%s</h1>
+                            Email:  <input  value='%s' type='text' name='email' maxlength='40' size='20'><br><br>
+                            Город:  <input  value='%s' type='text' name='town' maxlength='40' size='20'><br><br>
+                            Пол: %s <input  type='radio' name='pol' value='М'>M <input type='radio' name='pol' value='Ж'>Ж <br><br>
+                            Возраст: %d <input  type='number' name='years'><br><br>
+                            <input  type='file' name='file'  multiple><br><br><br>
+                            <a href='index.php'> Назад </a>
+                            <input type='submit' value='Сохранить'>  </form> </div> </div>",
+                        $row[6],$row[0],$row[0],$row[2],$row[3],$row[4],$row[5]);}*/
+					////////////////////////////////////////////////////////////////////////////////////////////
+					$pic = $row[6];
+					$log = $row[0];
+					$mail = $row[2];
+					$flame = $row[4];
+					$years = $row[5];
+					$town = $row[3];
+					echo "<div align='center' style='color:white;font-size:20px;'> 
          				Изменение учётных данных <br><br>
-						<form  action='#' method='post' enctype='multipart/form-data'> Логин:  <input   value='%s' type='text' name='login' maxlength='40' size='20'>
-						<br>Добро пожаловать <h1>%s</h1> 
-						Введите ваши новые учётные данные:<br><br>
-						Email:  <input  value='%s' type='text' name='email' maxlength='40' size='20'><br><br> 
-						Город:  <input  value='%s' type='text' name='town' maxlength='40' size='20'><br><br> 
-						Пол: %s <input  type='radio' name='pol' value='М'>M <input type='radio' name='pol' value='Ж'>Ж <br><br> 
-						Возраст: %d <input  type='number' name='years'><br><br> 
-						Аватар: <input  type='file' name='file' multiple><br><br><br>
+         				<div style='float:left;'><img src='$pic' style='width: 350px; height: 350px; margin-left: 25px; margin-top: 25px'></div>
+						<div><form  action='#' method='post' enctype='multipart/form-data'> Логин:  <input   value='$log' type='text' name='login' maxlength='40' size='20'>
+						<br>Добро пожаловать <h1>$log</h1> 
+						Email: $mail <input  value='$mail' type='text' name='email' maxlength='40' size='20'><br><br> 
+						Город: $town <input  value='$town' type='text' name='town' maxlength='40' size='20'><br><br> 
+						Пол: $flame <input  type='radio' name='pol' value='М'>M <input type='radio' name='pol' value='Ж'>Ж <br><br> 
+						Возраст: $years <input  type='number' name='years'><br><br> 
+						<input  type='file' name='file' value='$pic'  multiple><br><br><br>
 						<a href='index.php'> Назад </a> 
-						<input type='submit' value='Сохранить'>  </form> </div>",
-				$row[0],$row[0],$row[2],$row[3],$row[4],$row[5]);}
-            
-            mysqli_free_result($result);
-        }else { echo "Ничего не найдено";}
-        /* печатаем разделитель */
-        if (mysqli_more_results($link)) {
-            printf("-----------------\n");
-        }
-    } while (mysqli_next_result($link));
-}
+						<input type='submit' value='Сохранить'>  </form> </div> </div>";
 
-
+					mysqli_free_result($result);
+				} else {
+					echo "Ничего не найдено";
+				}
+			}
+		}while (mysqli_next_result($link));
+	}
 ?>
-
 </div>
-
-
 </body>
