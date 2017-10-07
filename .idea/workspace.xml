@@ -25,21 +25,23 @@
       <file leaf-file-name="Profile.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="114" column="65" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="65" />
+            <state relative-caret-position="119">
+              <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-                <marker date="1507393964273" expanded="true" signature="606:773" placeholder="UPDATE RegUs... " />
-                <marker date="1507393964273" expanded="true" signature="834:901" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="1501:1585" placeholder="SELECT Log, RegUsers" />
-                <marker date="1507393964273" expanded="true" signature="2274:2301" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="2302:2313" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="3804:3831" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="3832:4776" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="3907:3918" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="3943:4007" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="4026:4769" placeholder="..." />
-                <marker date="1507393964273" expanded="true" signature="4088:4762" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="606:773" placeholder="UPDATE RegUs... " />
+                <marker date="1507395171779" expanded="true" signature="816:838" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="1438:1522" placeholder="SELECT Log, RegUsers" />
+                <marker date="1507395171779" expanded="true" signature="2211:2238" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="2239:2250" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3741:3768" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3769:4719" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3844:3855" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3880:3944" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3963:4712" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="3963:4719" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="4024:4678" placeholder="..." />
+                <marker date="1507395171779" expanded="true" signature="4024:4705" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -456,7 +458,7 @@
       <workItem from="1507139524777" duration="10641000" />
       <workItem from="1507228856221" duration="6632000" />
       <workItem from="1507312614115" duration="12588000" />
-      <workItem from="1507381106293" duration="12985000" />
+      <workItem from="1507381106293" duration="14137000" />
     </task>
     <servers />
   </component>
@@ -472,7 +474,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147708000" />
+    <option name="totallyTimeSpent" value="148860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -533,6 +535,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Profile.php</url>
+          <line>103</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -542,7 +551,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="96" />
+      <option name="time" value="97" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PhpWebAppRunConfigurationType">
@@ -1426,21 +1435,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="114" column="65" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="65" />
+        <state relative-caret-position="119">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <marker date="1507393964273" expanded="true" signature="606:773" placeholder="UPDATE RegUs... " />
-            <marker date="1507393964273" expanded="true" signature="834:901" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="1501:1585" placeholder="SELECT Log, RegUsers" />
-            <marker date="1507393964273" expanded="true" signature="2274:2301" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="2302:2313" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="3804:3831" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="3832:4776" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="3907:3918" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="3943:4007" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="4026:4769" placeholder="..." />
-            <marker date="1507393964273" expanded="true" signature="4088:4762" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="606:773" placeholder="UPDATE RegUs... " />
+            <marker date="1507395171779" expanded="true" signature="816:838" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="1438:1522" placeholder="SELECT Log, RegUsers" />
+            <marker date="1507395171779" expanded="true" signature="2211:2238" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="2239:2250" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3741:3768" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3769:4719" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3844:3855" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3880:3944" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3963:4712" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="3963:4719" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="4024:4678" placeholder="..." />
+            <marker date="1507395171779" expanded="true" signature="4024:4705" placeholder="..." />
           </folding>
         </state>
       </provider>
