@@ -102,6 +102,7 @@ $login = strip_tags($login);
 					$town = $row[3];
 					echo "<div align='center' style='color:white;font-size:20px;'> 
          				Изменение учётных данных <br><br>
+         		
          				<div style='float:left;'><img src='$pic' style='width: 350px; height: 350px; margin-left: 25px; margin-top: 25px'></div>
 						<div><form action='#' method='post' enctype='multipart/form-data'>
 						Логин:  <input   value='$log' type='text' name='login' maxlength='40' size='20'>
@@ -109,8 +110,9 @@ $login = strip_tags($login);
 						Email: $mail <input  value='$mail' type='text' name='email' maxlength='40' size='20'><br><br> 
 						Город: $town <input  value='$town' type='text' name='town' maxlength='40' size='20'><br><br> 
 						Пол: $flame <input  type='radio' name='pol' value='М'>M <input type='radio' name='pol' value='Ж'>Ж <br><br> 
-						Возраст: $years <input  type='number' name='years'><br><br> 
-						<input  type='file' name='file' value='$pic'  multiple><br><br><br>
+						Возраст: $years <input  type='number' name='years'><br><br>
+						<input  type='file' name='file'  value='$pic'  multiple><br><br><br>
+						
 						<a href='index.php'> Назад </a> 
 						<input type='submit'  value='Сохранить'>  </form> </div> </div>";
 
