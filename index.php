@@ -108,9 +108,9 @@ else $query  = 'SELECT * FROM Users LIMIT '.(($active*3)-3).",3";*/
 //УСПЕХ! Но при сортировке запросы не вытягивают картинки! ПОПРАВЛЮ.
 if($first_name != null and $Email != null){$query  = "SELECT * FROM `Users` WHERE Users='$first_name'";}
 else if($Email != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
-else if($Email != null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email' and Users='$first_name'";}
-else if($Email != null and $first_name == null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
-else if($Email == null and $first_name != null) {$query  = "SELECT * FROM `Users` WHERE  Users='$first_name'";}
+else if($Email != null and $first_name != null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Mail='$Email' and Users='$first_name'";}
+else if($Email != null and $first_name == null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Mail='$Email'";}
+else if($Email == null and $first_name != null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Users='$first_name'";}
 else $query  = 'SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` LIMIT '.(($active*3)-3).",3";
 
 
@@ -195,6 +195,7 @@ $count_pages = ceil($count_pages);
     }
 ?>
   <!-- Дальше идёт вывод Pagination -->
+
   <div id="pagination" style="font-size: 23px;">
     <span style="color:white;">Страницы: </span>
     <?php if ($active != 1) { ?>
@@ -209,7 +210,7 @@ $count_pages = ceil($count_pages);
       <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
       <?php } ?>
   </div>
-
+    
 <!-- END Pagination -->
 <br>
 

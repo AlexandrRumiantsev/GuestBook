@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 				if($Login == $row[0]  and $Password == $row[1]){
                 printf("<div style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
                            <img style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
-         				   <form action='Profile.php' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
+         				   <form action='Profile.php?mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
          				   <br>
          				   <div style='padding-left:44px;display:block;'>
 						 <input type='submit' style='width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>

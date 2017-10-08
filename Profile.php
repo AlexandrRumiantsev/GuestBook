@@ -50,9 +50,6 @@ $login = strip_tags($login);
 <h1>.::Wellcome to GuestBook::.</h1>
 </div>
 
-
-
-
 <div class="main">
 
 <?php
@@ -94,12 +91,29 @@ $login = strip_tags($login);
                             <input type='submit' value='Сохранить'>  </form> </div> </div>",
                         $row[6],$row[0],$row[0],$row[2],$row[3],$row[4],$row[5]);}*/
 					////////////////////////////////////////////////////////////////////////////////////////////
+					//first connect
+					$picFirst =$_GET['pic'];
+					$mailFirst = $_GET['mail'];
+					$flameFirst = $_GET['pol'];
+					$yearsFirst = $row['years'];
+					$townFirst = $_GET['town'];
+					///////////////
 					$pic = $row[6];
 					$log = $row[0];
 					$mail = $row[2];
 					$flame = $row[4];
 					$years = $row[5];
 					$town = $row[3];
+
+					if($pic==null){$pic=$picFirst;}
+					$pic=$picFirst;
+					if($mail==null){$mail=$mailFirst;}
+					if($flame==null){$flame=$flameFirst;}
+					$flame=$flameFirst;
+					if($years==null){$years=$yearsFirst;}
+					$years=$yearsFirst;
+					if($town==null){$town=$townFirst;}
+
 					echo "<div align='center' style='color:white;font-size:20px;'> 
          				Изменение учётных данных <br><br>
          		
@@ -113,8 +127,14 @@ $login = strip_tags($login);
 						Возраст: $years <input  type='number' name='years'><br><br>
 						<input  type='file' name='file'  value='$pic'  multiple><br><br><br>
 						
-						<a href='index.php'> Назад </a> 
-						<input type='submit'  value='Сохранить'>  </form> </div> </div>";
+						<a href='index.php'> Назад </a>
+						<input type='submit'  onClick='redirect()' value='Сохранить'>  </form> </div> </div>";
+
+					echo"<script type='text/javascript'>
+                     function redirect(){
+						alert('Данные успешно изменены!');
+                     window.location.href = 'index.php';}
+                   </script>";
 
 					mysqli_free_result($result);
 				} else {
