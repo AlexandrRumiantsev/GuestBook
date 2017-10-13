@@ -366,6 +366,9 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
                 $.ajax({
                     url: 'DelPost.php',
                     data: {nameDel: User, textDel: UserMess},
+                    success: function(){
+                     alert('Запись успешно удалена');
+                    },
                     type: 'GET',
                     beforeSend: function () {
                         $("#loader").css("display", "block");
@@ -393,6 +396,9 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
                 $.ajax({
                     url: 'RedactPost.php',
                     data: {nameUpp: User, textUpp: UserMess, oldText: oldText},
+                    success: function(){
+                        alert('Запись изменена');
+                    },
                     type: 'GET',
                     beforeSend: function () {
                         $("#loader").css("display", "block");
