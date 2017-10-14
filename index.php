@@ -152,9 +152,9 @@ if (mysqli_multi_query($link, $query)) {
                 echo"<a id='User$row[0]' class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                    // printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
-                    printf("<button id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
+                    printf("<button class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
-                    printf("<button  id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
+                    printf("<button  class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
 				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";
 				printf("<br>"); 
@@ -359,10 +359,11 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
     if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
 </script>
 
+
 <script type="text/javascript">
     $(document).ready(function(){
         $("#agaxClose").click(function(){
-           var result = confirm('Удалить?');
+            var result = confirm('Удалить?');
             if(result) {
                 //узнаём id по классу
                 var MessId = $(".messageID").attr('id');
@@ -373,7 +374,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
                     url: 'DelPost.php',
                     data: {nameDel: User, textDel: UserMess},
                     success: function(){
-                     alert('Запись успешно удалена');
+                        alert('Запись успешно удалена');
                     },
                     type: 'GET',
                     beforeSend: function () {
@@ -424,6 +425,5 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
             }});
     });
 </script>
-
 </body>
 </html>
