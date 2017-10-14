@@ -362,7 +362,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#agaxClose").click(function(){
+        $(".agaxClose").click(function(){
             var result = confirm('Удалить?');
             if(result) {
                 //узнаём id по классу
@@ -394,7 +394,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#agaxEdit").click(function(){
+        $(".agaxEdit").click(function(){
             var result = prompt('Введите текст для изменения сообщения');
             if(result) {
                 //узнаём id по классу
