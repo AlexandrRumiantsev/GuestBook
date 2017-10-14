@@ -23,6 +23,9 @@ border-color: yellow;
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="expires" content="0">
 
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+
+    
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="js/slide.js" type="text/javascript"></script>
 <script src="js/ClockAnAuto.js" type="text/javascript"></script>
@@ -146,7 +149,7 @@ if (mysqli_multi_query($link, $query)) {
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
 
-                echo"<a id='User' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
+                echo"<a id='User$row[0]' class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                    // printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
                     printf("<button id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
@@ -161,8 +164,8 @@ if (mysqli_multi_query($link, $query)) {
                     printf("<div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>");
 
                     if($row[5] != null) {
-                        printf("<p id='textUsers' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
-                    }else  printf("<p style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
+                        printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
+                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
                         ?></div><?
             }
             mysqli_free_result($result);
@@ -361,8 +364,11 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
         $("#agaxClose").click(function(){
            var result = confirm('Удалить?');
             if(result) {
-                var User = document.getElementById('User').textContent;
-                var UserMess = document.getElementById('textUsers').textContent;
+                //узнаём id по классу
+                var MessId = $(".messageID").attr('id');
+                var userId = $(".userID").attr('id');
+                var User = document.getElementById(userId).textContent;
+                var UserMess = document.getElementById(MessId).textContent;
                 $.ajax({
                     url: 'DelPost.php',
                     data: {nameDel: User, textDel: UserMess},
@@ -390,9 +396,13 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
         $("#agaxEdit").click(function(){
             var result = prompt('Введите текст для изменения сообщения');
             if(result) {
-                var User = document.getElementById('User').textContent;
+                //узнаём id по классу
+                var MessId = $(".messageID").attr('id');
+                var userId = $(".userID").attr('id');
+
+                var User = document.getElementById(userId).textContent;
                 var UserMess = result;
-                var oldText = document.getElementById('textUsers').textContent;
+                var oldText = document.getElementById(MessId).textContent;
                 $.ajax({
                     url: 'RedactPost.php',
                     data: {nameUpp: User, textUpp: UserMess, oldText: oldText},
