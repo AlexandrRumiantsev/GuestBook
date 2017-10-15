@@ -144,7 +144,7 @@ if (mysqli_multi_query($link, $query)) {
 				// тут выводит столбцы из таблицы
 
 
-				?> <div style="border-style:groove; width:900px; height:350px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
+				?> <div  style="border-style:groove; width:900px; height:350px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;">
                     <? /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
@@ -161,7 +161,7 @@ if (mysqli_multi_query($link, $query)) {
 				printf("<br>"); 
 				printf("<br>");
                 printf("<br>");
-                    printf("<div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>");
+                printf("<div id='loader' style='position: absolute;padding-left:365px;display: none;'><img src='images/loader.gif' /></div>");
 
                     if($row[5] != null) {
                         printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
@@ -203,7 +203,7 @@ $count_pages = ceil($count_pages);
     }
 ?>
   <!-- Дальше идёт вывод Pagination -->
-
+    <div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>
   <div id="pagination" style="font-size: 23px;">
     <span style="color:white;">Страницы: </span>
     <?php if ($active != 1) { ?>
