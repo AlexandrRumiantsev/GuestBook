@@ -154,7 +154,7 @@ if (mysqli_multi_query($link, $query)) {
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
                     printf("<button data-msg_id='$row[1]' data-user_id='$row[0]'  class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
-                    printf("<button  class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
+                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
 				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";
 				printf("<br>"); 
@@ -367,11 +367,6 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
             var users = $(this).data('user_id');
             var result = confirm('Удалить сообщение: ' + msg + ' Пользователя: ' + users);
             if(result) {
-                //узнаём id по классу
-                var MessId = $(".messageID").attr('id');
-                var userId = $(".userID").attr('id');
-                var User = document.getElementById(userId).textContent;
-                var UserMess = document.getElementById(MessId).textContent;
                 $.ajax({
                     url: 'DelPost.php',
                     data: {nameDel: users, textDel: msg},
@@ -397,18 +392,13 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
 <script type="text/javascript">
     $(document).ready(function(){
         $(".agaxEdit").click(function(){
-            var result = prompt('Введите текст для изменения сообщения');
+          var msg = $(this).data('msg_id');
+          var users = $(this).data('user_id');
+          var result = prompt('Введите текст для изменения сообщения');
             if(result) {
-                //узнаём id по классу
-                var MessId = $(".messageID").attr('id');
-                var userId = $(".userID").attr('id');
-
-                var User = document.getElementById(userId).textContent;
-                var UserMess = result;
-                var oldText = document.getElementById(MessId).textContent;
                 $.ajax({
                     url: 'RedactPost.php',
-                    data: {nameUpp: User, textUpp: UserMess, oldText: oldText},
+                    data: {nameUpp: users, textUpp: result, oldText: msg},
                     success: function(){
                         alert('Запись изменена');
                     },
