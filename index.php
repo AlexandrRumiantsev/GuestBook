@@ -149,19 +149,19 @@ if (mysqli_multi_query($link, $query)) {
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
 
-                echo"<a id='User$row[0]' class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
+                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                    // printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]'  class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
+                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
+                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
 				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";
 				printf("<br>"); 
 				printf("<br>"); 
 				printf("<br>");
                 printf("<br>");
-                printf("<div id='loader' style='position: absolute;padding-left:365px;display: none;'><img src='images/loader.gif' /></div>");
+                printf("<div id='louder$row[0]$row[1]' style='position: absolute;padding-left:365px;display: none;'><img src='images/loader.gif' /></div>");
 
                     if($row[5] != null) {
                         printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
@@ -365,6 +365,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
         $(".agaxClose").click(function(){
             var msg = $(this).data('msg_id');
             var users = $(this).data('user_id');
+			var louder = $(this).data('louder_id');
             var result = confirm('Удалить сообщение: ' + msg + ' Пользователя: ' + users);
             if(result) {
                 $.ajax({
@@ -375,12 +376,12 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
                     },
                     type: 'GET',
                     beforeSend: function () {
-                        $("#loader").css("display", "block");
-                        $("#loader").animate({opacity: 1}, 500);
+                        $("#"+louder).css("display", "block");
+                        $("#"+louder).animate({opacity: 1}, 500);
                     }
                 }).done(function (data) {
-                    $("#loader").animate({opacity: 0}, 500, function () {
-                        $("#loader").css("display", "none");
+                    $("#"+louder).animate({opacity: 0}, 500, function () {
+                        $("#"+louder).css("display", "none");
                     });
                 });
                 //после отработки функции, делаю редирект, чтобы увидеть результат.
@@ -394,6 +395,7 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
         $(".agaxEdit").click(function(){
           var msg = $(this).data('msg_id');
           var users = $(this).data('user_id');
+		  var louder = $(this).data('louder_id');
           var result = prompt('Введите текст для изменения сообщения');
             if(result) {
                 $.ajax({
@@ -404,12 +406,12 @@ document.getElementById('filesPic').addEventListener('change', handleFileSelect,
                     },
                     type: 'GET',
                     beforeSend: function () {
-                        $("#loader").css("display", "block");
-                        $("#loader").animate({opacity: 1}, 500);
+                        $("#"+louder).css("display", "block");
+                        $("#"+louder).animate({opacity: 1}, 500);
                     }
                 }).done(function (data) {
-                    $("#loader").animate({opacity: 0}, 500, function () {
-                        $("#loader").css("display", "none");
+                    $("#"+louder).animate({opacity: 0}, 500, function () {
+                        $("#"+louder).css("display", "none");
                     });
                 });
                 //после отработки функции, делаю редирект, чтобы увидеть результат.
