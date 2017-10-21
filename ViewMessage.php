@@ -13,11 +13,14 @@ $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
 Сообщения пользователя: <?echo $login?><br></body>
 
 <?
+
 //Вывод из базы и отображение символов кириллицы
 mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
 mysqli_query($link, "SET CHARACTER SET 'utf8'");
 
 $mysqliBase = mysqli_query($link, $query);
+//Подсчёт сообщений юзеру для вывода на главную
+$num_rows =mysqli_num_rows($mysqliBase);
 while($row=mysqli_fetch_assoc($mysqliBase)){
 
     echo $row["times"]." ";
