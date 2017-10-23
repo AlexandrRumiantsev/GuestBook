@@ -26,6 +26,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         if ($result = mysqli_store_result($link)) {
             while ($row = mysqli_fetch_row($result)) {
 				if($Login == $row[0]  and $Password == $row[1]){
+				
                 printf("<div style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
                            <img style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
          				   <form action='Profile.php?mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
@@ -41,6 +42,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 					include 'MyFramework\WorkWithBase.php';
 					$countMess = Timer($Login);
 					echo "<div style='color:white; position:absolute; padding-top:120px;'>У вас $countMess сообщений</div>";
+					
 				};
 				
 				//else echo("<script>alert('Вы ввели неправильный логин или пароль!'); window.location.href = 'index.php';</script>");

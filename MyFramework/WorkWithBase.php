@@ -1,7 +1,7 @@
 <?
 function Timer($login){
-    $link = mysqli_connect("localhost", "root", "", "GuestBook");
-    $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
+     $link = mysqli_connect("localhost", "root", "", "GuestBook");
+     $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
     $mysqliBase = mysqli_query($link, $query);
     return $num_rows = mysqli_num_rows($mysqliBase);
     };
