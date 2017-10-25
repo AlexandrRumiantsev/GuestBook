@@ -33,7 +33,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
          				   <br>
          				   <div style='padding-left:44px;display:block;'>
 						 <input type='submit' style='width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>
-						 <a href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> <div style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'> </div></div></a> 
+						 <a target='_blank' href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> <div style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'> </div></div></a> 
 						 <a href='index.php'> <img style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a> 
 						</div>
 						 </div> ",$row[6] , $row[0]);
