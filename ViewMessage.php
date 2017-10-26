@@ -24,7 +24,11 @@ $mysqliBase = mysqli_query($link, $query);
 $num_rows =mysqli_num_rows($mysqliBase);
 while($row=mysqli_fetch_assoc($mysqliBase)){
     ?><div style="border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;"><?
-    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button><button class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";echo "</div>";
+    $text = $row["message"];
+    $userFrom = $row["fromUser"];
+    $userTo = $row["toUser"];
+    $userTime = $row["times"];
+    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button><button data-msg_text='$text' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";echo "</div>";
     echo $row["times"]." написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     echo $row["message"];
     echo "<br>";
@@ -36,35 +40,37 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
 <script type="text/javascript">
     $(document).ready(function(){
         $(".close").click(function(){
-           // var msg = $(this).data('msg_id');
-           // var users = $(this).data('user_id');
+           var msg = $(this).data('msg_text');
+           var usersTo = $(this).data('user_to');
+            var usersFrom = $(this).data('user_from');
+            var times = $(this).data('time');
            // var louder = $(this).data('louder_id');
             var result = confirm('Удалить?');
            // var result = confirm('Удалить сообщение: ' + msg + ' Пользователя: ' + users);
             if(result) {
                 $.ajax({
-                    url: 'DelPost.php',
-                    data: {nameDel: users, textDel: msg},
+                    url: 'ViewMessage.php',
+                    data: {msg: msg, usersTo: usersTo, usersFrom: usersFrom, times:times},
                     success: function(){
-                        alert('Запись успешно удалена');
+                        alert('Сообщение удалено);
                     },
                     type: 'GET',
                     beforeSend: function () {
-                        $("#"+louder).css("display", "block");
-                        $("#"+louder).animate({opacity: 1}, 500);
+                       // $("#"+louder).css("display", "block");
+                        //$("#"+louder).animate({opacity: 1}, 500);
                     }
                 }).done(function (data) {
-                    $("#"+louder).animate({opacity: 0}, 500, function () {
-                        $("#"+louder).css("display", "none");
+                   // $("#"+louder).animate({opacity: 0}, 500, function () {
+                      //  $("#"+louder).css("display", "none");
                     });
-                });
+
                 //после отработки функции, делаю редирект, чтобы увидеть результат.
-                window.location.href = 'index.php';
+                //window.location.href = 'index.php';
             }});
     });
 </script>
 
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function(){
         $(".otvet").click(function(){
            // var msg = $(this).data('msg_id');
@@ -92,6 +98,23 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
                 window.location.href = 'index.php';
             }});
     });
-</script>
+</script>-->
+
+<?
+$msgFinal = $_GET['msg'];
+$userToFinal = $_GET['usersTo'];
+$userFromFinal = $_GET['usersFrom'];
+$timesFinal = $_GET['times'];
+
+$q = "DELETE FROM Message 
+	  WHERE
+	  message = '$msgFinal' AND
+      toUser = '$userToFinal' AND
+       fromUser = '$userFromFinal' AND
+        times =  '$timesFinal' ";
+$mysqli = new mysqli ("localhost", "root", "", "GuestBook");
+$mysqli->query("SET CHARSET 'utf8'");
+$success = $mysqli->query("$q");
+?>
 </html>
 
