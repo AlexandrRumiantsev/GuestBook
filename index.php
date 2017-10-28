@@ -15,6 +15,15 @@
 border-color: yellow;
 }
 </style>
+<style>
+.focus:hover{
+border-color: yellow;
+}
+.focus:focus{
+outline: none;
+border-color: yellow;
+}
+</style>
 
 <html><head>
 <? include 'cookie.inc.php' ?>
@@ -54,12 +63,12 @@ border-color: yellow;
 <!-- Проблема с сортировкой по дате-->
 <form method="get" action="#" style="color:white;">
 <label for="first_name">Имя:</label><br/>
-<input type="text" style="border-radius: 7px 7px 7px 7px; border-style: solid;" name="first_name" size="30"><br/>
+<input type="text" class="focus" style="border-radius: 7px 7px 7px 7px; border-style: solid;" name="first_name" size="30"><br/>
 <!-- <label for="Date">Дата:</label><br/>
 <input type="date" name="Date" size="30"><br/> -->
 <label for="E-Mail">E-Mail:</label><br/>
-<input style="border-radius: 7px 7px 7px 7px;  border-style: solid;" type="text" name="E-Mail" size="30"><br/><br/>
-<input style="border-radius: 7px 7px 7px 7px;" id="submit" type="submit" value="Найти и вывести"><br/>
+<input class="focus" style="border-radius: 7px 7px 7px 7px;  border-style: solid;" type="text" name="E-Mail" size="30"><br/><br/>
+<input class="focus" style="border-radius: 7px 7px 7px 7px;" id="submit" type="submit" value="Найти и вывести"><br/>
 </form>
 
 <?
@@ -224,7 +233,7 @@ $count_pages = ceil($count_pages);
 
 </div>
 
-<div style="min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 10%;">
+<div style="min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 13%;">
 <form  method="post" value="Отправить" action="New.php" enctype="multipart/form-data">
 
 <div style="color: white;" bgcolor="black">
@@ -238,7 +247,7 @@ $count_pages = ceil($count_pages);
 </div>
 <div align="left">
 <!-- КАК В ЛОГИНЕ МОЖЕТ БЫТЬ ЧИСЛО 1(Он глобальный, объявлен в Panel) -->
-<input type="text" style="border-style: solid;border-radius: 7px 7px 7px 7px;" id="mess" name="msg_from" value="<?echo $Login;?>" placeholder="<?if($Login==Null){echo"Авторезуйтесь";}?>"maxlength="40" size="20">
+<input type="text" class="focus" style="border-style: solid;border-radius: 7px 7px 7px 7px;" id="mess" name="msg_from" value="<?echo $Login;?>" placeholder="<?if($Login==Null){echo"Авторезуйтесь";}?>"maxlength="40" size="20">
 </div>
 </div>
 </div>
@@ -252,7 +261,7 @@ $count_pages = ceil($count_pages);
 E-Mail:
 </div>
 <div align="left">
-<input type="text"  style="border-style: solid; border-radius: 7px 7px 7px 7px;" value="<?echo $mail;?>" placeholder="<?if($mail==Null){echo"Авторезуйтесь";}?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
+<input type="text"  class="focus" style="border-style: solid; border-radius: 7px 7px 7px 7px;" value="<?echo $mail;?>" placeholder="<?if($mail==Null){echo"Авторезуйтесь";}?>" name="msg_mail" maxlength="40" style="margin-right:50px;" size="20">
 </div>
 </div>
 </div>
@@ -291,7 +300,7 @@ URL:
 * Сообщение:
 </div>
 <div>
-<textarea cols="80" rows="7" id="message" name="msg_message" style="border-radius: 7px 7px 7px 7px;border-style: solid;"></textarea>
+<textarea class="focus" cols="80" rows="7" id="message" name="msg_message" style="border-radius: 7px 7px 7px 7px;border-style: solid;"></textarea>
 </div>
 <!--Файл:<input type="file" id="filesPic" name="filesName" multiple />-->
 </div>
