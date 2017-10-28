@@ -28,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="154" column="80" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="80" />
+            <state relative-caret-position="829">
+              <caret line="410" column="21" selection-start-line="407" selection-start-column="19" selection-end-line="410" selection-end-column="21" />
               <folding>
                 <marker date="1508608689917" expanded="true" signature="4057:4104" placeholder="SELECT * FRO... Users" />
                 <marker date="1508608689917" expanded="true" signature="4144:4186" placeholder="SELECT * FRO... Users" />
@@ -57,70 +57,15 @@
       <file leaf-file-name="ViewMessage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ViewMessage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state relative-caret-position="489">
+              <caret line="68" column="9" selection-start-line="44" selection-start-column="0" selection-end-line="68" selection-end-column="9" />
               <folding>
-                <marker date="1509049062991" expanded="true" signature="297:343" placeholder="SELECT * FRO... Message" />
-                <marker date="1509049062991" expanded="true" signature="1106:1118" placeholder="..." />
-                <marker date="1509049062991" expanded="true" signature="1149:1250" placeholder="..." />
-                <marker date="1509049062991" expanded="true" signature="1384:1488" placeholder="..." />
-                <marker date="1509049062991" expanded="true" signature="1744:1851" placeholder="..." />
-                <marker date="1509049062991" expanded="true" signature="1778:1817" placeholder="{...}" />
-                <marker date="1509049062991" expanded="true" signature="4506:4594" placeholder="DELETE FROM " />
-                <marker date="1509049062991" expanded="true" signature="4506:4598" placeholder="DELETE FROM " />
-                <marker date="1509049062991" expanded="true" signature="4506:4617" placeholder="DELETE FROM " />
-                <marker date="1509049062991" expanded="true" signature="4506:4655" placeholder="DELETE FROM " />
-                <marker date="1509049062991" expanded="true" signature="4506:4656" placeholder="DELETE FROM " />
-                <marker date="1509049062991" expanded="true" signature="4506:4668" placeholder="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DelPost.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DelPost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="42" />
-              <folding>
-                <marker date="1507900904000" expanded="true" signature="205:289" placeholder="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkWithBase.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyFramework/WorkWithBase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="22" />
-              <folding>
-                <marker date="1508621643984" expanded="true" signature="110:156" placeholder="SELECT * FRO... Message" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Panel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Panel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="39" column="37" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="37" />
-              <folding>
-                <marker date="1508955795374" expanded="true" signature="243:267" placeholder="SELECT * FRO... RegUsers" />
-                <marker date="1508955795374" expanded="false" signature="794:952" placeholder="..." />
-                <marker date="1508955795374" expanded="true" signature="953:2187" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="995:1139" placeholder="..." />
-                <marker date="1508955795374" expanded="true" signature="1273:2181" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="1327:1456" placeholder="..." />
-                <marker date="1508955795374" expanded="true" signature="1503:2181" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="1555:1587" placeholder="..." />
-                <marker date="1508955795374" expanded="true" signature="1588:2173" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="1625:1681" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="1825:1961" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="1976:2029" placeholder="..." />
-                <marker date="1508955795374" expanded="false" signature="2090:2130" placeholder="..." />
-                <marker date="1508955795374" expanded="true" signature="2357:2407" placeholder="..." />
+                <marker date="1509212980130" expanded="true" signature="303:349" placeholder="SELECT * FRO... Message" />
+                <marker date="1509212980130" expanded="true" signature="1165:1177" placeholder="..." />
+                <marker date="1509212980130" expanded="true" signature="1178:1668" placeholder="..." />
+                <marker date="1509212980130" expanded="true" signature="1208:1309" placeholder="..." />
+                <marker date="1509212980130" expanded="true" signature="1554:1658" placeholder="..." />
+                <marker date="1509212980130" expanded="true" signature="4324:4486" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -221,28 +166,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="book2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -459,7 +387,8 @@
       <workItem from="1508781255829" duration="4351000" />
       <workItem from="1508955516663" duration="2191000" />
       <workItem from="1508958619839" duration="56000" />
-      <workItem from="1509042711076" duration="5575000" />
+      <workItem from="1509042711076" duration="5634000" />
+      <workItem from="1509210591598" duration="3217000" />
     </task>
     <servers />
   </component>
@@ -475,22 +404,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256385000" />
+    <option name="totallyTimeSpent" value="259661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="2" width="1373" height="740" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10980103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10980103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.56079584" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3857143" sideWeight="0.56374353" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.43920413" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3857143" sideWeight="0.43625644" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -507,7 +436,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27056962" sideWeight="0.5578482" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.56374353" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="102" y="101" width="1166" height="534" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19620253" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -520,7 +449,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.318038" sideWeight="0.4421518" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3857143" sideWeight="0.43625644" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -545,7 +474,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="181" />
+      <option name="time" value="182" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PhpWebAppRunConfigurationType">
@@ -568,8 +497,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="110" />
+        <state relative-caret-position="2567">
+          <caret line="154" column="80" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="80" />
           <folding>
             <marker date="1508608689917" expanded="true" signature="4057:4104" placeholder="SELECT * FRO... Users" />
             <marker date="1508608689917" expanded="true" signature="4144:4186" placeholder="SELECT * FRO... Users" />
@@ -598,18 +527,22 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509049062991" expanded="true" signature="297:343" placeholder="SELECT * FRO... Message" />
-            <marker date="1509049062991" expanded="true" signature="1106:1118" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1149:1250" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1384:1488" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1744:1851" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1778:1817" placeholder="{...}" />
-            <marker date="1509049062991" expanded="true" signature="4506:4594" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4598" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4617" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4655" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4656" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4668" placeholder="DELETE FROM " />
+            <marker date="1509212980130" expanded="true" signature="303:349" placeholder="SELECT * FRO... Message" />
+            <marker date="1509212980130" expanded="true" signature="1165:1177" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1178:1668" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1208:1309" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1554:1658" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="4324:4486" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DelPost.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="42" />
+          <folding>
+            <marker date="1507900904000" expanded="true" signature="205:289" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -649,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="154" column="80" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="80" />
+        <state relative-caret-position="425">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="110" />
           <folding>
             <marker date="1508608689917" expanded="true" signature="4057:4104" placeholder="SELECT * FRO... Users" />
             <marker date="1508608689917" expanded="true" signature="4144:4186" placeholder="SELECT * FRO... Users" />
@@ -674,10 +607,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ViewMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1509212980130" expanded="true" signature="303:349" placeholder="SELECT * FRO... Message" />
+            <marker date="1509212980130" expanded="true" signature="1165:1177" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1178:1668" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1208:1309" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1554:1658" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="4324:4486" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyFramework/WorkWithBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="22" />
+          <folding>
+            <marker date="1508621643984" expanded="true" signature="110:156" placeholder="SELECT * FRO... Message" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="663">
           <caret line="39" column="37" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="37" />
+          <folding>
+            <marker date="1508955795374" expanded="true" signature="243:267" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1508955795374" expanded="false" signature="794:952" placeholder="..." />
+            <marker date="1508955795374" expanded="true" signature="953:2187" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="995:1139" placeholder="..." />
+            <marker date="1508955795374" expanded="true" signature="1273:2181" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="1327:1456" placeholder="..." />
+            <marker date="1508955795374" expanded="true" signature="1503:2181" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="1555:1587" placeholder="..." />
+            <marker date="1508955795374" expanded="true" signature="1588:2173" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="1625:1681" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="1825:1961" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="1976:2029" placeholder="..." />
+            <marker date="1508955795374" expanded="false" signature="2090:2130" placeholder="..." />
+            <marker date="1508955795374" expanded="true" signature="2357:2407" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Panel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding>
             <marker date="1508955795374" expanded="true" signature="243:267" placeholder="SELECT * FRO... RegUsers" />
             <marker date="1508955795374" expanded="false" signature="794:952" placeholder="..." />
@@ -717,23 +698,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="410" column="21" selection-start-line="407" selection-start-column="19" selection-end-line="410" selection-end-column="21" />
+          <folding>
+            <marker date="1508608689917" expanded="true" signature="4057:4104" placeholder="SELECT * FRO... Users" />
+            <marker date="1508608689917" expanded="true" signature="4144:4186" placeholder="SELECT * FRO... Users" />
+            <marker date="1508608689917" expanded="true" signature="4250:4376" placeholder="SELECT `User... Users" />
+            <marker date="1508608689917" expanded="true" signature="4440:4542" placeholder="SELECT `User... Users" />
+            <marker date="1508608689917" expanded="true" signature="4606:4714" placeholder="SELECT `User... Users" />
+            <marker date="1508608689917" expanded="true" signature="4734:4843" placeholder="SELECT `User... Users" />
+            <marker date="1508608689917" expanded="true" signature="5025:5051" placeholder="SELECT COUNT... Users" />
+            <marker date="1508608689917" expanded="true" signature="5969:5999" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="6013:6083" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="6414:6462" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="6996:7149" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="7322:7472" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="7517:7575" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="7769:7821" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="7989:8071" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="8091:8135" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="8260:8342" placeholder="..." />
+            <marker date="1508608689917" expanded="true" signature="8362:8406" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ViewMessage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        <state relative-caret-position="489">
+          <caret line="68" column="9" selection-start-line="44" selection-start-column="0" selection-end-line="68" selection-end-column="9" />
           <folding>
-            <marker date="1509049062991" expanded="true" signature="297:343" placeholder="SELECT * FRO... Message" />
-            <marker date="1509049062991" expanded="true" signature="1106:1118" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1149:1250" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1384:1488" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1744:1851" placeholder="..." />
-            <marker date="1509049062991" expanded="true" signature="1778:1817" placeholder="{...}" />
-            <marker date="1509049062991" expanded="true" signature="4506:4594" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4598" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4617" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4655" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4656" placeholder="DELETE FROM " />
-            <marker date="1509049062991" expanded="true" signature="4506:4668" placeholder="DELETE FROM " />
+            <marker date="1509212980130" expanded="true" signature="303:349" placeholder="SELECT * FRO... Message" />
+            <marker date="1509212980130" expanded="true" signature="1165:1177" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1178:1668" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1208:1309" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="1554:1658" placeholder="..." />
+            <marker date="1509212980130" expanded="true" signature="4324:4486" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>

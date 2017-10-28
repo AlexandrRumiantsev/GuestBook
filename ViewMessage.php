@@ -1,5 +1,7 @@
 <html>
-<head><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script></head>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
 <title>Сообщения</title>
 <?
 
@@ -23,16 +25,21 @@ $mysqliBase = mysqli_query($link, $query);
 //Подсчёт сообщений юзеру для вывода на главную
 $num_rows =mysqli_num_rows($mysqliBase);
 while($row=mysqli_fetch_assoc($mysqliBase)){
-    ?><div style="border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;"><?
-    $text = $row["message"];
+	$text = $row["message"];
     $userFrom = $row["fromUser"];
     $userTo = $row["toUser"];
     $userTime = $row["times"];
-    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button><button data-msg_text='$text' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";echo "</div>";
+	global $blockId;
+    $blockId = $userFrom .$userTo .$text;
+    echo "<div id='$blockId' style='border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;'>";
+    
+    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button>
+                                                                      <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
+    echo "</div>";
     echo $row["times"]." написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     echo $row["message"];
     echo "<br>";
-    ?></div><?
+    echo "</div>";
 }
 ?>
 
@@ -44,30 +51,23 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
            var usersTo = $(this).data('user_to');
             var usersFrom = $(this).data('user_from');
             var times = $(this).data('time');
-           // var louder = $(this).data('louder_id');
+			var idBlock = $(this).data('id_block');
             var result = confirm('Удалить?');
-           // var result = confirm('Удалить сообщение: ' + msg + ' Пользователя: ' + users);
             if(result) {
                 $.ajax({
                     url: 'ViewMessage.php',
                     data: {msg: msg, usersTo: usersTo, usersFrom: usersFrom, times:times},
                     success: function(){
-                        alert('Сообщение удалено);
-                    },
+                        //скрытие блока
+                        $("#"+idBlock).hide();
+                        alert('Сообщение удалено');},
                     type: 'GET',
-                    beforeSend: function () {
-                       // $("#"+louder).css("display", "block");
-                        //$("#"+louder).animate({opacity: 1}, 500);
-                    }
-                }).done(function (data) {
-                   // $("#"+louder).animate({opacity: 0}, 500, function () {
-                      //  $("#"+louder).css("display", "none");
-                    });
-
-                //после отработки функции, делаю редирект, чтобы увидеть результат.
-                //window.location.href = 'index.php';
-            }});
-    });
+                        beforeSend: function () {
+                            //скрытие блока
+                            $("#"+idBlock).hide();
+                        }
+            })}
+	})});
 </script>
 
 <!--<script type="text/javascript">
@@ -105,6 +105,7 @@ $msgFinal = $_GET['msg'];
 $userToFinal = $_GET['usersTo'];
 $userFromFinal = $_GET['usersFrom'];
 $timesFinal = $_GET['times'];
+$id =  $_GET['id_block'];
 
 $q = "DELETE FROM Message 
 	  WHERE
@@ -115,6 +116,8 @@ $q = "DELETE FROM Message
 $mysqli = new mysqli ("localhost", "root", "", "GuestBook");
 $mysqli->query("SET CHARSET 'utf8'");
 $success = $mysqli->query("$q");
+
+
 ?>
 </html>
 
