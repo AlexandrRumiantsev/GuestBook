@@ -1,6 +1,5 @@
 <?php
 $name= $_GET[name];
-$q= $_GET[un1];
 $q1= $_GET[un2];
 $q2= $_GET[un3];
 $q3= $_GET[un4];

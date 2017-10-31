@@ -211,8 +211,8 @@ height:0px
 ::-webkit-scrollbar{
 width: 4px;
 }
-</style>";
-                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
+</style>"; 
+                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                    // printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
                     printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
