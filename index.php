@@ -157,7 +157,61 @@ if (mysqli_multi_query($link, $query)) {
                      /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
+echo"
+<style>
+.messageID {
+  border: 1px solid black;
+  width: 200px;
+  height: 210px;
+  overflow: hidden;
+  font-size: 14px;
+  margin-top:0px;
+  padding-top:0px;
+}
+.messageID:hover {
+  height: auto;
+  cursor: pointer;
+  background:black:
+  position: fixed;
+  max-height:210px;
+  overflow-y:auto;
+}
+</style>";
 
+echo"
+<style>
+::-webkit-scrollbar-button {
+background-image:url('');
+background-repeat:no-repeat;
+width:5px;
+height:0px
+}
+
+::-webkit-scrollbar-track {
+background-color:#ecedee
+}
+
+::-webkit-scrollbar-thumb {
+-webkit-border-radius: 0px;
+border-radius: 0px;
+background-color:#6dc0c8;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background-color:#56999f;
+}
+
+::-webkit-resizer{
+background-image:url('');
+background-repeat:no-repeat;
+width:4px;
+height:0px
+}
+
+::-webkit-scrollbar{
+width: 4px;
+}
+</style>";
                 echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un1=$row[1]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                    // printf("<a target='_blank' href='DelPost.php?nameDel=$row[0]&textDel=$row[1]' style='float:right;'> <img width='30px' height='30px' src='images\close.png'></a>");
                    // printf("<a target='_blank' href='RedactPost.php?name=$row[0]&text=$row[1]' style='float:right;'> <img width='30px' height='30px' src='edit.png'></a>");
@@ -174,7 +228,7 @@ if (mysqli_multi_query($link, $query)) {
 
                     if($row[5] != null) {
                         printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
-                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
+                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='margin:0px;overflow: hidden;height:100px;display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
                         echo"</div>";
             }
             mysqli_free_result($result);
@@ -233,7 +287,7 @@ $count_pages = ceil($count_pages);
 
 </div>
 
-<div style="min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 13%;">
+<div style="min-width: 1300px; width:100%; height:260px; background:black; background-color:rgba(0, 0, 0, 0.7);  margin-top: 13%; position:absolute;">
 <form  method="post" value="Отправить" action="New.php" enctype="multipart/form-data">
 
 <div style="color: white;" bgcolor="black">
