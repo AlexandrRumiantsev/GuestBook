@@ -188,17 +188,17 @@ height:0px
 }
 
 ::-webkit-scrollbar-track {
-background-color:#ecedee
+background-color:white;
 }
 
 ::-webkit-scrollbar-thumb {
 -webkit-border-radius: 0px;
 border-radius: 0px;
-background-color:#6dc0c8;
+background-color:yellow;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-background-color:#56999f;
+background-color:black;
 }
 
 ::-webkit-resizer{
