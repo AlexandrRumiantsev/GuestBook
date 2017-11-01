@@ -10,7 +10,7 @@ $town = strip_tags($town);
 $pol = strip_tags($pol);
 $years = strip_tags($years);
 $login = strip_tags($login);
-//Запись данных в БД
+
 	$mysqli = new mysqli ("localhost","root","","GuestBook");
 	
       $mysqli -> query ("SET CHARSET 'utf8'");

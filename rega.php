@@ -6,7 +6,7 @@ $PasswordReg = $_POST['pass'];
 $EmailReg = $_POST['email'];
 
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
-$q = "INSERT INTO RegUsers (Log,Pass,mail) VALUES ('$LoginReg','$PasswordReg','$EmailReg')";
+$q = "INSERT INTO RegUsers (Log,Pass,mail,status) VALUES ('$LoginReg','$PasswordReg','$EmailReg','user')";
 
 //отправка письма
 //$to ="nobody@example.com";

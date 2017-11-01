@@ -3,6 +3,7 @@ $email = $_POST['email'];
 $town = $_POST['town'];
 $pol = $_POST['pol'];
 $years = $_POST['years'];
+$status = $_POST['status'];
 
 $fileX = $_FILES['file'];
 $file = $_FILES['file']['name'];
@@ -59,7 +60,7 @@ $login = strip_tags($login);
 	
 	$link = mysqli_connect("localhost", "root", "", "GuestBook");
 	/////////////////////////////////////////////////////////////////////////////////////////////////
-	$q = "SELECT Log, Pass, mail, town, pol, years, ProfPic FROM `RegUsers` WHERE Log='$login'";;
+	$q = "SELECT Log, Pass, mail, town, pol, years, ProfPic, status FROM `RegUsers` WHERE Log='$login'";;
 
 	mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
     mysqli_query($link, "SET CHARACTER SET 'utf8'");
@@ -98,6 +99,8 @@ $login = strip_tags($login);
 					$yearsFirst = $row['years'];
 					$townFirst = $_GET['town'];
 					///////////////
+					global $status;
+					$status = $row[7];
 					$pic = $row[6];
 					$log = $row[0];
 					$mail = $row[2];
@@ -114,7 +117,10 @@ $login = strip_tags($login);
 					$years=$yearsFirst;
 					if($town==null){$town=$townFirst;}
 
-					echo "<div align='center' style='color:white;font-size:20px;'> 
+					//if($status == 'admin')$adm = "<a href='#'>Админка</a>";
+					if($status == 'admin') echo"<a href='#'>Админка</a>";
+					echo "<div align='center' style='color:white;font-size:20px;'>
+                    
          				Изменение учётных данных <br><br>
          		
          				<div style='float:left;'><img src='$pic' style='width: 350px; height: 350px; margin-left: 25px; margin-top: 25px'></div>
@@ -127,7 +133,7 @@ $login = strip_tags($login);
 						Возраст: $years <input  type='number' name='years'><br><br>
 						<input  type='file' name='file'  value='$pic'  multiple><br><br><br>
 						
-						<a href='index.php'> Назад </a>
+						<a href='index.php'> Назад </a>   
 						<input type='submit'  onClick='redirect()' value='Сохранить'>  </form> </div> </div>";
 
 					echo"<script type='text/javascript'>
