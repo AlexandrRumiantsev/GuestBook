@@ -118,7 +118,7 @@ $login = strip_tags($login);
 					if($town==null){$town=$townFirst;}
 
 					//if($status == 'admin')$adm = "<a href='#'>Админка</a>";
-					if($status == 'admin') echo"<a href='#'>Админка</a>";
+					if($status == 'admin') echo"<a target='_blank' href='AdminPanel\MainAdmin.php'>Админка</a>";
 					echo "<div align='center' style='color:white;font-size:20px;'>
                     
          				Изменение учётных данных <br><br>
