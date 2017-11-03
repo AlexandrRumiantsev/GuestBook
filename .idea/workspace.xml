@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154d351c-4c27-4f83-8ba1-eb8e6590d510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminPanel/message.php" afterPath="$PROJECT_DIR$/AdminPanel/message.php" />
     </list>
     <ignored path="book2.iws" />
@@ -28,15 +27,18 @@
       <file leaf-file-name="message.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdminPanel/message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
               <folding>
-                <marker date="1509747482389" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
-                <marker date="1509747482389" expanded="true" signature="889:903" placeholder="..." />
-                <marker date="1509747482389" expanded="true" signature="1095:1119" placeholder="SELECT * FRO... RegUsers" />
-                <marker date="1509747482389" expanded="true" signature="1468:1482" placeholder="..." />
-                <marker date="1509747482389" expanded="true" signature="1606:1629" placeholder="SELECT * FRO... Message" />
-                <marker date="1509747482389" expanded="true" signature="2104:2711" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
+                <marker date="1509748678189" expanded="true" signature="844:912" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="966:980" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="1172:1196" placeholder="SELECT * FRO... RegUsers" />
+                <marker date="1509748678189" expanded="true" signature="1499:1568" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="1623:1637" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="1761:1784" placeholder="SELECT * FRO... Message" />
+                <marker date="1509748678189" expanded="true" signature="2259:2266" placeholder="..." />
+                <marker date="1509748678189" expanded="true" signature="2259:2866" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -454,7 +456,7 @@
       <workItem from="1509562792454" duration="3796000" />
       <workItem from="1509646325917" duration="4798000" />
       <workItem from="1509733220383" duration="3523000" />
-      <workItem from="1509737657647" duration="9700000" />
+      <workItem from="1509737657647" duration="10882000" />
     </task>
     <servers />
   </component>
@@ -470,7 +472,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281478000" />
+    <option name="totallyTimeSpent" value="282660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -578,12 +580,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509747482389" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="889:903" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1095:1119" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="1468:1482" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1606:1629" placeholder="SELECT * FRO... Message" />
-            <marker date="1509747482389" expanded="true" signature="2104:2711" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="844:912" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="966:980" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1172:1196" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="1499:1568" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1623:1637" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1761:1784" placeholder="SELECT * FRO... Message" />
+            <marker date="1509748678189" expanded="true" signature="2259:2266" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="2259:2866" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -644,12 +649,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1509747482389" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="889:903" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1095:1119" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="1468:1482" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1606:1629" placeholder="SELECT * FRO... Message" />
-            <marker date="1509747482389" expanded="true" signature="2104:2711" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="844:912" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="966:980" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1172:1196" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="1499:1568" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1623:1637" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1761:1784" placeholder="SELECT * FRO... Message" />
+            <marker date="1509748678189" expanded="true" signature="2259:2266" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="2259:2866" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1060,15 +1068,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AdminPanel/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="92" column="10" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="10" />
+        <state relative-caret-position="255">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
-            <marker date="1509747482389" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="889:903" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1095:1119" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1509747482389" expanded="true" signature="1468:1482" placeholder="..." />
-            <marker date="1509747482389" expanded="true" signature="1606:1629" placeholder="SELECT * FRO... Message" />
-            <marker date="1509747482389" expanded="true" signature="2104:2711" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="517:541" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="844:912" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="966:980" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1172:1196" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1509748678189" expanded="true" signature="1499:1568" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1623:1637" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="1761:1784" placeholder="SELECT * FRO... Message" />
+            <marker date="1509748678189" expanded="true" signature="2259:2266" placeholder="..." />
+            <marker date="1509748678189" expanded="true" signature="2259:2866" placeholder="..." />
           </folding>
         </state>
       </provider>

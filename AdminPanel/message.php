@@ -21,7 +21,7 @@ li{list-style-position:inside;}
         while($row=mysqli_fetch_assoc($mBase))
         {
             $usFrom = $row["Log"];
-            echo "<div class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
         }
         ?>
         <?
@@ -34,7 +34,7 @@ li{list-style-position:inside;}
         while($row=mysqli_fetch_assoc($mBase))
         {
             $usFrom = $row["Log"];
-            echo "<div class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
         }
         ?>
 
