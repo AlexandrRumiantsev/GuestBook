@@ -66,7 +66,7 @@ while($row=mysqli_fetch_assoc($mysqliBase)) {
         var userId = $(this).data('id');
         var div = $('#ins');
         $('#ins').val(userId)
-        $('.spisok').hide()
+        $('.spisok').hide(0)
 
         });
 
@@ -74,7 +74,7 @@ while($row=mysqli_fetch_assoc($mysqliBase)) {
         var div = $('#ins'); // тут указываем класс элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
-            $('.spisok').hide() // скрываем его
+            $('.spisok').hide(0) // скрываем его
         }
     });
 
@@ -89,14 +89,14 @@ while($row=mysqli_fetch_assoc($mysqliBase)) {
         $('.spisoks').click(function () {
             var userId = $(this).data('id');
             $('#to').val(userId)
-            $('.spisoks').hide()
+            $('.spisoks').hide(0)
         })
 
     $(document).mouseup(function (e){ // событие клика по веб-документу
         var div = $('#to'); // тут указываем класс элемента
         if (!div.is(e.target) // если клик был не по нашему блоку
             && div.has(e.target).length === 0) { // и не по его дочерним элементам
-            $('.spisoks').hide() // скрываем его
+            $('.spisoks').hide(0) // скрываем его
         }
     });
 </script>
