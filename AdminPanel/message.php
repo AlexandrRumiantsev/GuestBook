@@ -8,8 +8,7 @@
 <style>
 li{list-style-position:inside;}
 </style>
-
-<div>
+<div style="position: relative;float:left;">
 
         <?
         //Реализация выпадающего списка имён из БД
@@ -18,15 +17,21 @@ li{list-style-position:inside;}
         mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
         mysqli_query($link, "SET CHARACTER SET 'utf8'");
         $mBase = mysqli_query($link, $query);
+
         while($row=mysqli_fetch_assoc($mBase))
         {
             $usFrom = $row["Log"];
-            echo "<div style='margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
-        }
+
+            
+
+            echo "<div style='text-align:center;z-index:100;background:black;color:white;float:left;position: fixed;margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='text-align:center;z-index:100;background:black;color:white;float:right;position: fixed; margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo"<br>"; }
         ?>
+
         <?
         //Реализация 2 выпадающего списка имён из БД
-        $link = mysqli_connect("localhost", "root", "", "GuestBook");
+        /*$link = mysqli_connect("localhost", "root", "", "GuestBook");
         $query  = "SELECT * FROM `RegUsers`";
         mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
         mysqli_query($link, "SET CHARACTER SET 'utf8'");
@@ -34,11 +39,16 @@ li{list-style-position:inside;}
         while($row=mysqli_fetch_assoc($mBase))
         {
             $usFrom = $row["Log"];
-            echo "<div style='margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
-        }
+
+            echo "<div style='float:right;position: fixed; margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+
+        }*/
+
         ?>
 
 </div>
+
+<div style="float:left;position:fixed ">
 <?
 
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
@@ -58,6 +68,7 @@ while($row=mysqli_fetch_assoc($mysqliBase)) {
     echo "<br>От кого:$userFrom Кому:$userTo в:$userTime Сообщение:$text<br>";
 }
 ?>
+    </div>
 <script>
     $('#ins').focus(function(){
         $('.spisok').show()
