@@ -27,8 +27,8 @@ echo'<br>';
 echo '<div class="cont">';
 echo '<a href="MainAdmin.php?Page=main"><img class="imgAdm" src="img1.png"> </a>';
 echo '<a href="MainAdmin.php?Page=stat"><img class="imgAdm" src="img2.png"></a>';
-echo '<a href="MainAdmin.php?Page=user"><img class="imgAdm" style="margin-top:12px;"src="users.png"> </a>';
-echo '<a href="MainAdmin.php?Page=message"><img class="imgAdm" src="conv.png">  </a>';
+echo '<a href="MainAdmin.php?Page=user"><img class="imgAdm" style="height:90px;margin-top:10px;"src="users.png"> </a>';
+echo '<a href="MainAdmin.php?Page=message"><img class="imgAdm" src="img/conv.png">  </a>';
 echo '<a href="MainAdmin.php?Page=setting"><img class="imgAdm" src="set.png"> </a>';
 echo '</div>';
 ?>
@@ -36,7 +36,7 @@ echo '</div>';
 <?
 $page = $_Get['Page'];
 echo'<br>';
-echo '<div class="cont2">';
+echo '<div class="cont2" style="">';
 if($_REQUEST['Page']=='setting') {include 'setting.php';}
 else if($_REQUEST['Page']=='stat'){include 'stat.php';}
 else if($_REQUEST['Page']=='user'){include 'user.php';}
