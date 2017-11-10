@@ -1,6 +1,6 @@
 Сообщения
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<div style="margin-top:22px;position: relative;">
+<div style="margin-top:22px;position: relative;padding-left: 130px;">
 <input  type="text" id='ins' placeholder="От кого">
 <input  type="text" id='to' placeholder="кому">
 <input  type="time" placeholder="время">
@@ -26,8 +26,8 @@ li{list-style-position:inside;}
 
             
 
-            echo "<div style='position:absolute;display:none;text-align:center;z-index:100;background:black;color:white;float:left;margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
-            echo "<div style='position:absolute;text-align:center;z-index:100;background:black;color:white;float:right; margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='padding-left: 180px; position:absolute;display:none;text-align:center;z-index:100;background:black;color:white;float:left;margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='padding-left: 330px; position:absolute;text-align:center;z-index:100;background:black;color:white;float:right; margin-left:60px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
             echo"<br>"; }
         ?>
 
