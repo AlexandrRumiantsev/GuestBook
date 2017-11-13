@@ -4,26 +4,7 @@
 // Автор: Александр Румянцев            //
 //--------------------------------------//
 ?>
-
-<style>
-    .bloock{
-        float:left;margin-left: 70px; width:140px; height: 200px; background: black; display: none;
-    }
-</style>
-<style>
-.picFooter:hover{
-border-color: yellow;
-}
-</style>
-<style>
-.focus:hover{
-border-color: yellow;
-}
-.focus:focus{
-outline: none;
-border-color: yellow;
-}
-</style>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <html><head>
 <? include 'cookie.inc.php' ?>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
