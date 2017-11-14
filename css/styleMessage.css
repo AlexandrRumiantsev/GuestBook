@@ -1,0 +1,42 @@
+.messageID {
+
+    width: 200px;
+    height: 210px;
+    overflow: hidden;
+    font-size: 14px;
+    margin-top:0px;
+    padding-top:0px;
+}
+.messageID:hover {
+    height: auto;
+    cursor: pointer;
+    max-height:210px;
+    overflow-y:auto;
+    border: 1px solid black;
+}
+
+ ::-webkit-scrollbar-button {
+     background-image:url('');
+     background-repeat:no-repeat;
+     width:5px;
+     height:0px
+ }
+::-webkit-scrollbar-track {
+    background-color:white;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color:yellow;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color:black;
+}
+::-webkit-resizer{
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px
+}
+::-webkit-scrollbar{
+    width: 4px;
+}

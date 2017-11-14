@@ -70,56 +70,8 @@ if (mysqli_multi_query($link, $query)) {
                      /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
-echo"
-<style>
-.messageID {
-  border: 1px solid black;
-  width: 200px;
-  height: 210px;
-  overflow: hidden;
-  font-size: 14px;
-  margin-top:0px;
-  padding-top:0px;
-}
-.messageID:hover {
-  height: auto;
-  cursor: pointer;
-  background:black:
-  position: fixed;
-  max-height:210px;
-  overflow-y:auto;
-}
-</style>";
+                echo"<link rel='stylesheet' href='css/styleMessage.css' type='text/css' media='screen' />";
 
-echo"
-<style>
-::-webkit-scrollbar-button {
-background-image:url('');
-background-repeat:no-repeat;
-width:5px;
-height:0px
-}
-::-webkit-scrollbar-track {
-background-color:white;
-}
-::-webkit-scrollbar-thumb {
--webkit-border-radius: 0px;
-border-radius: 0px;
-background-color:yellow;
-}
-::-webkit-scrollbar-thumb:hover{
-background-color:black;
-}
-::-webkit-resizer{
-background-image:url('');
-background-repeat:no-repeat;
-width:4px;
-height:0px
-}
-::-webkit-scrollbar{
-width: 4px;
-}
-</style>"; 
                 echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                     printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
 
