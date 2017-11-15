@@ -61,3 +61,6 @@ h2{
 	outline: none;
 	border-color: yellow;
 }
+.inputS{
+	border-radius: 7px 7px 7px 7px;
+}
