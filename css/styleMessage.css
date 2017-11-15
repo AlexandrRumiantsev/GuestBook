@@ -6,7 +6,13 @@
     font-size: 14px;
     margin-top:0px;
     padding-top:0px;
+    display:block;
+    padding-left:100px;
+    width:400px;
+    float:left;
+    word-wrap: break-word;
 }
+
 .messageID:hover {
     height: auto;
     cursor: pointer;
@@ -39,4 +45,30 @@
 }
 ::-webkit-scrollbar{
     width: 4px;
+}
+.mainBlock {
+    border-style: groove;
+    width: 900px;
+    height: 350px;
+    background: black;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+.agaxEdit{
+    margin:5px;
+    border-radius: 10px 10px 10px 10px;
+    float:right;
+    background-size: cover;
+    width: 30px;
+    height:30px;
+}
+.agaxClose{
+    margin:5px;
+    border-radius: 10px 10px 10px 10px;
+    float:right;
+    background-size: cover;
+    width: 30px;
+    height:30px;
 }

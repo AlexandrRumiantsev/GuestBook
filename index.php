@@ -66,32 +66,23 @@ if (mysqli_multi_query($link, $query)) {
             while ($row = mysqli_fetch_row($result)) {
 				// тут выводит столбцы из таблицы
                 $idMain = $row[0].$row[1].$row[2].$row[3];
-				echo "<div  id='$idMain' style='border-style:groove; width:900px; height:350px; background:black; color:white;  background-color:rgba(0, 0, 0, 0.5); padding-bottom:20px;margin-bottom:10px;'>";
+				echo "<div  id='$idMain' class='mainBlock'>";
                      /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
                 echo"<link rel='stylesheet' href='css/styleMessage.css' type='text/css' media='screen' />";
-
                 echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/crestic.png); background-size: cover;  width: 30px; height:30px;'></button>");
-
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='margin:5px; border-radius: 10px 10px 10px 10px; float:right;background-image: url(images/edit.png); background-size: cover;  width: 30px; height:30px;'></button>");
-
-				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div>";
-				printf("<br>"); 
-				printf("<br>"); 
-				printf("<br>");
-                printf("<br>");
+                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'></button>");
+                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'></button>");
+				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div><br><br><br><br>";
                 printf("<div id='louder$row[0]$row[1]' style='position: absolute;padding-left:365px;display: none;'><img src='images/loader.gif' /></div>");
-
                     if($row[5] != null) {
-                        printf("<p id='textUsers$row[0]' class='messageID' style='display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
-                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='margin:0px;overflow: hidden;height:100px;display:block; padding-left:100px; width:400px; float:left; word-wrap: break-word;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
+                        printf("<p id='textUsers$row[0]' class='messageID' >%s</p><img style='width:300px; height:200px; padding-left:0px;' src='source\%s'>", $row[1], $row[5]);
+                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='height:100px;'>%s</p><img style='width:300px; height:200px; padding-left:0px;' src='images\pic.jpg'>",$row[1]);
                         echo"</div>";
             }
             mysqli_free_result($result);
         }
-        /* печатаем разделитель */
         if (mysqli_more_results($link)) {
             printf("-----------------\n");
         }
@@ -163,11 +154,7 @@ E-Mail:
 </div>
 </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br>
 </div>
 <br>
     <label>
