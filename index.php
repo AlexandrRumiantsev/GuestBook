@@ -71,7 +71,8 @@ if (mysqli_multi_query($link, $query)) {
                                                       if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[14];
                 echo"<div  style='float:left; position:relative;'><img style='width:50px; height: 50px; margin: 10px;border-radius: 7px 7px 7px 7px;' src='$pic'></div>";
                 echo"<link rel='stylesheet' href='css/styleMessage.css' type='text/css' media='screen' />";
-                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
+                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'  
+                style='float:left; position:relative; margin-top: 10px;'>$row[0]</a>";
                     printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'></button>");
                     printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'></button>");
 				echo"<br><br><div style='float:left;position:relative; display:block; height: 16px;'> $expd[2].$expd[1].$expd[0]</div><br><br><br><br>";
@@ -118,7 +119,6 @@ $count_pages = ceil($count_pages);
     <?php for ($i = $start; $i <= $end; $i++) { ?>
       <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
     <?php } ?>
-    
       <a href="<?=$url_page.($active + 1)?>" title="Следующая страница">&gt;</a>
       <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
       <?php } ?>
@@ -140,10 +140,7 @@ $count_pages = ceil($count_pages);
 </div>
 </div>
 </div>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br>
 <div style="float:left;">
 <div>
 <div>

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154d351c-4c27-4f83-8ba1-eb8e6590d510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styleMessage.css" afterPath="$PROJECT_DIR$/css/styleMessage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="book2.iws" />
@@ -46,35 +44,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="71" column="74" selection-start-line="71" selection-start-column="74" selection-end-line="71" selection-end-column="74" />
+            <state relative-caret-position="101">
+              <caret line="211" column="53" selection-start-line="210" selection-start-column="3" selection-end-line="211" selection-end-column="53" />
               <folding>
                 <element signature="e#3#45#0#PHP" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1510771630997" expanded="true" signature="2211:2258" placeholder="SELECT * FRO... Users" />
-                <marker date="1510771630997" expanded="true" signature="2298:2340" placeholder="SELECT * FRO... Users" />
-                <marker date="1510771630997" expanded="true" signature="2404:2530" placeholder="SELECT `User... Users" />
-                <marker date="1510771630997" expanded="true" signature="2594:2696" placeholder="SELECT `User... Users" />
-                <marker date="1510771630997" expanded="true" signature="2760:2868" placeholder="SELECT `User... Users" />
-                <marker date="1510771630997" expanded="true" signature="2888:2997" placeholder="SELECT `User... Users" />
-                <marker date="1510771630997" expanded="true" signature="3095:3121" placeholder="SELECT COUNT... Users" />
-                <marker date="1510771630997" expanded="true" signature="3886:3916" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="3930:4000" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="4426:4474" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="4649:4691" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="4863:4902" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="4946:5004" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="5120:5172" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="5351:5395" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="5520:5533" placeholder="..." />
-                <marker date="1510771630997" expanded="true" signature="5553:5597" placeholder="..." />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1510773053677" expanded="true" signature="2211:2258" placeholder="SELECT * FRO... Users" />
+                <marker date="1510773053677" expanded="true" signature="2298:2340" placeholder="SELECT * FRO... Users" />
+                <marker date="1510773053677" expanded="true" signature="2404:2530" placeholder="SELECT `User... Users" />
+                <marker date="1510773053677" expanded="true" signature="2594:2696" placeholder="SELECT `User... Users" />
+                <marker date="1510773053677" expanded="true" signature="2760:2868" placeholder="SELECT `User... Users" />
+                <marker date="1510773053677" expanded="true" signature="2888:2997" placeholder="SELECT `User... Users" />
+                <marker date="1510773053677" expanded="true" signature="3095:3121" placeholder="SELECT COUNT... Users" />
+                <marker date="1510773053677" expanded="true" signature="3886:3916" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="3930:4000" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="4417:4503" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="4443:4491" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="4666:4708" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="4880:4919" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="4963:5021" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="5137:5189" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="5368:5412" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="5537:5550" placeholder="..." />
+                <marker date="1510773053677" expanded="true" signature="5570:5614" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexScript.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/indexScript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -206,6 +219,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="book2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="book2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="book2" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,7 +492,7 @@
       <workItem from="1510599971448" duration="1116000" />
       <workItem from="1510604012329" duration="626000" />
       <workItem from="1510688130304" duration="912000" />
-      <workItem from="1510768834852" duration="1785000" />
+      <workItem from="1510768834852" duration="3827000" />
     </task>
     <servers />
   </component>
@@ -481,7 +508,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307088000" />
+    <option name="totallyTimeSpent" value="309130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -551,13 +578,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AdminPanel/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdminPanel/message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -901,32 +921,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="71" column="74" selection-start-line="71" selection-start-column="74" selection-end-line="71" selection-end-column="74" />
+        <state relative-caret-position="101">
+          <caret line="211" column="53" selection-start-line="210" selection-start-column="3" selection-end-line="211" selection-end-column="53" />
           <folding>
             <element signature="e#3#45#0#PHP" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1510771630997" expanded="true" signature="2211:2258" placeholder="SELECT * FRO... Users" />
-            <marker date="1510771630997" expanded="true" signature="2298:2340" placeholder="SELECT * FRO... Users" />
-            <marker date="1510771630997" expanded="true" signature="2404:2530" placeholder="SELECT `User... Users" />
-            <marker date="1510771630997" expanded="true" signature="2594:2696" placeholder="SELECT `User... Users" />
-            <marker date="1510771630997" expanded="true" signature="2760:2868" placeholder="SELECT `User... Users" />
-            <marker date="1510771630997" expanded="true" signature="2888:2997" placeholder="SELECT `User... Users" />
-            <marker date="1510771630997" expanded="true" signature="3095:3121" placeholder="SELECT COUNT... Users" />
-            <marker date="1510771630997" expanded="true" signature="3886:3916" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="3930:4000" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="4426:4474" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="4649:4691" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="4863:4902" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="4946:5004" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="5120:5172" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="5351:5395" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="5520:5533" placeholder="..." />
-            <marker date="1510771630997" expanded="true" signature="5553:5597" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#label#0;n#div#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1510773053677" expanded="true" signature="2211:2258" placeholder="SELECT * FRO... Users" />
+            <marker date="1510773053677" expanded="true" signature="2298:2340" placeholder="SELECT * FRO... Users" />
+            <marker date="1510773053677" expanded="true" signature="2404:2530" placeholder="SELECT `User... Users" />
+            <marker date="1510773053677" expanded="true" signature="2594:2696" placeholder="SELECT `User... Users" />
+            <marker date="1510773053677" expanded="true" signature="2760:2868" placeholder="SELECT `User... Users" />
+            <marker date="1510773053677" expanded="true" signature="2888:2997" placeholder="SELECT `User... Users" />
+            <marker date="1510773053677" expanded="true" signature="3095:3121" placeholder="SELECT COUNT... Users" />
+            <marker date="1510773053677" expanded="true" signature="3886:3916" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="3930:4000" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="4417:4503" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="4443:4491" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="4666:4708" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="4880:4919" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="4963:5021" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="5137:5189" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="5368:5412" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="5537:5550" placeholder="..." />
+            <marker date="1510773053677" expanded="true" signature="5570:5614" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/indexScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
