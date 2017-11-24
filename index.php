@@ -60,6 +60,7 @@ $CountAllStringInBase = $b[0];
 mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 $countString = mysqli_stmt_num_rows($stmt);
+include 'MyFramework\OneCollection.php';
 if (mysqli_multi_query($link, $query)) {
     do {
         if ($result = mysqli_store_result($link)) {
@@ -73,14 +74,21 @@ if (mysqli_multi_query($link, $query)) {
                 echo"<div  class='imgIn'>
                      <img class='imgMain'  src='$pic'>
                      </div>";
-                echo"<a id='User$row[0]'  class='userID' target='_blank' href='ProfileUsers.php?name=$row[0]&un2=$row[2]&un3=$row[3]&un4=$row[4]&un5=$row[5]&un6=$row[6]&un7=$row[7]&un8=$row[8]&un9=$row[9]&un10=$row[10]&un11=$row[11]&un12=$row[12]&un13=$row[13]&un14=$row[14]&un15=$Login'>$row[0]</a>";
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'></button>");
-                    printf("<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'></button>");
+                $userProf = formUser($row[0],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10],$row[11],$row[12],$row[13],$row[14],$Login);
+                echo"<a id='User$row[0]'  class='userID' target='_blank' href='$userProf'>$row[0]</a>";
+                echo"
+<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'>
+</button>";
+                echo"
+<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'>
+</button>";
 				echo"<br><br><div class='blockOne'> $expd[2].$expd[1].$expd[0]</div><br><br><br><br>";
-                printf("<div id='louder$row[0]$row[1]' class='louderClass'><img src='images/loader.gif' /></div>");
+                echo"<div id='louder$row[0]$row[1]' class='louderClass'><img src='images/loader.gif' /></div>";
                     if($row[5] != null) {
-                        printf("<p id='textUsers$row[0]' class='messageID' >%s</p><img class='imgMesage' src='source\%s'>", $row[1], $row[5]);
-                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='height:100px;'>%s</p><img class='imgMesage' src='images\pic.jpg'>",$row[1]);
+                        printf("<p id='textUsers$row[0]' class='messageID' >%s</p><img class='imgMesage' src='source\%s'>",
+                            $row[1], $row[5]);
+                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='height:100px;'>%s</p><img class='imgMesage' src='images\pic.jpg'>",
+                        $row[1]);
                         echo"</div>";
             }
             mysqli_free_result($result);
@@ -118,11 +126,12 @@ $count_pages = ceil($count_pages);
       <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>" title="Предыдущая страница">&lt;</a>
     <?php } ?>
     <?php for ($i = $start; $i <= $end; $i++) { ?>
-      <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?><?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
+    <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?>
+    <?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
     <?php } ?>
       <a href="<?=$url_page.($active + 1)?>" title="Следующая страница">&gt;</a>
       <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
-      <?php } ?>
+    <?php } ?>
   </div>
 <!-- END Pagination -->
 <br>
