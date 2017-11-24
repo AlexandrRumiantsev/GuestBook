@@ -1,10 +1,15 @@
 <?
+/**
+ * Краткое описание функции
+ * Функция подсчитывает кол-во сообщений пользователя в бд и выводит на форму
+ */
 function Timer($login){
      $link = mysqli_connect("localhost", "root", "", "GuestBook");
      $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
     $mysqliBase = mysqli_query($link, $query);
     return $num_rows = mysqli_num_rows($mysqliBase);
     };
+
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
