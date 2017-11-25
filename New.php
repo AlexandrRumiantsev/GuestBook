@@ -3,7 +3,7 @@ $text = $_POST['msg_message'];
 $name = $_POST['msg_from'];
 $mail = $_POST['msg_mail'];
 $url = $_POST['msg_url'];
-//$time = time();
+$time = time();
 
 //Работа с картинкой
 $file = $_FILES['filesName'];
@@ -77,7 +77,7 @@ ini_set('display_startup_errors', TRUE);
 	$mysqli = new mysqli ("localhost","root","","GuestBook");
       $mysqli -> query ("SET CHARSET 'utf8'");
 	 $date = date('Y-m-d');
-	 $q = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse) VALUES ('$name','$date','$mail','$url','$text', '$nameFile','$ip','$Br')";
+	 $q = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse,times) VALUES ('$name','$date','$mail','$url','$text', '$nameFile','$ip','$Br','$time')";
      $success = $mysqli -> query ("$q");
     if($success == 1){$mysqli -> close (); 	
 	header('Location: index.php');}

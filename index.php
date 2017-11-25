@@ -78,7 +78,7 @@ if (mysqli_multi_query($link, $query)) {
                 $userProf = $messageClass -> formUser($row[0],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10],$row[11],$row[12],$row[13],$row[14],$Login);
                 echo"<a id='User$row[0]'  class='userID' target='_blank' href='$userProf'>$row[0]</a>";
                 echo"
-<button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'>
+<button data-msg_time='$row[8]' data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'>
 </button>";
                 echo"
 <button data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'>

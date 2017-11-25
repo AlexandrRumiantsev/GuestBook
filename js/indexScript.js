@@ -55,11 +55,12 @@ if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
             var msg = $(this).data('msg_id');
             var users = $(this).data('user_id');
             var louder = $(this).data('louder_id');
+            var time = $(this).data('msg_time');
             var result = prompt('Введите текст для изменения сообщения');
             if(result) {
                 $.ajax({
                     url: 'RedactPost.php',
-                    data: {nameUpp: users, textUpp: result, oldText: msg},
+                    data: {nameUpp: users, textUpp: result, oldText: msg, times:time},
                     success: function(){
                         alert('Запись изменена');
                     },
