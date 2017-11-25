@@ -65,7 +65,7 @@ if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
                     success: function(){
                         alert('Запись изменена');
                     },
-                    type: 'GET',
+                    type: 'POST',
                     beforeSend: function () {
                         $("#"+louder).css("display", "block");
                         $("#"+louder).animate({opacity: 1}, 500);
