@@ -55,12 +55,13 @@ if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
             var msg = $(this).data('msg_id');
             var users = $(this).data('user_id');
             var louder = $(this).data('louder_id');
-            var time = $(this).data('msg_time');
+            var times = $(this).data('msg_time');
+            
             var result = prompt('Введите текст для изменения сообщения');
             if(result) {
                 $.ajax({
                     url: 'RedactPost.php',
-                    data: {nameUpp: users, textUpp: result, oldText: msg, times:time},
+                    data: {nameUpp: users, textUpp: result, oldText: msg, times:times},
                     success: function(){
                         alert('Запись изменена');
                     },
@@ -78,3 +79,40 @@ if(Log=="авторизуйтесь"){alert("авторизуйтесь!")}
                 window.location.href = 'index.php';
             }});
     });
+
+var LZW = {
+    compress: function(uncompressed) {
+        "use strict";
+
+        var i, l,
+            dictionary = {},
+            w = '', k, wk,
+            result = [],
+            dictSize = 256;
+
+        // initial dictionary
+        for (i = 0; i < dictSize; i++) {
+            dictionary[String.fromCharCode(i)] = i;
+        }
+
+        for (i = 0, l = uncompressed.length; i < l; i++) {
+            k = uncompressed.charAt(i);
+            wk = w + k;
+            if (dictionary.hasOwnProperty(wk)) {
+                w = wk;
+            }
+            else {
+                result.push(dictionary[w]);
+                dictionary[wk] = dictSize++;
+                w = k;
+            }
+        }
+
+        if (w !== '') {
+            result.push(dictionary[w]);
+        }
+
+        result.dictionarySize = dictSize;
+        return result;
+    }
+};

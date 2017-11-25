@@ -20,7 +20,7 @@ class Message
      * Краткое описание функции
      * Функция для более читабельной передачи данных с блока на форму профиля
      */
-    public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10, $row11, $row12, $row13, $row14, $Login)
+    public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10, $row11, $row12, $row13, $row14, $Login,$pic)
     {
         $str = "ProfileUsers.php?
     name=$row0&
@@ -37,7 +37,8 @@ class Message
     un12=$row12&
     un13=$row13&
     un14=$row14&
-    un15=$Login";
+    un15=$Login&
+    pic=$pic";
         return $str;
     }
 }

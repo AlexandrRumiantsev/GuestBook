@@ -14,6 +14,7 @@ $q11= $_GET[un12];
 $q12= $_GET[un13];
 $q13= $_GET[un14];
 $user = $_GET[un15];
+$pic = $_GET[pic];
 //echo "$q1, $q2, $q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10,$q11,$q12,$q13";
 echo"
 <head> 
@@ -24,7 +25,7 @@ echo"
 </head>
 <body style='background-image:url(Background.jpg);'>
 <div class='container' style='margin-top:140px; background-color:rgba(0, 0, 0, 0.5);  display: block; width: 500px; height: 300px; border-style: groove;'>
-<img src='$q13'  style='float:left; margin-top: 32px;margin-left:15px; margin-right:35px; width: 200px; height:200px;'>
+<img src='$pic'  style='float:left; margin-top: 32px;margin-left:15px; margin-right:35px; width: 200px; height:200px;'>
 <div style='float:left; margin-top: 32px; color:white;'>Пользователь:<br>$name<br>
 <br>
 E-mail:$q9<br>
