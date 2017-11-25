@@ -1,21 +1,28 @@
 <?
-/**
- * Краткое описание функции
- * Функция подсчитывает кол-во сообщений пользователя в бд и выводит на форму
- */
-function Timer($login){
-     $link = mysqli_connect("localhost", "root", "", "GuestBook");
-     $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
-    $mysqliBase = mysqli_query($link, $query);
-    return $num_rows = mysqli_num_rows($mysqliBase);
-    };
+class Library
+{
+    /**
+     * Краткое описание функции
+     * Функция подсчитывает кол-во сообщений пользователя в бд и выводит на форму
+     */
+public function Timer($login)
+    {
+        $link = mysqli_connect("localhost", "root", "", "GuestBook");
+        $query = "SELECT * FROM `Message` WHERE  toUser='$login'";
+        $mysqliBase = mysqli_query($link, $query);
+        return $num_rows  = mysqli_num_rows($mysqliBase);
+    }
+};
 
-/**
- * Краткое описание функции
- * Функция для более читабельной передачи данных с блока на форму профиля
- */
-function formUser($row0,$row2,$row3,$row4,$row5,$row6,$row7,$row8,$row9,$row10,$row11,$row12,$row13,$row14,$Login){
-    $str = "ProfileUsers.php?
+class Message
+{
+    /**
+     * Краткое описание функции
+     * Функция для более читабельной передачи данных с блока на форму профиля
+     */
+    public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10, $row11, $row12, $row13, $row14, $Login)
+    {
+        $str = "ProfileUsers.php?
     name=$row0&
     un2=$row2&
     un3=$row3&
@@ -31,8 +38,9 @@ function formUser($row0,$row2,$row3,$row4,$row5,$row6,$row7,$row8,$row9,$row10,$
     un13=$row13&
     un14=$row14&
     un15=$Login";
-    return $str;
-};
+        return $str;
+    }
+}
 
 /**
  * Краткое описание класса

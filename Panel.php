@@ -39,8 +39,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 						 </div> ",$row[6] , $row[0]);
 					$Login = $row[0];
 					$mail = $row[2];
-					include 'MyFramework\OneCollection.php';
-					$countMess = Timer($Login);
+					require_once  'MyFramework\OneCollection.php';
+					$library = new Library();
+					$countMess = $library ->Timer($Login);
 					echo "<div style='color:white; position:absolute; padding-top:120px;'>У вас $countMess сообщений</div>";
 					
 				};
