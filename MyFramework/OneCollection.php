@@ -1,5 +1,21 @@
 <?
-class Library
+//Классы для работы с БД
+class connectToBD
+{
+    var $log = 'root';
+    var $password = '';
+    var $table = 'GuestBook';
+    var $host =  'localhost';
+    function connect($sql){
+        $link = mysqli_connect($this->host, $this->log, $this->password, $this->table);
+         //русскоязычный вывод из БД
+        mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+        mysqli_query($link, "SET CHARACTER SET 'utf8'");
+        return $mysqliResult = mysqli_query($link, $sql);
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////
+class Library extends connectToBD
 {
     /**
      * Краткое описание функции
@@ -7,7 +23,7 @@ class Library
      */
 public function Timer($login)
     {
-        $link = mysqli_connect("localhost", "root", "", "GuestBook");
+        $link = mysqli_connect($this->host, $this->log, $this->password, $this->table);
         $query = "SELECT * FROM `Message` WHERE  toUser='$login'";
         $mysqliBase = mysqli_query($link, $query);
         return $num_rows  = mysqli_num_rows($mysqliBase);
