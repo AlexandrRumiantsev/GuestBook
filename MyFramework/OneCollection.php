@@ -1,5 +1,27 @@
 <?
 //Классы для работы с БД
+class sqlSort
+{
+  function sqlSort($Email,$first_name,$active){
+      if($first_name != null and $Email != null){
+            return $query  = "SELECT * 
+            FROM `Users` WHERE Users='$first_name'";}
+        else if($Email != null) {
+            return $query  = "SELECT * 
+            FROM `Users` WHERE  Mail='$Email'";}
+        else if($Email != null and $first_name != null) {
+            return $query  = "SELECT `Users`.* ,`RegUsers`.* 
+            FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log`WHERE  Mail='$Email' and Users='$first_name'";}
+        else if($Email != null and $first_name == null) {
+            return $query  = "SELECT `Users`.* ,`RegUsers`.* 
+            FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Mail='$Email'";}
+        else if($Email == null and $first_name != null) {
+            return $query  = "SELECT `Users`.* ,`RegUsers`.* 
+            FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Users='$first_name'";}
+        else return $query  = 'SELECT `Users`.* ,`RegUsers`.* 
+            FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` LIMIT '.(($active*3)-3).",3";
+    }
+}
 class connectToBD
 {
     var $log = 'root';

@@ -35,6 +35,8 @@
 <input class="focus" style="border-radius: 7px 7px 7px 7px;" id="submit" type="submit" value="Найти и вывести"><br/>
 </form>
 <?
+require_once  'MyFramework\OneCollection.php';
+error_reporting(0);
 //---------- Настройки GB ----------//
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 //Вывод из базы и отображение символов кириллицы
@@ -44,12 +46,8 @@ $first_name = $_GET['first_name'];
 $Email = $_GET['E-Mail'];
 $active= $_GET['page'];
 if($active == null){$active = 1;} else $active= $_GET['page'];
-if($first_name != null and $Email != null){$query  = "SELECT * FROM `Users` WHERE Users='$first_name'";}
-else if($Email != null) {$query  = "SELECT * FROM `Users` WHERE  Mail='$Email'";}
-else if($Email != null and $first_name != null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Mail='$Email' and Users='$first_name'";}
-else if($Email != null and $first_name == null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Mail='$Email'";}
-else if($Email == null and $first_name != null) {$query  = "SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` WHERE  Users='$first_name'";}
-else $query  = 'SELECT `Users`.* ,`RegUsers`.* FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` LIMIT '.(($active*3)-3).",3";
+$sqlSort = new sqlSort();
+$query = $sqlSort ->sqlSort($Email,$first_name,$active);
 $stmt = mysqli_prepare($link, $query);
 //Вытащить все строки из базы и посчитать
 $queryAll  = 'SELECT COUNT(1) FROM Users';
