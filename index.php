@@ -39,9 +39,7 @@ require_once  'MyFramework\OneCollection.php';
 error_reporting(0);
 //---------- Настройки GB ----------//
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
-//Вывод из базы и отображение символов кириллицы
-//mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
-//mysqli_query($link, "SET CHARACTER SET 'utf8'");
+
 $first_name = $_GET['first_name'];
 $Email = $_GET['E-Mail'];
 $active= $_GET['page'];
@@ -97,6 +95,7 @@ if (mysqli_multi_query($link, $query)) {
         }
     } while (mysqli_next_result($link));
 }
+///////////////////////////////////////////////////////////////////////////
 $count_pages=$CountAllStringInBase/3;
 $count_pages = ceil($count_pages);
   $active = $_GET['page'];
@@ -115,6 +114,7 @@ $count_pages = ceil($count_pages);
       $end = $count_pages;
       if ($start < 1) $start = 1;
     }
+///////////////////////////////////////////////////////////////////////////
 ?>
   <!-- Дальше идёт вывод Pagination -->
     <div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>

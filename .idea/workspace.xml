@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154d351c-4c27-4f83-8ba1-eb8e6590d510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyFramework/OneCollection.php" afterPath="$PROJECT_DIR$/MyFramework/OneCollection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <ignored path="book2.iws" />
@@ -26,29 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
+            <state relative-caret-position="340">
+              <caret line="116" column="75" selection-start-line="116" selection-start-column="75" selection-end-line="116" selection-end-column="75" />
               <folding>
                 <element signature="e#3#45#0#PHP" expanded="true" />
-                <marker date="1511805186573" expanded="true" signature="2406:2432" placeholder="SELECT COUNT... Users" />
-                <marker date="1511805186573" expanded="true" signature="3358:3441" placeholder="..." />
-                <marker date="1511805186573" expanded="true" signature="3958:4000" placeholder="..." />
-                <marker date="1511805186573" expanded="true" signature="4001:4011" placeholder="..." />
-                <marker date="1511805186573" expanded="true" signature="4190:4229" placeholder="..." />
-                <marker date="1511805186573" expanded="true" signature="4230:4240" placeholder="..." />
-                <marker date="1511805186573" expanded="true" signature="4745:4758" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="2238:2264" placeholder="SELECT COUNT... Users" />
+                <marker date="1511805765043" expanded="true" signature="3190:3273" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="3790:3832" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="3833:3843" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="4022:4061" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="4062:4072" placeholder="..." />
+                <marker date="1511805765043" expanded="true" signature="4577:4590" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneCollection.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OneCollection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyFramework/OneCollection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="-442">
               <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <marker date="1511805165452" expanded="true" signature="172:232" placeholder="SELECT * FRO... Users" />
@@ -512,7 +510,7 @@
       <workItem from="1511644742778" duration="4058000" />
       <workItem from="1511716372285" duration="6322000" />
       <workItem from="1511803322431" duration="1881000" />
-      <workItem from="1511805402418" duration="49000" />
+      <workItem from="1511805402418" duration="360000" />
     </task>
     <servers />
   </component>
@@ -528,7 +526,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338725000" />
+    <option name="totallyTimeSpent" value="339036000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -947,26 +945,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
-          <folding>
-            <element signature="e#3#45#0#PHP" expanded="true" />
-            <marker date="1511805186573" expanded="true" signature="2406:2432" placeholder="SELECT COUNT... Users" />
-            <marker date="1511805186573" expanded="true" signature="3358:3441" placeholder="..." />
-            <marker date="1511805186573" expanded="true" signature="3958:4000" placeholder="..." />
-            <marker date="1511805186573" expanded="true" signature="4001:4011" placeholder="..." />
-            <marker date="1511805186573" expanded="true" signature="4190:4229" placeholder="..." />
-            <marker date="1511805186573" expanded="true" signature="4230:4240" placeholder="..." />
-            <marker date="1511805186573" expanded="true" signature="4745:4758" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyFramework/OneCollection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="-442">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <marker date="1511805165452" expanded="true" signature="172:232" placeholder="SELECT * FRO... Users" />
@@ -976,6 +957,23 @@
             <marker date="1511805165452" expanded="true" signature="884:1005" placeholder="SELECT `User... Users" />
             <marker date="1511805165452" expanded="true" signature="1040:1162" placeholder="SELECT `User... Users" />
             <marker date="1511805165452" expanded="true" signature="2738:2784" placeholder="SELECT * FRO... Message" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="116" column="75" selection-start-line="116" selection-start-column="75" selection-end-line="116" selection-end-column="75" />
+          <folding>
+            <element signature="e#3#45#0#PHP" expanded="true" />
+            <marker date="1511805765043" expanded="true" signature="2238:2264" placeholder="SELECT COUNT... Users" />
+            <marker date="1511805765043" expanded="true" signature="3190:3273" placeholder="..." />
+            <marker date="1511805765043" expanded="true" signature="3790:3832" placeholder="..." />
+            <marker date="1511805765043" expanded="true" signature="3833:3843" placeholder="..." />
+            <marker date="1511805765043" expanded="true" signature="4022:4061" placeholder="..." />
+            <marker date="1511805765043" expanded="true" signature="4062:4072" placeholder="..." />
+            <marker date="1511805765043" expanded="true" signature="4577:4590" placeholder="..." />
           </folding>
         </state>
       </provider>
