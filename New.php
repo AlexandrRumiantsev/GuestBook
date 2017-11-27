@@ -7,7 +7,8 @@ $url = $_POST['msg_url'];
 $time = time();
 //Работа с картинкой
 $file = $_FILES['filesName'];
-if($text == null or $name == null){echo "<script> alert('Необходимо авторизоватся и заполнить поле - Сообщение'); window.location.href = 'index.php';</script>";} 
+if($text == null or $name == null){
+	echo "<script> alert('Необходимо авторизоватся и заполнить поле - Сообщение'); window.location.href = 'index.php';</script>";}
 $nameFile = $_FILES['filesName']['name'];
 //Определяем IP и Браузер пользователя
 $Br = $_SERVER['HTTP_USER_AGENT'];
@@ -26,7 +27,8 @@ $mCode = $fileToDirect->save_source_code($file,$fileTmp);
 $pathPicture = $path . $_FILES['filesName']['names'];
 $text = strip_tags($text);
 $name = strip_tags($name);
-$comment =   '<div style="font-weight:bolder; align:center;">'  .'</div>'  .'<br>'  .'<p style="width:340px;">' .$text .'</p>' .'<hr style="display:block; width:200px;">';       
+$comment =   '<div style="font-weight:bolder; align:center;">'  .'</div>'
+	         .'<br>'  .'<p style="width:340px;">' .$text .'</p>' .'<hr style="display:block; width:200px;">';
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
