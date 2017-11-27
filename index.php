@@ -40,8 +40,8 @@ error_reporting(0);
 //---------- Настройки GB ----------//
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 //Вывод из базы и отображение символов кириллицы
-mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
-mysqli_query($link, "SET CHARACTER SET 'utf8'");
+//mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+//mysqli_query($link, "SET CHARACTER SET 'utf8'");
 $first_name = $_GET['first_name'];
 $Email = $_GET['E-Mail'];
 $active= $_GET['page'];

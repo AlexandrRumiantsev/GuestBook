@@ -24,10 +24,21 @@ class sqlSort
 }
 class connectToBD
 {
-    var $log = 'root';
-    var $password = '';
-    var $table = 'GuestBook';
+    private $log;
+    private $password;
+    private $table;
     var $host =  'localhost';
+
+    //Устанавливаю геттер и сеттер для Логина, Пароля и Таблицы.
+    public function getLog(){return $this->log;}
+    public function setLog($log){$this->log = $log;}
+
+    public function getPass(){return $this->password;}
+    public function setPass($password){$this->password = $password;}
+
+    public function getTable(){return $this->table;}
+    public function setTable($table){$this->table = $table;}
+
     function connect($sql){
         $link = mysqli_connect($this->host, $this->log, $this->password, $this->table);
          //русскоязычный вывод из БД
@@ -45,7 +56,17 @@ class Library extends connectToBD
      */
 public function Timer($login)
     {
-        $link = mysqli_connect($this->host, $this->log, $this->password, $this->table);
+        $log = new connectToBD();
+        $log->setLog('root');
+        $log = $log->getLog();
+        $password = new connectToBD();
+        $password->setPass('');
+        $password = $password->getPass();
+        $table = new connectToBD();
+        $table->setTable('GuestBook');
+        $table = $table->getTable();
+
+        $link = mysqli_connect($this->host, $log, $password, $table);
         $query = "SELECT * FROM `Message` WHERE  toUser='$login'";
         $mysqliBase = mysqli_query($link, $query);
         return $num_rows  = mysqli_num_rows($mysqliBase);
