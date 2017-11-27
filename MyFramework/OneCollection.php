@@ -102,6 +102,14 @@ class Message
     }
 }
 
+class fileToDirect
+{
+    public function save_source_code($file,$fileTmp)
+    {
+        $path = "source/".$file;
+        move_uploaded_file($fileTmp, $path);
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected

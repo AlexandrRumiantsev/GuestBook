@@ -1,4 +1,5 @@
-<?php  
+<?php
+require_once  'MyFramework\OneCollection.php';
 $text = $_POST['msg_message'];
 $name = $_POST['msg_from'];
 $mail = $_POST['msg_mail'];
@@ -30,40 +31,12 @@ if($_FILES['filesName']['size'] < 1048576)
 if($_FILES['filesName']['type'] == 'text/plain' and $_FILES['filesName']['size'] < 100)
 {};
 
-//Запись файла в папку + Запись пути к файлу(В БД)
-	
-function save_source_code($cName)
-{
+//Запись файла в папку
+$file = $_FILES["filesName"]["name"];
+$fileTmp =$_FILES["filesName"]["tmp_name"];
 
-$path = "source/".$_FILES["filesName"]["name"];
-move_uploaded_file($_FILES["filesName"]["tmp_name"], $path);
-    
-}
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/* 
-$uploaddir = '/source/';
-$uploadfile = $uploaddir . basename($_FILES['files']['name']);
-
-echo '<pre>';
-if (move_uploaded_file($_FILES['files'], $uploadfile)) {
-    echo "Файл корректен и был успешно загружен.\n";
-} else {
-    echo "Возможная атака с помощью файловой загрузки!\n";
-}
-
-print "</pre>"; */
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Запись файла в папку НЕ РАБОТАет этот вариант
-$mCode = save_source_code($_FILES['filesName']);
-					
-//$path = 'source\ ';
-
+$fileToDirect = new fileToDirect();
+$mCode = $fileToDirect->save_source_code($file,$fileTmp);
 
 $pathPicture = $path . $_FILES['filesName']['names'];
 
@@ -77,7 +50,8 @@ ini_set('display_startup_errors', TRUE);
 	$mysqli = new mysqli ("localhost","root","","GuestBook");
       $mysqli -> query ("SET CHARSET 'utf8'");
 	 $date = date('Y-m-d');
-	 $q = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse,times) VALUES ('$name','$date','$mail','$url','$text', '$nameFile','$ip','$Br','$time')";
+	 $q = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse,times) VALUES 
+                             ('$name','$date','$mail','$url','$text','$nameFile','$ip','$Br','$time')";
      $success = $mysqli -> query ("$q");
     if($success == 1){$mysqli -> close (); 	
 	header('Location: index.php');}
