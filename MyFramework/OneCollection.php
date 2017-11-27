@@ -110,6 +110,26 @@ class fileToDirect
         move_uploaded_file($fileTmp, $path);
     }
 }
+
+class audit
+{
+    public function auditType($type){
+        if($type == 'text/plain') {echo "Ввод текстового файла на данный момент не реализован!";}
+        if ($type == "image/gif" or
+            $type == "image/jpeg" or
+            $type == "image/jpg" or
+            $type == "image/png" or
+            $type == 'text/plain' or
+            $type == Null) {}
+        else {
+            echo "Не корректный тип файла!";
+            exit();}}
+
+    public function auditSize($size){
+        if($size < 1048576)
+        {}else{echo"Не допустимый вес файла!";exit();}
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected

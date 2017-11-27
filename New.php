@@ -14,22 +14,18 @@ $nameFile = $_FILES['filesName']['name'];
 //Определяем IP и Браузер пользователя
 $Br = $_SERVER['HTTP_USER_AGENT'];
 $ip = $_SERVER['REMOTE_ADDR'];
-//Проверка файла на ТИП
-if($_FILES['filesName']['type'] == "image/gif" or 
-   $_FILES['filesName']['type'] =="image/jpeg" or 
-   $_FILES['filesName']['type'] =="image/jpg" or 
-   $_FILES['filesName']['type'] =="image/png" or 
-   $_FILES['filesName']['type'] == 'text/plain' or
-    $_FILES['filesName']['type'] == Null)
-{}else{echo"Error!!"; echo "Недопустимый формат файла!";}
 
+$type = $_FILES['filesName']['type'];
+$size = $_FILES['filesName']['size'];
+$audit = new audit();
+$resultAuditSize = $audit ->auditSize($size);
+$resultAuditType = $audit ->auditType($type);
 //Проверка файла на РАЗМЕР не более 1мб
-if($_FILES['filesName']['size'] < 1048576)
-{}else{echo"Error!!"; echo "Недопустимый вес файла!";}
 
-//Проверка текстового файла на РАЗМЕР 
-if($_FILES['filesName']['type'] == 'text/plain' and $_FILES['filesName']['size'] < 100)
-{};
+
+//Проверка текстового файла на ТИП
+if($_FILES['filesName']['type'] == 'text/plain')
+{echo "Ввод текстового файла на данный момент не реализован!";};
 
 //Запись файла в папку
 $file = $_FILES["filesName"]["name"];
