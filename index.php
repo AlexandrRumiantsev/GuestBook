@@ -147,7 +147,7 @@ $count_pages = ceil($count_pages);
 * Имя:
 </div>
 <div align="left">
-<input type="text" class="focus" style="border-style: solid;border-radius: 7px 7px 7px 7px;" id="mess" name="msg_from" value="<?echo $Login;?>" placeholder="<?if($Login==Null){echo"Авторезуйтесь";}?>"maxlength="40" size="20">
+<input type="text" class="focus" style="border-style: solid;border-radius: 7px 7px 7px 7px;" id="mess" name="msg_from" value="<?global $Login;echo $Login; ?>" placeholder="<?if($Login==Null){echo"Авторезуйтесь";}?>"maxlength="40" size="20">
 </div>
 </div>
 </div>
@@ -196,4 +196,9 @@ E-Mail:
 </div>
 <script type="text/javascript" src="js\indexScript.js"></script>
 </body>
+<?
+require_once  'MyFramework\OneCollection.php';
+$user = new userInfo();
+$user -> userInfo($Login);
+?>
 </html>

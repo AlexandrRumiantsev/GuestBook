@@ -130,6 +130,41 @@ class audit
         {}else{echo"Не допустимый вес файла!";exit();}
     }
 }
+
+class userInfo extends connectToBD
+{
+
+ function userInfo($Login){
+     $user = [
+         "userIp" => $_SERVER["REMOTE_ADDR"],
+         "userLanguage" => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
+         "timeIn" => date(DATE_RFC822),
+         "fromIn" => $_SERVER["HTTP_REFERER"],
+         "login" => $Login
+     ];
+     if($Login == null){$Login = "Guest".$user["userIp"];}
+     //else $Login  = $user["login"];
+     $userIp =$user["userIp"];
+     $userLanguage =$user["userLanguage"];
+     $timeIn =$user["timeIn"];
+     $fromIn =$user["fromIn"];
+     $log = new connectToBD();
+     $log->setLog('root');
+     $log = $log->getLog();
+     $password = new connectToBD();
+     $password->setPass('');
+     $password = $password->getPass();
+     $table = new connectToBD();
+     $table->setTable('GuestBook');
+     $base = $table->getTable();
+     $sql ="INSERT INTO usersInfo (userIp,userLanguage,timeIn,fromIn,userLog) VALUES 
+                             ('$userIp','$userLanguage','$timeIn','$fromIn','$Login')";
+     $link = mysqli_connect($this->host, $log, $password, $base);
+     mysqli_query($link, $sql);
+     }
+    function userStep(){
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
