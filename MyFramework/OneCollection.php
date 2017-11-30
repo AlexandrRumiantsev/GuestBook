@@ -165,6 +165,42 @@ class userInfo extends connectToBD
     function userStep(){
     }
 }
+
+class pagination
+{
+    function paginationEnter($count_pages, $active, $count_show_pages, $url,$url_page){
+
+if ($count_pages > 1) {
+$left = $active - 1;
+$right = $count_pages - $active;
+if ($left < floor($count_show_pages / 2)) $start = 1;
+else $start = $active - floor($count_show_pages / 2);
+$end = $start + $count_show_pages - 1;
+if ($end > $count_pages) {
+$start -= ($end - $count_pages);
+$end = $count_pages;
+if ($start < 1) $start = 1;
+}
+///////////////////////////////////////////////////////////////////////////
+?>
+<!-- Дальше идёт вывод Pagination -->
+<div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>
+<div id="pagination" style="font-size: 23px;">
+    <span style="color:white;">Страницы: </span>
+    <?php if ($active != 1) { ?>
+        <a href="<?=$url?>" title="Первая страница">&lt;&lt;&lt;</a>
+        <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>" title="Предыдущая страница">&lt;</a>
+    <?php } ?>
+    <?php for ($i = $start; $i <= $end; $i++) { ?>
+        <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?>
+    <?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
+    <?php } ?>
+    <a href="<?=$url_page.($active + 1)?>" title="Следующая страница">&gt;</a>
+    <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
+    <?php } ?>
+</div>
+    <?php }}
+
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
