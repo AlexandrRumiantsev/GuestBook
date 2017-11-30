@@ -59,44 +59,8 @@ mysqli_stmt_execute($stmt);
 mysqli_stmt_store_result($stmt);
 $countString = mysqli_stmt_num_rows($stmt);
 require_once  'MyFramework\OneCollection.php';
-if (mysqli_multi_query($link, $query)) {
-    do {
-        if ($result = mysqli_store_result($link)) {
-            while ($row = mysqli_fetch_row($result)) {
-				// тут выводит столбцы из таблицы
-                $idMain = $row[0].$row[1].$row[2].$row[3];
-				echo "<div  id='$idMain' class='mainBlock'>";
-                     /*Форматирую строку с датой */ $expd = explode("-",$row[4]);
-                                                      if($row[14]==null){$pic='images\ava.jpg';}else $pic=$row[15];
-                echo"<link rel='stylesheet' href='css/styleMessage.css' type='text/css' media='screen' />";
-                echo"<div  class='imgIn'>
-                     <img class='imgMain'  src='$pic'>
-                     </div>";
-                $messageClass = new Message();
-                $userProf = $messageClass -> formUser($row[0],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10],$row[11],$row[12],$row[13],$row[14],$Login,$pic);
-                echo"<a id='User$row[0]'  class='userID' target='_blank' href='$userProf'>$row[0]</a>";
-                echo"
-<button data-msg_time='$row[8]' data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxClose' id='agaxClose' style='background-image: url(images/crestic.png);'>
-</button>";
-                echo"
-<button data-msg_time='$row[8]' data-msg_id='$row[1]' data-user_id='$row[0]' data-louder_id='louder$row[0]$row[1]' class='agaxEdit' id='agaxEdit' style='background-image: url(images/edit.png);'>
-</button>";
-				echo"<br><br><div class='blockOne'> $expd[2].$expd[1].$expd[0]</div><br><br><br><br>";
-                echo"<div id='louder$row[0]$row[1]' class='louderClass'><img src='images/loader.gif' /></div>";
-                    if($row[5] != null) {
-                        printf("<p id='textUsers$row[0]' class='messageID' >%s</p><img class='imgMesage' src='source\%s'>",
-                            $row[1], $row[5]);
-                    }else  printf("<p id='textUsers$row[0]' class='messageID' style='height:100px;'>%s</p><img class='imgMesage' src='images\pic.jpg'>",
-                        $row[1]);
-                        echo"</div>";
-            }
-            mysqli_free_result($result);
-        }
-        if (mysqli_more_results($link)) {
-            printf("-----------------\n");
-        }
-    } while (mysqli_next_result($link));
-}
+$blocksMain = new blocksMain();
+$blocksMain ->blocksMain($link, $query,$Login);
 ///////////////////////////////////////////////////////////////////////////
 $count_pages=$CountAllStringInBase/3;
 $count_pages = ceil($count_pages);
