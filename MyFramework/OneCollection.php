@@ -133,36 +133,73 @@ class audit
 
 class userInfo extends connectToBD
 {
+    function geoDate()
+    {
+        $ip = $_SERVER["REMOTE_ADDR"];
+        $ip = '78.106.137.192';
+        $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
+        $xml = new SimpleXMLElement($result);
+        $attributes = $xml->ip->attributes[0];
+        $inetnum = $xml->ip->inetnum;
+        $country = $xml->ip->country;
+        $city = $xml->ip->city;
+        $region = $xml->ip->region;
+        $district = $xml->ip->district;
+        $lat = $xml->ip->lat;
+        $lng = $xml->ip->lng;
+        return $geoBase = array(
+            attributes => $attributes,
+            inetnum => $inetnum,
+            country => $country,
+            city => $city,
+            region => $region,
+            district => $district,
+            lat => $lat,
+            lng => $lng
+        );
+    }
+    function userInfo($Login)
+    {
+        $user = [
+            "userIp" => $_SERVER["REMOTE_ADDR"],
+            "userLanguage" => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
+            "timeIn" => date(DATE_RFC822),
+            "fromIn" => $_SERVER["HTTP_REFERER"],
+            "login" => $Login
+        ];
+        if ($Login == null) {
+            $Login = "Guest" . $user["userIp"];
+        }
+        //else $Login  = $user["login"];
+        $userIp = $user["userIp"];
+        $userLanguage = $user["userLanguage"];
+        $timeIn = $user["timeIn"];
+        $fromIn = $user["fromIn"];
+        $log = new connectToBD();
+        $log->setLog('root');
+        $log = $log->getLog();
+        $password = new connectToBD();
+        $password->setPass('');
+        $password = $password->getPass();
+        $table = new connectToBD();
+        $table->setTable('GuestBook');
+        $base = $table->getTable();
+        $geo = $this->geoDate();
+        $inetnum = $geo['inetnum'];
+        $country = $geo['country'];
+        $city = $geo['city'];
+        $region = $geo['region'];
+        $district = $geo['district'];
+        $lat = $geo['lat'];
+        $lng = $geo['lng'];
+        $sql = "INSERT INTO usersInfo (userIp,userLanguage,timeIn,fromIn,userLog,internum,country,city,region,district,lat,lng) VALUES 
+                             ('$userIp','$userLanguage','$timeIn','$fromIn','$Login','$inetnum','$country','$city','$region','$district','$lat','$lng')";
+        $link = mysqli_connect($this->host, $log, $password, $base);
 
- function userInfo($Login){
-     $user = [
-         "userIp" => $_SERVER["REMOTE_ADDR"],
-         "userLanguage" => $_SERVER['HTTP_ACCEPT_LANGUAGE'],
-         "timeIn" => date(DATE_RFC822),
-         "fromIn" => $_SERVER["HTTP_REFERER"],
-         "login" => $Login
-     ];
-     if($Login == null){$Login = "Guest".$user["userIp"];}
-     //else $Login  = $user["login"];
-     $userIp =$user["userIp"];
-     $userLanguage =$user["userLanguage"];
-     $timeIn =$user["timeIn"];
-     $fromIn =$user["fromIn"];
-     $log = new connectToBD();
-     $log->setLog('root');
-     $log = $log->getLog();
-     $password = new connectToBD();
-     $password->setPass('');
-     $password = $password->getPass();
-     $table = new connectToBD();
-     $table->setTable('GuestBook');
-     $base = $table->getTable();
-     $sql ="INSERT INTO usersInfo (userIp,userLanguage,timeIn,fromIn,userLog) VALUES 
-                             ('$userIp','$userLanguage','$timeIn','$fromIn','$Login')";
-     $link = mysqli_connect($this->host, $log, $password, $base);
-     mysqli_query($link, $sql);
-     }
-    function userStep(){
+        mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+        mysqli_query($link, "SET CHARACTER SET 'utf8'");
+        $result = mysqli_query($link, $sql);
+        if($result == false){echo"<script>alert('Произошла неизвестная ошибка! Обратитесь к администратору.')</script>";}
     }
 }
 

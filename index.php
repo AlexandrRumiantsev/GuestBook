@@ -133,6 +133,5 @@ E-Mail:
 <?
 require_once  'MyFramework\OneCollection.php';
 $user = new userInfo();
-$user -> userInfo($Login);
 ?>
 </html>
