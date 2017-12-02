@@ -192,8 +192,16 @@ class userInfo extends connectToBD
         $district = $geo['district'];
         $lat = $geo['lat'];
         $lng = $geo['lng'];
-        $sql = "INSERT INTO usersInfo (userIp,userLanguage,timeIn,fromIn,userLog,internum,country,city,region,district,lat,lng) VALUES 
-                             ('$userIp','$userLanguage','$timeIn','$fromIn','$Login','$inetnum','$country','$city','$region','$district','$lat','$lng')";
+        $sql = "INSERT INTO usersInfo (userIp,userLanguage,timeIn,
+                                       fromIn,userLog,internum,
+                                       country,city,region,
+                                       district,lat,lng) VALUES 
+                             ('$userIp','$userLanguage',
+                              '$timeIn','$fromIn',
+                              '$Login','$inetnum',
+                              '$country','$city',
+                              '$region','$district',
+                              '$lat','$lng')";
         $link = mysqli_connect($this->host, $log, $password, $base);
 
         mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
