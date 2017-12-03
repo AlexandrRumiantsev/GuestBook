@@ -35,7 +35,6 @@ error_reporting(0);
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 //Вывод кирилицы из БД
 $link->set_charset("utf8");
-
 $first_name = $_GET['first_name'];
 $Email = $_GET['E-Mail'];
 $active= $_GET['page'];

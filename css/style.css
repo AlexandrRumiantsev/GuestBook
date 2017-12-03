@@ -64,3 +64,16 @@ h2{
 .inputS{
 	border-radius: 7px 7px 7px 7px;
 }
+.subm {
+
+	 background-image: url(edit.png);
+ }
+
+.close{
+	  background-image: url(images/close.png);
+  }
+
+.text{
+	background-color: #f6f6f6; /*Цвет текстового поля*/
+	border-radius: 10px 10px 10px 10px; /*Закругляем уголки*/
+  }

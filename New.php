@@ -27,8 +27,8 @@ $mCode = $fileToDirect->save_source_code($file,$fileTmp);
 $pathPicture = $path . $_FILES['filesName']['names'];
 $text = strip_tags($text);
 $name = strip_tags($name);
-$comment =   '<div style="font-weight:bolder; align:center;">'  .'</div>'
-	         .'<br>'  .'<p style="width:340px;">' .$text .'</p>' .'<hr style="display:block; width:200px;">';
+/*$comment =   '<div style="font-weight:bolder; align:center;">'  .'</div>'
+	         .'<br>'  .'<p style="width:340px;">' .$text .'</p>' .'<hr style="display:block; width:200px;">';*/
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
@@ -39,7 +39,8 @@ ini_set('display_startup_errors', TRUE);
 	 $q = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse,times) VALUES 
                              ('$name','$date','$mail','$url','$text','$nameFile','$ip','$Br','$time')";
      $success = $mysqli -> query ("$q");
-    if($success == 1){$mysqli -> close (); 	
-	header('Location: index.php');}
+    if($success == 1){$mysqli -> close ();
+		echo"<script>document.location.replace('index.php');alert('Запись успешно добавлена!');</script>";
+	}
 	else echo "Произошла ошибка";
 ?>
