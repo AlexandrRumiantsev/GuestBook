@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 	//Вывод кирилицы
 	mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
     mysqli_query($link, "SET CHARACTER SET 'utf8'");
-
+		$resultAutoriz;
 	if (mysqli_multi_query($link, $q)) {
     do {
         /* получаем первый результирующий набор */
@@ -45,12 +45,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 					$countMess = $library->Timer($Login);
 					echo "<div style='color:white; position:absolute; padding-top:120px;'>У вас $countMess сообщений</div>";
 				}else{}
-			}
+			}if($resultAutoriz!==true){echo"<script>alert('Вы ввели неправильный логин или пароль!');</script>";}
             mysqli_free_result($result);
-        }else { echo "Ничего не найдено";}
+        }
+        //else { echo 'Ничего не найдено';}
         /* печатаем разделитель */
         if (mysqli_more_results($link)) {
-            printf("-----------------\n");
+            printf('-----------------\n');
         }
     } while (mysqli_next_result($link));
 }
