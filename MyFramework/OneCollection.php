@@ -336,6 +336,35 @@ class answerMessage extends connectToBD
         if($result == false){echo"<script>alert('Произошла неизвестная ошибка! Обратитесь к администратору.')</script>";}
     }
 }
+
+class viewMessage
+{
+    function view($mysqliBase)
+    {
+        while ($row = mysqli_fetch_assoc($mysqliBase)) {
+            $text = $row["message"];
+            $userFrom = $row["fromUser"];
+            $userTo = $row["toUser"];
+            $userTime = $row["times"];
+            global $blockId;
+            $blockId = $userFrom . $userTo . $text;
+            echo "<div id='$blockId' style='border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;'>";
+
+            echo $row["fromUser"] . " в ";
+            echo "<div style='float:right;'>
+   <button data-user_from='$userFrom'
+           data-user_to='$userTo' 
+           class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'>
+   </button>
+   <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
+            echo "</div>";
+            echo $row["times"] . " написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            echo $row["message"];
+            echo "<br>";
+            echo "</div>";
+        }
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected

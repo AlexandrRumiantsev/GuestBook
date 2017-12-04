@@ -4,7 +4,6 @@
 </head>
 <title>Сообщения</title>
 <?
-
 $login=$_GET['log'];
 $mail=$_GET['mail'];
 $town=$_GET['town'];
@@ -16,7 +15,7 @@ $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
 Сообщения пользователя: <br><?echo $login?><br></body>
 
 <?
-
+require_once  'MyFramework\OneCollection.php';
 //Вывод из базы и отображение символов кириллицы
 mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
 mysqli_query($link, "SET CHARACTER SET 'utf8'");
@@ -24,7 +23,9 @@ mysqli_query($link, "SET CHARACTER SET 'utf8'");
 $mysqliBase = mysqli_query($link, $query);
 //Подсчёт сообщений юзеру для вывода на главную
 $num_rows =mysqli_num_rows($mysqliBase);
-while($row=mysqli_fetch_assoc($mysqliBase)){
+$viewMess = new viewMessage();
+$viewMess ->view($mysqliBase);
+/*while($row=mysqli_fetch_assoc($mysqliBase)){
 	$text = $row["message"];
     $userFrom = $row["fromUser"];
     $userTo = $row["toUser"];
@@ -33,14 +34,19 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
     $blockId = $userFrom .$userTo .$text;
     echo "<div id='$blockId' style='border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;'>";
     
-    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button data-user_from='$userFrom' data-user_to='$userTo' class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button>
-                                                                      <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
+    echo $row["fromUser"]." в ";      
+    echo "<div style='float:right;'>
+   <button data-user_from='$userFrom'
+           data-user_to='$userTo' 
+           class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'>
+   </button>
+   <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
     echo "</div>";
     echo $row["times"]." написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
     echo $row["message"];
     echo "<br>";
     echo "</div>";
-}
+}*/
 ?>
 
 
