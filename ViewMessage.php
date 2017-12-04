@@ -33,7 +33,7 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
     $blockId = $userFrom .$userTo .$text;
     echo "<div id='$blockId' style='border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;'>";
     
-    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button>
+    echo $row["fromUser"]." в ";      echo "<div style='float:right;'><button data-user_from='$userFrom' data-user_to='$userTo' class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'></button>
                                                                       <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
     echo "</div>";
     echo $row["times"]." написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -70,35 +70,25 @@ while($row=mysqli_fetch_assoc($mysqliBase)){
 	})});
 </script>
 
-<!--<script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function(){
         $(".otvet").click(function(){
-           // var msg = $(this).data('msg_id');
-            //var users = $(this).data('user_id');
-           // var louder = $(this).data('louder_id');
-            var result = prompt('Введите текст для изменения сообщения');
-            if(result) {
+            var msg = prompt('Введите сообщение');
+            var usersTo = $(this).data('user_to');
+            var usersFrom = $(this).data('user_from');
+
+
+            if(msg) {
                 $.ajax({
-                    url: 'RedactPost.php',
-                    data: {nameUpp: users, textUpp: result, oldText: msg},
+                    type: 'POST',
+                    url: 'Message.php',
+                    data: {usersTo: usersTo, msg: msg, userFrom: usersFrom},
                     success: function(){
-                        alert('Запись изменена');
-                    },
-                    type: 'GET',
-                    beforeSend: function () {
-                        $("#"+louder).css("display", "block");
-                        $("#"+louder).animate({opacity: 1}, 500);
+                        alert('Сообщение отправлено');
                     }
-                }).done(function (data) {
-                    $("#"+louder).animate({opacity: 0}, 500, function () {
-                        $("#"+louder).css("display", "none");
-                    });
-                });
-                //после отработки функции, делаю редирект, чтобы увидеть результат.
-                window.location.href = 'index.php';
-            }});
+                })}});
     });
-</script>-->
+</script>
 
 <?
 $msgFinal = $_GET['msg'];

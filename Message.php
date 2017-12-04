@@ -7,7 +7,7 @@
  */
 require_once  'MyFramework\OneCollection.php';
 $message=$_POST[msg];
-$UserFrom =$_POST[UserFrom];
+$UserFrom =$_POST[userFrom];
 $user=$_POST[usersTo];
 $time = date('H:i:s');
 $messegeUser = new Message();

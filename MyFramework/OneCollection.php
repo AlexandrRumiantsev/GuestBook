@@ -312,6 +312,30 @@ class blocksMain
     }
 }
 
+class answerMessage extends connectToBD
+{
+    function sendMessage($message,$fromUser,$toUser){
+        $log = new connectToBD();
+        $log->setLog('root');
+        $log = $log->getLog();
+        $password = new connectToBD();
+        $password->setPass('');
+        $password = $password->getPass();
+        $table = new connectToBD();
+        $table->setTable('GuestBook');
+        $table = $table->getTable();
+        $this->sendMessage();
+        $times = time();
+        $sql = "INSERT INTO Message (message,fromUser,toUser,times) VALUES 
+                             ('$message','$fromUser','$toUser','$times')";
+        $link = mysqli_connect($this->host, $log, $password, $table);
+
+        mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+        mysqli_query($link, "SET CHARACTER SET 'utf8'");
+        $result = mysqli_query($link, $sql);
+        if($result == false){echo"<script>alert('Произошла неизвестная ошибка! Обратитесь к администратору.')</script>";}
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
