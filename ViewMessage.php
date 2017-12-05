@@ -65,7 +65,7 @@ $viewMess ->view($mysqliBase);
                 $.ajax({
                     type: 'POST',
                     url: 'Message.php',
-                    data: {usersTo: usersTo, msg: msg, userFrom: usersFrom},
+                    data: {usersTo: usersTo, msg: msg, UserFrom: usersFrom},
                     success: function(){
                         alert('Сообщение отправлено');
                     }

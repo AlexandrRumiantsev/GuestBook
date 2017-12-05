@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154d351c-4c27-4f83-8ba1-eb8e6590d510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Message.php" afterPath="$PROJECT_DIR$/Message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ProfileUsers.php" afterPath="$PROJECT_DIR$/ProfileUsers.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ViewMessage.php" afterPath="$PROJECT_DIR$/ViewMessage.php" />
     </list>
     <ignored path="book2.iws" />
@@ -72,8 +69,8 @@
       <file leaf-file-name="Message.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,11 +79,11 @@
       <file leaf-file-name="ViewMessage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ViewMessage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+            <state relative-caret-position="244">
+              <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
               <folding>
-                <marker date="1512499334103" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
-                <marker date="1512499334103" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
+                <marker date="1512503971107" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
+                <marker date="1512503971107" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -164,9 +161,9 @@
         <option value="$PROJECT_DIR$/setting.php" />
         <option value="$PROJECT_DIR$/Panel.php" />
         <option value="$PROJECT_DIR$/MyFramework/OneCollection.php" />
-        <option value="$PROJECT_DIR$/ViewMessage.php" />
         <option value="$PROJECT_DIR$/ProfileUsers.php" />
         <option value="$PROJECT_DIR$/Message.php" />
+        <option value="$PROJECT_DIR$/ViewMessage.php" />
       </list>
     </option>
   </component>
@@ -547,7 +544,7 @@
       <workItem from="1512287380619" duration="9773000" />
       <workItem from="1512407649119" duration="4871000" />
       <workItem from="1512499213251" duration="5000" />
-      <workItem from="1512499258342" duration="4262000" />
+      <workItem from="1512499258342" duration="4758000" />
     </task>
     <servers />
   </component>
@@ -563,11 +560,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397429000" />
+    <option name="totallyTimeSpent" value="397925000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18078668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -603,6 +600,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Message.php</url>
+          <line>10</line>
+          <option name="timeStamp" value="271" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -612,7 +616,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="271" />
+      <option name="time" value="272" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PhpWebAppRunConfigurationType">
@@ -684,8 +688,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1512499334103" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
-            <marker date="1512499334103" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
+            <marker date="1512503971107" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
+            <marker date="1512503971107" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -765,17 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ViewMessage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
-          <folding>
-            <marker date="1512499334103" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
-            <marker date="1512499334103" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ProfileUsers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-484">
@@ -803,10 +796,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ViewMessage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="67" column="56" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
+          <folding>
+            <marker date="1512503971107" expanded="true" signature="302:348" placeholder="SELECT * FRO... Message" />
+            <marker date="1512503971107" expanded="true" signature="2664:2826" placeholder="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
