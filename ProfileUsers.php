@@ -1,5 +1,5 @@
 <?php
-$name= $_GET[name];
+$name= $_GET["name"];
 $q1= $_GET[un2];
 $q2= $_GET[un3];
 $q3= $_GET[un4];
@@ -36,19 +36,17 @@ E-mail:$q9<br>
 <div id='louder' style='position: absolute;padding-left:165px; padding-top:65px; display: none;'><img src='images/loader.gif' /></div>
 </div>
 
-<script type=\"text/javascript\">
+<script type='text/javascript'>
     $(document).ready(function(){
-        $(\".message\").click(function(){
+        $('.message').click(function(){
           var msg = prompt('Введите сообщение');
           var usersTo = '$name';
           var UserFrom = '$user';
+          
             if(msg) {
                 $.ajax({
                     url: 'Message.php',
-                    data: {usersTo: usersTo, msg: msg, UserFrom: UserFrom},
-                    success: function(){
-                        alert('Сообщение отправлено');                
-                    },
+                    data: {usersTo: usersTo, msg: msg, UserFrom: UserFrom},               
                     type: 'POST',
                     beforeSend: function () {
                         $(\"#\"+'louder').css(\"display\", \"block\");
@@ -58,7 +56,7 @@ E-mail:$q9<br>
              
                 //после отработки функции, делаю редирект, чтобы увидеть результат.
                 window.location.href = 'ProfileUsers.php?name=$name&un1=$q&un2=$q1&un3=$q2&un4=$q3&un5=$q4&un6=$q5&un7=$q6&un8=$q7&un9=$q8&un10=$q9&un11=$q10&un12=$q11&un13=$q12&un14=$q13&un15=$user';
-            }});
+            }else alert('Сообщение не отправлено');});
     });
 </script>
 </body>";
