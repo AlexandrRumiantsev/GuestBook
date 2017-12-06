@@ -1,6 +1,7 @@
 <html>
 <head>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js\messageJS.js"></script>
 </head>
 <title>Сообщения</title>
 <?
@@ -24,56 +25,6 @@ $mysqliBase = mysqli_query($link, $query);
 $num_rows =mysqli_num_rows($mysqliBase);
 $viewMess = new viewMessage();
 $viewMess ->view($mysqliBase);
-?>
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $(".close").click(function(){
-           var msg = $(this).data('msg_text');
-           var usersTo = $(this).data('user_to');
-            var usersFrom = $(this).data('user_from');
-            var times = $(this).data('time');
-			var idBlock = $(this).data('id_block');
-            var result = confirm('Удалить?');
-            if(result) {
-                $.ajax({
-                    url: 'ViewMessage.php',
-                    data: {msg: msg, usersTo: usersTo, usersFrom: usersFrom, times:times},
-                    success: function(){
-                        //скрытие блока
-                        $("#"+idBlock).hide();
-                        alert('Сообщение удалено');},
-                    type: 'GET',
-                        beforeSend: function () {
-                            //скрытие блока
-                            $("#"+idBlock).hide();
-                        }
-            })}
-	})});
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $(".otvet").click(function(){
-            var msg = prompt('Введите сообщение');
-            var usersTo = $(this).data('user_to');
-            var usersFrom = $(this).data('user_from');
-
-
-            if(msg) {
-                $.ajax({
-                    type: 'POST',
-                    url: 'Message.php',
-                    data: {usersTo: usersTo, msg: msg, UserFrom: usersFrom},
-                    success: function(){
-                        alert('Сообщение отправлено');
-                    }
-                })}});
-    });
-</script>
-
-<?
 $msgFinal = $_GET['msg'];
 $userToFinal = $_GET['usersTo'];
 $userFromFinal = $_GET['usersFrom'];

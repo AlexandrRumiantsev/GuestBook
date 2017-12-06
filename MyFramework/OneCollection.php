@@ -80,8 +80,8 @@ class Message
         $mysqli -> query ("SET CHARSET 'utf8'");
         $q = "INSERT INTO Message (message,fromUser,toUser,times) VALUES ('$message','$UserFrom','$user','$time')";
         $success = $mysqli -> query ("$q");
-        if($success == 1){echo"<script>alert('всё ок')</script>";}
-        else echo "<script>alert('Ошибка')</script>";}
+        if($success == 1){?>Сообщение доставлено успешно!<?;}
+        else ?>Произошла ошибка!<?;}
     /**
      * Краткое описание функции
      * Функция для более читабельной передачи данных с блока на форму профиля
