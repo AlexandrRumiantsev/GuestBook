@@ -8,11 +8,12 @@
 require_once  'MyFramework\OneCollection.php';
 $message=$_POST[msg];
 $UserFrom =$_POST[UserFrom];
-if($UserFrom==""){echo "<script>alert('Необходимо авторизоваться');</script>";}
+if($UserFrom==""){?><script language='javascript' type='text/javascript'>alert('Необходимо авторизоваться');</script><?;}
 else{
+    echo "<script language='javascript' type='text/javascript'>alert('Сообщение отправлено');</script>";
 $user=$_POST[usersTo];
 $time = date('H:i:s');
 $messegeUser = new Message();
 $messegeUser ->pushToBase($message,$UserFrom,$time,$user);
-    echo "<script>alert('Сообщение отправлено');</script>";}
+    }
 ?>
