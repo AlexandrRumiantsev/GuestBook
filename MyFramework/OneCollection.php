@@ -220,8 +220,13 @@ class userInfo extends connectToBD
 
 class pagination
 {
-    function paginationEnter($count_pages, $active, $count_show_pages, $url,$url_page){
-
+private $count_show_pages = 1;
+private $url = "/index.php";
+private $url_page = "/index.php?page=";
+    function paginationEnter($count_pages, $active){
+        $count_show_pages = $this->count_show_pages;
+        $url = $this->url;
+        $url_page = $this->url_page;
 if ($count_pages > 1) {
 $left = $active - 1;
 $right = $count_pages - $active;

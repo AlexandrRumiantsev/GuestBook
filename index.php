@@ -58,11 +58,8 @@ $count_pages=$CountAllStringInBase/3;
 $count_pages = ceil($count_pages);
   $active = $_GET['page'];
   if($_GET['page']==null) $active = 1;
-  $count_show_pages = 1;
-  $url = "/index.php";
-  $url_page = "/index.php?page=";
 $pagination = new pagination();
-$pagination ->paginationEnter($count_pages, $active, $count_show_pages, $url,$url_page)
+$pagination ->paginationEnter($count_pages, $active)
  ?>
 <!-- END Pagination -->
 <br>
