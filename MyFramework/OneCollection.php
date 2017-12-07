@@ -374,6 +374,11 @@ class viewMessage
 class autorUser
 {
     function auto($Login,$Password){
+        if(isset($_COOKIE['user']) and (isset($_COOKIE['password'])))
+        {
+            $Login = $_COOKIE['user'];
+            $Password = $_COOKIE['password'];
+        }
         if($Login){
             //Авторизация
             $link = mysqli_connect("localhost", "root", "", "GuestBook");
@@ -419,6 +424,13 @@ class autorUser
                 } while (mysqli_next_result($link));
             }
         }
+        $this-> userCookie($Login,$Password);
+    }
+
+    private function userCookie($Login,$Password){
+        error_reporting( E_ERROR );
+        setcookie("user", $Login);
+        setcookie("password", $Password);
     }
 }
 /**
