@@ -396,14 +396,20 @@ class autorUser
                             //echo("<script>alert('Вы ввели неправильный логин или пароль!');document.location.replace('index.php');</script>");
                             if ($Login == $log and $Password == $Pas) {
                                 $resultAutoriz = true;
-                                printf("<div style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
-                           <img style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
-         				   <form action='Profile.php?status=$row[7]&mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' method='post'>  <input  value='%s' type='text' class='text' style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
+                                printf("<div 
+style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
+                           <img 
+style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
+         				   <form action='Profile.php?status=$row[7]&mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' method='post'>  <input  value='%s' type='text' class='text' 
+style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
          				   <br>
          				   <div style='padding-left:44px;display:block;'>
-						 <input type='submit' style='background-size:contain;background-image: url(edit.png);width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>
-						 <a target='_blank' href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> <div style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'> </div></div></a> 
-						 <a href='index.php'> <img style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a> 
+						 <input type='submit' 
+style='background-size:contain;background-image: url(edit.png);width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>
+						 <a target='_blank' href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> <div 
+style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'> </div></div></a> 
+						 <a href='index.php'> <img 
+style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a> 
 						</div>
 						 </div> ", $row[6], $row[0]);
                                 $Login = $row[0];

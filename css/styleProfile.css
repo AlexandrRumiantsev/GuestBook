@@ -1,0 +1,51 @@
+.oneBlockProfile{
+    background:black;
+    border-radius: 7px 7px 7px 7px;
+    float:left; color:white;
+    width:250px; height:100px;
+    border-style:groove;
+    position:absolute;
+    font-size:18px;
+}
+.imgProfile{
+    width:90px;
+    height:90px;
+    padding-left:9px;
+    padding-right:11px;
+    padding-top:7px;
+    margin-left:0px;
+    float:left;
+    border-radius: 75px 75px 75px 75px;
+}
+.inputStyle{
+    background-color:black;
+    color:white;
+    padding-left:19px;
+    margin-top: 12px;
+    margin-bottom: 7px;
+    border-radius: 7px 7px 7px 7px;
+}
+#submit{
+    background-size:contain;
+    background-image: url(edit.png);
+    width:35px; height:35px;
+    border-radius: 7px 7px 7px 7px;
+}
+.viewMess{
+    width:48px;
+    height:35px;
+    display: inline-block;
+    background-image:url(onebit_42.png);
+    margin-top:6px;
+    border-radius: 10px 10px 10px 10px;
+}
+.viewMess2{
+    font-size: 30px;
+    padding-left:15px;
+    padding-top:16px;
+}
+.close{
+    width:35px;
+    height:35px;
+    padding-top:10px
+}
