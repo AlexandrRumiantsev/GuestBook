@@ -511,6 +511,23 @@ class autorUser
         setcookie("password", $Password);
     }
 }
+
+class RecInBase
+{
+    function Rec($name,$mail,$url,$text,$nameFile,$ip,$Br,$time)
+    {
+        $mysqli = new mysqli ("localhost","root","","GuestBook");
+        $mysqli -> query ("SET CHARSET 'utf8'");
+        $date = date('Y-m-d');
+        $sql = "INSERT INTO Users (Users,Date,Mail,Url,Text,Photo,IP,Brouse,times) VALUES 
+                             ('$name','$date','$mail','$url','$text','$nameFile','$ip','$Br','$time')";
+        $success = $mysqli -> query ("$sql");
+        if($success == 1){$mysqli -> close ();
+            echo"<script>document.location.replace('index.php');alert('Запись успешно добавлена!');</script>";
+        }
+        else echo "Произошла ошибка";
+    }
+}
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
