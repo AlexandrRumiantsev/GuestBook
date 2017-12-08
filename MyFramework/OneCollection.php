@@ -144,7 +144,6 @@ class userInfo extends connectToBD
     function geoDate()
     {
         $ip = $_SERVER["REMOTE_ADDR"];
-        $ip = '78.106.137.192';
         $result = file_get_contents("http://ipgeobase.ru:7020/geo?ip=" . $ip);
         $xml = new SimpleXMLElement($result);
         $attributes = $xml->ip->attributes[0];
