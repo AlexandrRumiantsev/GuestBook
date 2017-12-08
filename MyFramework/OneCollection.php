@@ -86,7 +86,8 @@ class Message
      * Краткое описание функции
      * Функция для более читабельной передачи данных с блока на форму профиля
      */
-    public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10, $row11, $row12, $row13, $row14, $Login,$pic)
+    public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10,
+                             $row11, $row12, $row13, $row14, $Login,$pic)
     {
         $str = "ProfileUsers.php?
     name=$row0&
@@ -238,7 +239,6 @@ $start -= ($end - $count_pages);
 $end = $count_pages;
 if ($start < 1) $start = 1;
 }
-///////////////////////////////////////////////////////////////////////////
 ?>
 <!-- Дальше идёт вывод Pagination -->
 <div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>
@@ -246,7 +246,8 @@ if ($start < 1) $start = 1;
     <span style="color:white;">Страницы: </span>
     <?php if ($active != 1) { ?>
         <a href="<?=$url?>" title="Первая страница">&lt;&lt;&lt;</a>
-        <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>" title="Предыдущая страница">&lt;</a>
+        <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>"
+           title="Предыдущая страница">&lt;</a>
     <?php } ?>
     <?php for ($i = $start; $i <= $end; $i++) { ?>
         <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?>
@@ -279,7 +280,11 @@ class blocksMain
                      <img class='imgMain'  src='$pic'>
                      </div>";
                         $messageClass = new Message();
-                        $userProf = $messageClass->formUser($row[0], $row[2], $row[3], $row[4], $row[5], $row[6], $row[7], $row[8], $row[9], $row[10], $row[11], $row[12], $row[13], $row[14], $Login, $pic);
+                        $userProf = $messageClass->formUser($row[0], $row[2], $row[3],
+                                                            $row[4], $row[5], $row[6],
+                                                            $row[7],$row[8], $row[9],
+                                                            $row[10], $row[11], $row[12],
+                                                            $row[13], $row[14], $Login, $pic);
                         echo "<a id='User$row[0]'  class='userID' target='_blank' href='$userProf'>$row[0]</a>";
                         echo "
                      <button data-msg_time='$row[8]' 
@@ -353,17 +358,38 @@ class viewMessage
             $userTime = $row["times"];
             global $blockId;
             $blockId = $userFrom . $userTo . $text;
-            echo "<div id='$blockId' style='border-style: groove;word-wrap: break-word; width: 800px;margin-left:300px; padding: 20px;'>";
+            echo "<div id='$blockId' style='border-style: groove;
+                                            word-wrap: break-word; 
+                                            width: 800px;
+                                            margin-left:300px; 
+                                            padding: 20px;'>";
 
             echo $row["fromUser"] . " в ";
             echo "<div style='float:right;'>
    <button data-user_from='$userFrom'
            data-user_to='$userTo' 
-           class='otvet' style='margin:5px; background-size: cover; background-image: url(images/conv.png); width: 20px; height:20px;'>
+           class='otvet' 
+           style='margin:5px; 
+           background-size: cover; 
+           background-image: url(images/conv.png); 
+           width: 20px; 
+           height:20px;'>
    </button>
-   <button data-msg_text='$text'   data-id_block='$blockId' data-user_from='$userFrom' data-user_to='$userTo' data-time='$userTime' class='close' style='margin:5px; background-size: cover; background-image: url(images/crestic.png); width: 20px; height:20px;'></button>";
+   <button data-msg_text='$text'   
+           data-id_block='$blockId' 
+           data-user_from='$userFrom' 
+           data-user_to='$userTo' 
+           data-time='$userTime' 
+           class='close' 
+           style='margin:5px; 
+                  background-size: cover; 
+                  background-image: url(images/crestic.png); 
+                  width: 20px; 
+                  height:20px;'>
+  </button>";
             echo "</div>";
-            echo $row["times"] . " написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            echo $row["times"]
+                . " написал вам:<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             echo $row["message"];
             echo "<br>";
             echo "</div>";
@@ -388,28 +414,73 @@ class autorUser
             mysqli_query($link, "SET CHARACTER SET 'utf8'");
             if (mysqli_multi_query($link, $q)) {
                 do {
-                    /* получаем первый результирующий набор */
                     if ($result = mysqli_store_result($link)) {
                         while ($row = mysqli_fetch_row($result)) {
                             $log = $row[0];
                             $Pas = $row[1];
-                            //echo("<script>alert('Вы ввели неправильный логин или пароль!');document.location.replace('index.php');</script>");
                             if ($Login == $log and $Password == $Pas) {
                                 $resultAutoriz = true;
                                 printf("<div 
-style='background:black;  border-radius: 7px 7px 7px 7px; float:left; color:white; width:250px; height:100px; border-style:groove; position:absolute; font-size:18px;'> 
+                            style='background:black;
+                                   border-radius: 7px 7px 7px 7px; 
+                                   float:left; 
+                                   color:white; 
+                                   width:250px; 
+                                   height:100px; 
+                                   border-style:groove; 
+                                   position:absolute; 
+                                   font-size:18px;'> 
                            <img 
-style='width:90px; height:90px; padding-left:9px; padding-right:11px; padding-top:7px; margin-left:0px; float:left; border-radius: 75px 75px 75px 75px;' src='%s' > 
-         				   <form action='Profile.php?status=$row[7]&mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' method='post'>  <input  value='%s' type='text' class='text' 
-style='background-color:black; color:white; padding-left:19px;  margin-top: 12px;  margin-bottom: 7px;  border-radius: 7px 7px 7px 7px; ' name='login' maxlength='20' size='10'>  <form> 
+                            style='width:90px;
+                                   height:90px;
+                                   padding-left:9px; 
+                                   padding-right:11px; 
+                                   padding-top:7px; 
+                                   margin-left:0px; 
+                                   float:left; 
+                                   border-radius: 75px 75px 75px 75px;' 
+                                   src='%s' > 
+         				   <form action='Profile.php?status=$row[7]&mail=$row[2]&town=$row[3]&pol=$row[4]&years=$row[5]&pic=$row[6]' 
+         				           method='post'>  
+         				   <input  value='%s' type='text' class='text' 
+                            style='background-color:black; 
+                                   color:white; 
+                                   padding-left:19px;  
+                                   margin-top: 12px;  
+                                   margin-bottom: 7px;  
+                                   border-radius: 7px 7px 7px 7px;' 
+                            name='login' maxlength='20' size='10'>  
+                            <form> 
          				   <br>
          				   <div style='padding-left:44px;display:block;'>
 						 <input type='submit' 
-style='background-size:contain;background-image: url(edit.png);width:35px; height:35px; border-radius: 7px 7px 7px 7px;' class='subm' name='submitUser' value=''/>
-						 <a target='_blank' href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> <div 
-style='width:48px;height:35px; display: inline-block;  background-image:url(onebit_42.png); margin-top:6px; border-radius: 10px 10px 10px 10px;'> <div style='font-size: 30px; padding-left:15px; padding-top:16px;'> </div></div></a> 
-						 <a href='index.php'> <img 
-style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a> 
+                            style='background-size:contain;
+                                   background-image: url(edit.png);
+                                   width:35px; 
+                                   height:35px; 
+                                   border-radius: 7px 7px 7px 7px;' 
+                             class='subm' name='submitUser' value=''/>
+						 <a target='_blank' href='ViewMessage.php?log=$row[0]&mail=$row[2]&town=$row[3]'> 
+						 <div 
+                            style='width:48px;
+                                   height:35px; 
+                                   display: inline-block;  
+                                   background-image:url(onebit_42.png); 
+                                   margin-top:6px; 
+                                   border-radius: 10px 10px 10px 10px;'> 
+                             <div style='font-size: 30px; 
+                                         padding-left:15px; 
+                                         padding-top:16px;'> 
+                             </div>
+                         </div>
+                         </a> 
+						 <a href='index.php'> 
+						 <img 
+                         style='width:35px;
+                                height:35px;
+                                padding-top:10px;' 
+                                src='images/close.png'> 
+                         </a> 
 						</div>
 						 </div> ", $row[6], $row[0]);
                                 $Login = $row[0];
@@ -417,13 +488,14 @@ style='width:35px;height:35px;padding-top:10px;' src='images/close.png'> </a>
                                 require_once 'MyFramework\OneCollection.php';
                                 $library = new Library();
                                 $countMess = $library->Timer($Login);
-                                echo "<div style='color:white; position:absolute; padding-top:120px;'>У вас $countMess сообщений</div>";
+                                echo "<div style='color:white; position:absolute; padding-top:120px;'>
+                                      У вас $countMess сообщений
+                                      </div>";
                             }else{}
-                        }if($resultAutoriz!==true){echo"<script>alert('Вы ввели неправильный логин или пароль!');</script>";}
+                        }if($resultAutoriz!==true)
+                        {echo"<script>alert('Вы ввели неправильный логин или пароль!');</script>";}
                         mysqli_free_result($result);
                     }
-                    //else { echo 'Ничего не найдено';}
-                    /* печатаем разделитель */
                     if (mysqli_more_results($link)) {
                         printf('-----------------\n');
                     }
