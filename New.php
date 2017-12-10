@@ -8,7 +8,9 @@ $time = time();
 //Работа с картинкой
 $file = $_FILES['filesName'];
 if($text == null or $name == null){
-	echo "<script> alert('Необходимо авторизоватся и заполнить поле - Сообщение'); window.location.href = 'index.php';</script>";}
+	echo "<script> 
+          alert('Необходимо авторизоватся и заполнить поле - Сообщение'); window.location.href = 'index.php';
+          </script>";}
 $nameFile = $_FILES['filesName']['name'];
 //Определяем IP и Браузер пользователя
 $Br = $_SERVER['HTTP_USER_AGENT'];

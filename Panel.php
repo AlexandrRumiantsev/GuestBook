@@ -27,7 +27,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 					<input class="field" type="text" name="log" id="log" value="" size="23" style="border-style: groove; background: gray;"/>
 					<label class="grey" for="pwd">Пароль:</label>
 					<input class="field" type="password" name="pwd" id="pwd" size="23" />
-	            	<label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> &nbsp;Запомнить</label>
+	            	<label><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" />
+						&nbsp;Запомнить
+					</label>
         			<div class="clear"></div>
 					<input type="submit" name="submit" value="Войти" class="button normal white" />
 				</form>
