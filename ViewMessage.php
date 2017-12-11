@@ -8,13 +8,11 @@
 $login=$_GET['log'];
 $mail=$_GET['mail'];
 $town=$_GET['town'];
-
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 $query  = "SELECT * FROM `Message` WHERE  toUser='$login'";
 ?>
 <body style="background: url(Background.jpg); color:white;">
 Сообщения пользователя: <br><?echo $login?><br></body>
-
 <?
 require_once  'MyFramework\OneCollection.php';
 //Вывод из базы и отображение символов кириллицы
@@ -30,7 +28,6 @@ $userToFinal = $_GET['usersTo'];
 $userFromFinal = $_GET['usersFrom'];
 $timesFinal = $_GET['times'];
 $id =  $_GET['id_block'];
-
 $q = "DELETE FROM Message 
 	  WHERE
 	  message = '$msgFinal' AND
