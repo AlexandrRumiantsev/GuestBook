@@ -10,7 +10,6 @@ $message=$_POST[msg];
 $UserFrom =$_POST[UserFrom];
 if($UserFrom==""){?><script language='javascript' type='text/javascript'>alert('Необходимо авторизоваться');</script><?;}
 else{
-    //echo "<script language='javascript' type='text/javascript'>alert('Сообщение отправлено');</script>";
 $user=$_POST[usersTo];
 $time = date('H:i:s');
 $messegeUser = new Message();

@@ -1,4 +1,5 @@
 <?php
+//поправить тут
 $name= $_GET["name"];
 $q1= $_GET[un2];
 $q2= $_GET[un3];
@@ -15,7 +16,6 @@ $q12= $_GET[un13];
 $q13= $_GET[un14];
 $user = $_GET[un15];
 $pic = $_GET[pic];
-//echo "$q1, $q2, $q3,$q4,$q5,$q6,$q7,$q8,$q9,$q10,$q11,$q12,$q13";
 echo"
 <head> 
   <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css\">
@@ -41,8 +41,7 @@ E-mail:$q9<br>
         $('.message').click(function(){
           var msg = prompt('Введите сообщение');
           var usersTo = '$name';
-          var UserFrom = '$user';
-          
+          var UserFrom = '$user'; 
             if(msg) {
                 $.ajax({
                     url: 'Message.php',
@@ -52,8 +51,7 @@ E-mail:$q9<br>
                         $(\"#\"+'louder').css(\"display\", \"block\");
                         $(\"#\"+'louder').animate({opacity: 1}, 500);
                     }
-                });
-             
+                });  
                 //после отработки функции, делаю редирект, чтобы увидеть результат.
                 window.location.href = 'ProfileUsers.php?name=$name&un1=$q&un2=$q1&un3=$q2&un4=$q3&un5=$q4&un6=$q5&un7=$q6&un8=$q7&un9=$q8&un10=$q9&un11=$q10&un12=$q11&un13=$q12&un14=$q13&un15=$user';
             }else alert('Сообщение не отправлено');});

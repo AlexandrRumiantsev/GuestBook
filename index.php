@@ -7,7 +7,6 @@
 <html>
 <head>
 <?
-include 'cookie.inc.php';
 include 'setting.php';
 ?>
 </head>
