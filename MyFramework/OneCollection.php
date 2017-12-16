@@ -237,26 +237,43 @@ if ($end > $count_pages) {
 $start -= ($end - $count_pages);
 $end = $count_pages;
 if ($start < 1) $start = 1;
-}
-?>
-<!-- Дальше идёт вывод Pagination -->
+}}
+    $this->viewPagination($active,$url,$start,$url_page,$end,$count_pages);
+    }
+
+//Дальше идёт вывод Pagination -->
+    function viewPagination($active,$url,$start,$url_page,$end,$count_pages){
+        echo"
 <div id='loader' style='position: absolute;padding-left:365px;display: none'><img src='images/loader.gif' /></div>
-<div id="pagination" style="font-size: 23px;">
-    <span style="color:white;">Страницы: </span>
-    <?php if ($active != 1) { ?>
-        <a href="<?=$url?>" title="Первая страница">&lt;&lt;&lt;</a>
-        <a href="<?php if ($active == 2) { ?><?=$url?><?php } else { ?><?=$url_page.($active - 1)?><?php } ?>"
-           title="Предыдущая страница">&lt;</a>
-    <?php } ?>
-    <?php for ($i = $start; $i <= $end; $i++) { ?>
-        <?php if ($i == $active) { ?><span style="background: white;border-radius: 5px;font-size: 28px;"><?=$i?></span><?php } else { ?><a href="<?php if ($i == 1) { ?><?=$url?>
-    <?php } else { ?><?=$url_page.$i?><?php } ?>"><?=$i?></a><?php } ?>
-    <?php } ?>
-    <a href="<?=$url_page.($active + 1)?>" title="Следующая страница">&gt;</a>
-    <a href="<?=$url_page.$count_pages?>" title="Последняя страница">&gt;&gt;&gt;</a>
-    <?php } ?>
-</div>
-    <?php }}
+<div id='pagination' style='font-size: 23px;'>
+    <span style='color:white;'>Страницы: </span>";
+        if($active>1) {
+            echo "
+        <a href='$url' title='Первая страница'>&lt;&lt;&lt;</a>";
+            $predPage = $url_page . ($active - 1);
+        }
+
+        if($active>1){
+            echo"
+        <a href='$predPage' title='Предыдущая страница'>&lt;<a>";};
+           
+        $i = $start;
+        $unI = $url_page.$i;
+        echo"
+             <a href='$unI' style='background: white;border-radius: 5px;font-size: 28px;'>$i</a>";
+           $url_pageNext = $url_page.($active + 1);
+           $lastPage = $url_page.$count_pages;
+           $active = $active + 1;
+        if($active<=$count_pages){
+            echo"
+    <a href='$url_pageNext' title='Следующая страница'>&gt;</a>
+    <a href='$lastPage' title='Последняя страница'>&gt;&gt;&gt;</a>";
+    }
+    if($active<$count_pages) {
+        echo "</div>";
+    }
+     }
+}
 
 class blocksMain
 {

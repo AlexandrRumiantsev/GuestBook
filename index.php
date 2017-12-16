@@ -57,6 +57,7 @@ $count_pages=$CountAllStringInBase/3;
 $count_pages = ceil($count_pages);
   $active = $_GET['page'];
   if($_GET['page']==null) $active = 1;
+  
 $pagination = new pagination();
 $pagination ->paginationEnter($count_pages, $active)
  ?>
