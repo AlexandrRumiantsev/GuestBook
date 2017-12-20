@@ -1,5 +1,6 @@
 Сообщения
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel='stylesheet' href='css/style.css' type='text/css' media='screen' />
 <div style="margin-top:22px;position: relative;padding-left: 130px;">
 <input  type="text" id='ins' placeholder="От кого">
 <input  type="text" id='to' placeholder="кому">
@@ -10,7 +11,7 @@
 <style>
 li{list-style-position:inside;}
 </style>
-<div class="mainCont" style="float:left;">
+<div style="float:left;">
 
         <?
         //Реализация выпадающего списка имён из БД
@@ -23,34 +24,13 @@ li{list-style-position:inside;}
         while($row=mysqli_fetch_assoc($mBase))
         {
             $usFrom = $row["Log"];
-
-            
-
-            echo "<div style='padding-left: 180px; position:absolute;display:none;text-align:center;z-index:100;background:black;color:white;float:left;margin-left:83px;display: block; width: 168px; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
-            echo "<div style='padding-left: 330px; position:absolute;text-align:center;z-index:100;background:black;color:white;float:right; margin-left:60px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
+            echo "<div style='margin-top:-25px;position:absolute;text-align:center;z-index:100;background:white;color:black;float:right; margin-left:155px; width: 173px;display: none; border-style: groove;' class='spisok'id='$usFrom' data-id='$usFrom'>$usFrom</div>";
+            echo "<div style='margin-top:-25px;position:absolute;text-align:center;z-index:100;background:white;color:black;float:right; margin-left:334px; width: 173px;display: none; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom'>$usFrom</div>";
             echo"<br>"; }
         ?>
-
-        <?
-        //Реализация 2 выпадающего списка имён из БД
-        /*$link = mysqli_connect("localhost", "root", "", "GuestBook");
-        $query  = "SELECT * FROM `RegUsers`";
-        mysqli_query($link, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
-        mysqli_query($link, "SET CHARACTER SET 'utf8'");
-        $mBase = mysqli_query($link, $query);
-        while($row=mysqli_fetch_assoc($mBase))
-        {
-            $usFrom = $row["Log"];
-
-            echo "<div style='float:right;position: fixed; margin-left:260px;display: block; width: 168px; border-style: groove;' class='spisoks'id='$usFrom' data-id='$usFrom' style='display: none;'>$usFrom</div>";
-
-        }*/
-
-        ?>
-
 </div>
 
-<div style="float:left;position:absolute;">
+<div class='mainCont' style="margin-left:80px;overflow:auto;height: 680px">
 <?
 
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
@@ -67,7 +47,9 @@ while($row=mysqli_fetch_assoc($mysqliBase)) {
     $userFrom = $row["fromUser"];
     $userTo = $row["toUser"];
     $userTime = $row["times"];
-    echo "<br>От кого:$userFrom Кому:$userTo в:$userTime Сообщение:$text<br>";
+    echo "<link rel='stylesheet' href='css/style.css' type='text/css' media='screen' />";
+    echo "<div class='blockMess'>От кого:$userFrom Кому:$userTo в:$userTime<hr style='margin: 0px;padding: 0px'> <br> Сообщение: <br>$text<div><hr>
+";
 }
 ?>
     </div>
