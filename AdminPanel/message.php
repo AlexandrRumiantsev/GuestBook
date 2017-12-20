@@ -1,7 +1,7 @@
-Сообщения
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <link rel='stylesheet' href='css/style.css' type='text/css' media='screen' />
-<div style="margin-top:22px;position: relative;padding-left: 130px;">
+<div style="margin-top:22px;position: relative;padding-left: 130px; padding-top:40px;">
 <input  type="text" id='ins' placeholder="От кого">
 <input  type="text" id='to' placeholder="кому">
 <input  type="time" placeholder="время">

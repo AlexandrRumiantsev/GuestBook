@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="154d351c-4c27-4f83-8ba1-eb8e6590d510" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdminPanel/message.php" afterPath="$PROJECT_DIR$/AdminPanel/message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styleMessage.css" afterPath="$PROJECT_DIR$/css/styleMessage.css" />
     </list>
     <ignored path="book2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,19 +40,32 @@
       <file leaf-file-name="message.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdminPanel/message.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="51">
+              <caret line="3" column="81" selection-start-line="3" selection-start-column="81" selection-end-line="3" selection-end-column="81" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <marker date="1513801407736" expanded="true" signature="691:715" placeholder="SELECT * FRO... RegUsers" />
-                <marker date="1513801407736" expanded="true" signature="1019:1194" placeholder="..." />
-                <marker date="1513801407736" expanded="true" signature="1287:1462" placeholder="..." />
-                <marker date="1513801407736" expanded="true" signature="1304:1462" placeholder="..." />
-                <marker date="1513801407736" expanded="true" signature="1724:1747" placeholder="SELECT * FRO... Message" />
-                <marker date="1513801407736" expanded="true" signature="2253:2363" placeholder="..." />
-                <marker date="1513801407736" expanded="true" signature="2307:2331" placeholder="..." />
+                <marker date="1513802177811" expanded="true" signature="700:724" placeholder="SELECT * FRO... RegUsers" />
+                <marker date="1513802177811" expanded="true" signature="1028:1203" placeholder="..." />
+                <marker date="1513802177811" expanded="true" signature="1296:1471" placeholder="..." />
+                <marker date="1513802177811" expanded="true" signature="1313:1471" placeholder="..." />
+                <marker date="1513802177811" expanded="true" signature="1733:1756" placeholder="SELECT * FRO... Message" />
+                <marker date="1513802177811" expanded="true" signature="2262:2372" placeholder="..." />
+                <marker date="1513802177811" expanded="true" signature="2316:2340" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AdminPanel/MainAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-295">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1510344896587" expanded="true" signature="572:619" placeholder="..." />
+                <marker date="1510344896587" expanded="true" signature="578:612" placeholder="{...}" />
+                <marker date="1510344896587" expanded="true" signature="925:953" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -129,7 +139,7 @@
       <file leaf-file-name="styleMessage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/styleMessage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
+            <state relative-caret-position="198">
               <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
               <folding />
             </state>
@@ -139,7 +149,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
+            <state relative-caret-position="931">
               <caret line="80" column="10" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="10" />
               <folding />
             </state>
@@ -601,7 +611,7 @@
       <workItem from="1513365792061" duration="3094000" />
       <workItem from="1513435753440" duration="8146000" />
       <workItem from="1513792603108" duration="3000" />
-      <workItem from="1513792746022" duration="8734000" />
+      <workItem from="1513792746022" duration="9676000" />
     </task>
     <servers />
   </component>
@@ -617,7 +627,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="448534000" />
+    <option name="totallyTimeSpent" value="449476000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1370" height="744" extended-state="0" />
@@ -893,22 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styleMessage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyFramework/OneCollection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -972,21 +966,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AdminPanel/MainAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1510344896587" expanded="true" signature="572:619" placeholder="..." />
+            <marker date="1510344896587" expanded="true" signature="578:612" placeholder="{...}" />
+            <marker date="1510344896587" expanded="true" signature="925:953" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="80" column="10" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styleMessage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AdminPanel/message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+        <state relative-caret-position="51">
+          <caret line="3" column="81" selection-start-line="3" selection-start-column="81" selection-end-line="3" selection-end-column="81" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-            <marker date="1513801407736" expanded="true" signature="691:715" placeholder="SELECT * FRO... RegUsers" />
-            <marker date="1513801407736" expanded="true" signature="1019:1194" placeholder="..." />
-            <marker date="1513801407736" expanded="true" signature="1287:1462" placeholder="..." />
-            <marker date="1513801407736" expanded="true" signature="1304:1462" placeholder="..." />
-            <marker date="1513801407736" expanded="true" signature="1724:1747" placeholder="SELECT * FRO... Message" />
-            <marker date="1513801407736" expanded="true" signature="2253:2363" placeholder="..." />
-            <marker date="1513801407736" expanded="true" signature="2307:2331" placeholder="..." />
+            <marker date="1513802177811" expanded="true" signature="700:724" placeholder="SELECT * FRO... RegUsers" />
+            <marker date="1513802177811" expanded="true" signature="1028:1203" placeholder="..." />
+            <marker date="1513802177811" expanded="true" signature="1296:1471" placeholder="..." />
+            <marker date="1513802177811" expanded="true" signature="1313:1471" placeholder="..." />
+            <marker date="1513802177811" expanded="true" signature="1733:1756" placeholder="SELECT * FRO... Message" />
+            <marker date="1513802177811" expanded="true" signature="2262:2372" placeholder="..." />
+            <marker date="1513802177811" expanded="true" signature="2316:2340" placeholder="..." />
           </folding>
         </state>
       </provider>
