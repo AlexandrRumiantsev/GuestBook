@@ -25,11 +25,11 @@ echo "Adminka";
 echo'<br>';
 //Верхнее меню
 echo '<div class="cont">';
-echo '<a href="MainAdmin.php?Page=main"><img class="imgAdm" src="img1.png"> </a>';
-echo '<a href="MainAdmin.php?Page=stat"><img class="imgAdm" src="img2.png"></a>';
-echo '<a href="MainAdmin.php?Page=user"><img class="imgAdm" style="height:90px;margin-top:10px;"src="users.png"> </a>';
-echo '<a href="MainAdmin.php?Page=message"><img class="imgAdm" src="img/conv.png">  </a>';
-echo '<a href="MainAdmin.php?Page=setting"><img class="imgAdm" src="set.png"> </a>';
+echo '<a href="MainAdmin.php?Page=main" title="main"><img class="imgAdm" src="img1.png"> </a>';
+echo '<a href="MainAdmin.php?Page=stat" title="Статистика"><img class="imgAdm" src="img2.png"></a>';
+echo '<a href="MainAdmin.php?Page=user" title="Пользователи"><img class="imgAdm" style="height:90px;margin-top:10px;"src="users.png"> </a>';
+echo '<a href="MainAdmin.php?Page=message" title="Сообщения"><img class="imgAdm" src="img/conv.png">  </a>';
+echo '<a href="MainAdmin.php?Page=setting" title="Настройки"><img class="imgAdm" src="set.png"> </a>';
 echo '</div>';
 ?>
 

@@ -216,6 +216,30 @@ class userInfo extends connectToBD
         $result = mysqli_query($link, $sql);
         if($result == false){echo"<script>alert('Произошла неизвестная ошибка! Обратитесь к администратору.')</script>";}
     }
+
+    function userInfoView()
+    {
+        $sqlInfo = "SELECT * FROM `usersinfo`";
+        $mySql = new mysqli('localhost', 'root', '', 'GuestBook');
+        mysqli_query($mySql, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+        mysqli_query($mySql, "SET CHARACTER SET 'utf8'");
+        $resultSql =  mysqli_query($mySql, $sqlInfo);
+
+        while ($row = mysqli_fetch_assoc($resultSql)) {
+            echo 'ip '.$row['userIp'] .'<br>';
+            echo 'Язык пользователя '.$row['userLanguage'] .'<br>';
+            echo 'Время входа ' .$row['timeIn'] .'<br>';
+            echo 'Откуда пришёл ' .$row['fromIn'] .'<br>';
+            echo 'Логин ' .$row['userLog'] .'<br>';
+            echo 'Сеть ' .$row['internum'] .'<br>';
+            echo 'Страна ' .$row['country'] .'<br>';
+            echo 'Город ' .$row['city'] .'<br>';
+            echo 'Регион ' .$row['region'] .'<br>';
+            echo 'Округ ' .$row['district'] .'<br>';
+            echo 'Широта ' .$row['lat'] .'<br>';
+            echo 'Долгота ' .$row['lng'] .'<br><hr>';
+        }
+    }
 }
 
 class pagination
@@ -544,6 +568,38 @@ class RecInBase
         else echo "Произошла ошибка";
     }
 }
+
+class usersView
+{
+      private function info()
+      {
+           $sqlInfo = "SELECT * FROM `RegUsers`";
+           $mySql = new mysqli('localhost', 'root', '', 'GuestBook');
+           mysqli_query($mySql, "SET NAMES 'utf8' COLLATE 'utf8_general_ci'");
+           mysqli_query($mySql, "SET CHARACTER SET 'utf8'");
+           $resultSql =  mysqli_query($mySql, $sqlInfo);
+           return $resultSql;
+
+      }
+      public function usersView()
+      {
+          $resultSql = $this->info();
+          if ($resultSql) {
+              while ($row = mysqli_fetch_assoc($resultSql)) {
+                  echo 'Логин ' . $row['Log'] . '<br>';
+                  echo 'Пароль ' . $row['Pass'] . '<br>';
+                  echo 'Маил ' . $row['mail'] . '<br>';
+                  echo 'Город ' . $row['town'] . '<br>';
+                  echo 'Пол ' . $row['pol'] . '<br>';
+                  echo 'Возраст ' . $row['years'] . '<br>';
+                  echo 'Аватарка ' . $row['ProfPic'] . '<br>';
+                  echo 'Статус ' . $row['status'] . '<br>';
+                  echo '<hr>';
+              };exit();
+          }
+      }
+}
+
 /**
  * Краткое описание класса
  * тут храню все запросы, у всех тип protected
