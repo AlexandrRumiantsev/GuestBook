@@ -28,9 +28,10 @@ echo"
 <img src='$pic'  style='float:left; margin-top: 32px;margin-left:15px; margin-right:35px; width: 200px; height:200px;'>
 <div style='float:left; margin-top: 32px; color:white;'>Пользователь:<br>$name<br>
 <br>
-E-mail:$q9<br>
-Пол:$q11<br>
-Возраст:$q12<br><br><br><br>
+E-mail:$q10<br>
+Пол:$q12<br>
+Возраст:$q13<br>
+Город:$q11<br><br><br><br>
 <button style='background: black;' data-user_from='' data-user_to='$name'  class='message'>написать сообщение</button>
 </div>
 <div id='louder' style='position: absolute;padding-left:165px; padding-top:65px; display: none;'><img src='images/loader.gif' /></div>
