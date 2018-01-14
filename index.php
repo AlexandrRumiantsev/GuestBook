@@ -33,9 +33,12 @@ error_reporting(0);
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 //Вывод кирилицы из БД
 $link->set_charset("utf8");
-$first_name = $_GET['first_name'];
 $Email = $_GET['E-Mail'];
+$Email = mysqli_real_escape_string($link,$Email);
+$first_name = $_GET['first_name'];
+$first_name = mysqli_real_escape_string($link,$first_name);
 $active= $_GET['page'];
+$active= mysqli_real_escape_string($link,$active);
 if($active == null){$active = 1;} else $active= $_GET['page'];
 $sqlSort = new sqlSort();
 $query = $sqlSort ->sqlSort($Email,$first_name,$active);

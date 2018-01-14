@@ -5,6 +5,10 @@ $LoginReg = $_POST['Log'];
 $PasswordReg = $_POST['pass'];
 $EmailReg = $_POST['email'];
 
+$LoginReg = mysqli_real_escape_string($link,$LoginReg);
+$PasswordReg = mysqli_real_escape_string($link,$PasswordReg);
+$EmailReg = mysqli_real_escape_string($link,$EmailReg);
+
 $link = mysqli_connect("localhost", "root", "", "GuestBook");
 $q = "INSERT INTO RegUsers (Log,Pass,mail,status) VALUES ('$LoginReg','$PasswordReg','$EmailReg','user')";
 mail("nobody@example.com",

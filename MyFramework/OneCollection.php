@@ -3,6 +3,7 @@
 class sqlSort
 {
   function sqlSort($Email,$first_name,$active){
+
       if($first_name != null and $Email != null){
             return $query  = "SELECT * 
             FROM `Users` WHERE Users='$first_name'";}

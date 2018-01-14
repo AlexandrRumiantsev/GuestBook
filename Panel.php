@@ -4,8 +4,14 @@ require_once  'MyFramework\OneCollection.php';
 //Авторизация
 global $Login;
 global $mail;
+$link = mysqli_connect("localhost", "root", "", "GuestBook");
+
 $Login=$_POST['log'];
 $Password=$_POST['pwd'];
+
+$Login = mysqli_real_escape_string($link,$Login);
+$Password = mysqli_real_escape_string($link,$Password);
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
 	$autori = new autorUser();
 	$autori ->auto($Login,$Password);
