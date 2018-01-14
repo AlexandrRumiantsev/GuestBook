@@ -1,5 +1,8 @@
 <?
-//Классы для работы с БД
+
+/**
+ * sqlSort - класс который содержит функцию для сортировки записей на главной странице
+ */
 class sqlSort
 {
   function sqlSort($Email,$first_name,$active){
@@ -23,6 +26,10 @@ class sqlSort
             FROM `Users` LEFT JOIN `RegUsers` ON `Users`=`Log` LIMIT '.(($active*3)-3).",3";
     }
 }
+
+/**
+ * connectToBD - класс обеспечивает соединение с Базой данных.
+ */
 class connectToBD
 {
     private $log;
@@ -48,13 +55,14 @@ class connectToBD
         return $mysqliResult = mysqli_query($link, $sql);
     }
 }
-//////////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * Library - класс обеспечивает содержащий в себе рандомные функции.
+ * function Timer - функция подскитывает колличество сообщений пользователя и выводит их на главной при авторизации
+ */
 class Library extends connectToBD
 {
-    /**
-     * Краткое описание функции
-     * Функция подсчитывает кол-во сообщений пользователя в бд и выводит на форму
-     */
 public function Timer($login)
     {
         $log = new connectToBD();
@@ -74,6 +82,12 @@ public function Timer($login)
     }
 };
 
+
+/**
+ * Message - класс для манипуляции объектом "сообщение".
+ * function pushToBase - функция записи сообщения в БД
+ * function formUser - функция детализации пользователя(Для себя: Пофиксить уны и другие нечитабильные переменные)
+ */
 class Message
 {
     public function pushToBase($message,$UserFrom,$time,$user){
@@ -83,10 +97,7 @@ class Message
         $success = $mysqli -> query ("$q");
         if($success == 1){?>Сообщение доставлено успешно!<?;}
         else ?>Произошла ошибка!<?;}
-    /**
-     * Краткое описание функции
-     * Функция для более читабельной передачи данных с блока на форму профиля
-     */
+
     public function formUser($row0, $row2, $row3, $row4, $row5, $row6, $row7, $row8, $row9, $row10,
                              $row11, $row12, $row13, $row14, $Login,$pic)
     {
@@ -111,6 +122,11 @@ class Message
     }
 }
 
+
+/**
+ * fileToDirect - класс для записи файла "изображение" в директорию.
+ * function save_source_code - функция сохранения файла в директорию
+ */
 class fileToDirect
 {
     public function save_source_code($file,$fileTmp)
@@ -120,6 +136,11 @@ class fileToDirect
     }
 }
 
+/**
+ * audit - класс для проверки файла который записывается пользователем с формы.
+ * function auditType - функция проверки типа файла
+ * function auditSize - функция проверки размера файла
+ */
 class audit
 {
     public function auditType($type){
@@ -140,6 +161,13 @@ class audit
     }
 }
 
+
+/**
+ * userInfo - класс сбора информации о зашедшем пользователе.
+ * function geoDate() - расположение пользователя на основе его ID
+ * function userInfo - функция запрос и запись данных пользователя в БД
+ * function userInfoView - функция вывода данных пользователя.
+ */
 class userInfo extends connectToBD
 {
     function geoDate()
@@ -243,6 +271,12 @@ class userInfo extends connectToBD
     }
 }
 
+
+/**
+ * pagination - класс реализующий пагинацию на главной странице.
+ * function viewPagination() - форма пагинации
+ * function paginationEnter() - механизм пагинации
+ */
 class pagination
 {
 private $count_show_pages = 1;
@@ -300,6 +334,10 @@ if ($start < 1) $start = 1;
      }
 }
 
+/**
+ * blocksMain - класс реализующий вывод блоков на главной странице.
+ * БАГ - разобратся подробнее, почему стили прописываются только на прямую!
+ */
 class blocksMain
 {
     function blocksMain($link, $query,$Login)
@@ -363,6 +401,10 @@ class blocksMain
     }
 }
 
+/**
+ * answerMessage - класс реализующий ответ на сообщения пользователю.
+ * function sendMessage() - функция посылки сообщения
+ */
 class answerMessage extends connectToBD
 {
     function sendMessage($message,$fromUser,$toUser){
@@ -388,6 +430,11 @@ class answerMessage extends connectToBD
     }
 }
 
+
+/**
+ * viewMessage - класс реализующий вывод сообщений пользователю, которые были получены.
+ * function view() - функция форма представления сообщений
+ */
 class viewMessage
 {
     function view($mysqliBase)
@@ -438,6 +485,11 @@ class viewMessage
     }
 }
 
+/**
+ * autorUser - класс реализующий авторизацию пользователя.
+ * function auto() - авторизация пользователя
+ * function userCookie() - сохранение данных
+ */
 class autorUser
 {
     function auto($Login,$Password){
@@ -553,6 +605,10 @@ class autorUser
     }
 }
 
+/**
+ * autorUser - класс реализующий запись данных в БД
+ * function Rec() - запись данных в БД
+ */
 class RecInBase
 {
     function Rec($name,$mail,$url,$text,$nameFile,$ip,$Br,$time)
@@ -570,6 +626,11 @@ class RecInBase
     }
 }
 
+/**
+ * usersView - класс реализующий детализацию пользователей
+ * function usersView() - реализующий форму - представление пользователей
+ * function info - собирает информацию о пользователе из Базы данных.
+ */
 class usersView
 {
       private function info()
@@ -601,34 +662,4 @@ class usersView
       }
 }
 
-/**
- * Краткое описание класса
- * тут храню все запросы, у всех тип protected
- *
- * Подробное описание класса
- * которое может растянуться на несколько строк с использованием HTML тегов.
- * Теги можно использовать следующие:
- * <b> — жирное начертание;
- * <code> — код;
- * <br> — разрыв строки;
- * <i> — курсив;
- * <kbd> — сочетание клавиш;
- * <li> — элемент списка;
- * <ol> — нумерованный список;
- * <p> — абзац;
- * <pre> — форматированный текст;
- * <samp> — пример;
- * <ul> — маркированный список;
- * <var> — имя переменной.
- * Инлайн тег. Использует данные с {@link http://кодер.укр/data.php}
- * Далее будет список используемых тегов
- *
- * @author Coder UA <web@кодер.укр>
- * @version 1.0
- * @package MyPackageName
- * @category MyCategoryNews
- * @todo описание необходимых доработок
- * @example http://кодер.укр/example.php
- * @copyright Copyright (c) 2014, Coder UA
- */
 ?>
